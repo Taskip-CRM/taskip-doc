@@ -46,4 +46,14 @@ export default defineConfig({
   ],
   output: 'server',
   adapter: vercel(),
+  vite: {
+    ssr: {
+      // Bundle Keystatic + its deps (yjs, y-indexeddb) into the SSR output
+      // instead of treating them as externals — fixes "Could not resolve yjs"
+      noExternal: ['@keystatic/core', '@keystatic/astro', '@toeverything/y-indexeddb'],
+    },
+    optimizeDeps: {
+      include: ['yjs'],
+    },
+  },
 });

@@ -4,8 +4,8 @@ export default config({
   storage: {
     kind: 'github',
     repo: {
-      owner: 'taskip',
-      name: 'docs',
+      owner: 'Taskip-CRM',
+      name: 'taskip-doc',
     },
   },
 

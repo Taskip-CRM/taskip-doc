@@ -212,3 +212,5 @@ Simply move a line up or down to reorder. No frontmatter needed.
 4. Commit and push — Vercel deploys automatically
 
 Or, use the CMS at `/keystatic` — no code needed.
+
+> **Tip:** The homepage content (hero tagline, feature cards, CTA button) is fully editable via the **Homepage** singleton in the CMS — no code changes required.

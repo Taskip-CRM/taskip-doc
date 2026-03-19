@@ -1,0 +1,36 @@
+---
+title: Taskip Documentation
+description: Everything you need to know about Taskip — the modern task and project management platform.
+template: splash
+hero:
+  tagline: Manage tasks, projects, and teams — all in one place.
+  image:
+    file: ../../assets/hero.svg
+  actions:
+    - text: Get Started
+      link: /getting-started/introduction/
+      icon: right-arrow
+      variant: primary
+    - text: View on GitHub
+      link: https://github.com/taskip
+      icon: external
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## What can Taskip do?
+
+<CardGrid stagger>
+  <Card title="Task Management" icon="pencil">
+    Create, assign, and track tasks with due dates, priorities, and rich descriptions.
+  </Card>
+  <Card title="Projects & Boards" icon="open-book">
+    Organize work with Kanban boards, Gantt charts, and custom workflows.
+  </Card>
+  <Card title="Team Collaboration" icon="group">
+    Comment, mention teammates, share files, and keep everyone aligned.
+  </Card>
+  <Card title="Integrations" icon="puzzle">
+    Connect with Slack, GitHub, Zapier, and hundreds of other tools.
+  </Card>
+</CardGrid>

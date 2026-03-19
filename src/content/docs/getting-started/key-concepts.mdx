@@ -1,0 +1,74 @@
+---
+title: Key Concepts
+description: Understand the core building blocks of Taskip — workspaces, projects, tasks, and more.
+sidebar:
+  order: 4
+---
+
+import { Aside, Card, CardGrid } from '@astrojs/starlight/components';
+
+# Key Concepts
+
+Understanding a few core ideas will help you get the most out of Taskip.
+
+## Workspace
+
+A **Workspace** is the top-level container for your organization. Everything in Taskip lives inside a workspace — projects, members, settings, and billing.
+
+You can be a member of multiple workspaces (e.g. your company and a side project). Switch between them using the workspace switcher in the top-left corner.
+
+## Projects
+
+A **Project** groups related tasks together around a shared goal. Examples:
+
+- `Website Redesign`
+- `Q2 Marketing Campaign`
+- `Bug Tracker`
+
+Each project has its own sidebar with views: **Board**, **List**, **Timeline**, and **Calendar**.
+
+## Tasks
+
+A **Task** is the core unit of work. Every task has:
+
+| Field | Description |
+|---|---|
+| Title | What needs to be done |
+| Assignee | Who is responsible |
+| Due Date | When it's due |
+| Priority | Urgent, High, Medium, Low, or None |
+| Status | Todo, In Progress, In Review, Done |
+| Labels | Custom tags for filtering |
+| Description | Rich text notes, checklists, and attachments |
+
+<Aside type="tip">
+  Use **subtasks** to break a big task into smaller steps. Subtasks appear nested under the parent task in List view.
+</Aside>
+
+## Views
+
+Taskip supports multiple views of the same data:
+
+<CardGrid>
+  <Card title="Board View" icon="seti:config">
+    Kanban-style columns. Drag tasks between status columns.
+  </Card>
+  <Card title="List View" icon="list-format">
+    Spreadsheet-like table. Sort, filter, and group tasks.
+  </Card>
+  <Card title="Timeline View" icon="sun">
+    Gantt chart. See task dependencies and deadlines over time.
+  </Card>
+  <Card title="Calendar View" icon="seti:clock">
+    Month or week calendar showing tasks by due date.
+  </Card>
+</CardGrid>
+
+## Members & Roles
+
+| Role | Permissions |
+|---|---|
+| **Owner** | Full access including billing and workspace deletion |
+| **Admin** | Manage members, projects, and settings |
+| **Member** | Create and edit tasks within projects they belong to |
+| **Viewer** | Read-only access |

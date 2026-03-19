@@ -1,0 +1,62 @@
+---
+title: Projects & Boards
+description: Learn how to create projects, customize Kanban boards, and manage workflows in Taskip.
+sidebar:
+  order: 2
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+# Projects & Boards
+
+## Creating a Project
+
+From your workspace dashboard, click **+ New Project**. You can start from a template or a blank project.
+
+### Project Templates
+
+| Template | Best for |
+|---|---|
+| **Blank** | Custom workflows from scratch |
+| **Kanban** | Ongoing work without fixed deadlines |
+| **Sprint** | Agile development with 2-week cycles |
+| **Bug Tracker** | Software issue tracking |
+| **Marketing Calendar** | Campaign planning and content scheduling |
+
+## Customizing Your Board
+
+The Board view shows your tasks as cards in columns. Each column represents a **Status**.
+
+### Adding & Renaming Columns
+
+Click **+ Add Status** at the right of the board to add a new column. Double-click a column header to rename it.
+
+### Reordering Columns
+
+Drag any column header left or right to change the order.
+
+### Color-Coding Columns
+
+Click the ⋯ menu on a column → **Set color** to give it a background color. Useful for marking "Done" as green and "Blocked" as red.
+
+## Filters & Grouping
+
+Use the **Filter** button (top right of any view) to narrow down tasks:
+
+- Filter by assignee, label, priority, due date, or custom field
+- Combine multiple filters with AND / OR logic
+- Save a filter as a **Saved View** for quick access
+
+<Aside type="note">
+  Saved views appear in the project's sidebar under **Views**. They're private to you by default, but you can share them with the team.
+</Aside>
+
+## Project Settings
+
+Go to **Project → Settings** to configure:
+
+- **Name & Description** — Shown on the dashboard and in search
+- **Access** — Public (all workspace members) or Private (invite only)
+- **Default View** — Which view opens when you enter the project
+- **Custom Fields** — Add fields like "Story Points", "Department", or "External Link"
+- **Automations** — Trigger actions based on conditions (e.g. "When status = Done, notify Slack")

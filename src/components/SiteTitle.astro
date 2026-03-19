@@ -1,0 +1,31 @@
+---
+// Custom SiteTitle — replaces default Starlight header title/logo
+import type { Props } from '@astrojs/starlight/props';
+---
+<a href="/" class="taskip-logo-link">
+  <img
+    src="https://taskip.net/wp-content/uploads/2024/09/Taskip-Logo-New-Updates.png"
+    alt="Taskip"
+    class="taskip-logo"
+    width="120"
+    height="36"
+    loading="eager"
+  />
+</a>
+
+<style>
+  .taskip-logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  .taskip-logo {
+    height: 36px;
+    width: auto;
+    object-fit: contain;
+  }
+  /* Dark mode: add slight brightness to keep logo visible */
+  :root[data-theme='dark'] .taskip-logo {
+    filter: brightness(1.1);
+  }
+</style>

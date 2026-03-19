@@ -1,0 +1,79 @@
+---
+title: Task Management
+description: A deep dive into creating, organizing, and completing tasks in Taskip.
+sidebar:
+  order: 1
+---
+
+import { Steps, Aside, Tabs, TabItem } from '@astrojs/starlight/components';
+
+# Task Management
+
+Tasks are the heart of Taskip. Here's everything you need to know about creating and managing them effectively.
+
+## Creating a Task
+
+There are three ways to create a task:
+
+<Tabs>
+  <TabItem label="Keyboard shortcut">
+    Press `T` anywhere in a project to open the task creation dialog.
+  </TabItem>
+  <TabItem label="Button">
+    Click the **+ Add Task** button at the top of any view.
+  </TabItem>
+  <TabItem label="Command palette">
+    Press `Cmd+K` → type "Create task" → press Enter.
+  </TabItem>
+</Tabs>
+
+## Task Fields
+
+### Priority Levels
+
+Set priority to signal urgency to your team:
+
+- 🔴 **Urgent** — Drop everything, work on this now
+- 🟠 **High** — Important, get to it today
+- 🟡 **Medium** — Normal workflow (default)
+- 🔵 **Low** — Do it when you have bandwidth
+- ⚪ **None** — No priority set
+
+### Due Dates
+
+Click the calendar icon on any task to set a due date. Tasks with overdue dates turn red in all views.
+
+<Aside type="tip">
+  Use the natural language input — type "next Friday" or "in 3 days" and Taskip will parse the date automatically.
+</Aside>
+
+### Assignees
+
+A task can be assigned to one or more members. The primary assignee is responsible; secondary assignees are collaborators.
+
+### Labels
+
+Labels are custom colored tags you create per-workspace. Use them to cross-filter tasks across projects (e.g., `bug`, `design`, `backend`).
+
+## Subtasks
+
+Break big tasks into smaller steps with subtasks:
+
+<Steps>
+1. Open a task and scroll to the **Subtasks** section
+2. Click **+ Add Subtask**
+3. Each subtask has its own assignee, due date, and status
+4. The parent task shows a progress indicator (e.g. 3/5 complete)
+</Steps>
+
+## Recurring Tasks
+
+Set a task to repeat automatically:
+
+1. Open a task → click **Recurrence**
+2. Choose a schedule: Daily, Weekly, Monthly, or Custom
+3. When a recurring task is completed, a new copy is created with the next due date
+
+## Bulk Actions
+
+Select multiple tasks by holding `Shift` and clicking. The bulk action bar appears at the bottom — use it to reassign, re-prioritize, move, or delete multiple tasks at once.

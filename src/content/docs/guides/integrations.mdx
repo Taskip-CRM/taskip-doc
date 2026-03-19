@@ -1,0 +1,75 @@
+---
+title: Integrations
+description: Connect Taskip with Slack, GitHub, Zapier, and more to automate your workflows.
+sidebar:
+  order: 4
+---
+
+import { Tabs, TabItem, Aside, Card, CardGrid } from '@astrojs/starlight/components';
+
+# Integrations
+
+Taskip connects with the tools your team already uses. Find all integrations at **Workspace Settings → Integrations**.
+
+## Available Integrations
+
+<CardGrid>
+  <Card title="Slack" icon="comment">
+    Get task notifications in Slack channels. Create tasks directly from Slack messages using the `/taskip` command.
+  </Card>
+  <Card title="GitHub" icon="github">
+    Link pull requests and commits to Taskip tasks. Auto-close tasks when a PR is merged.
+  </Card>
+  <Card title="Zapier" icon="puzzle">
+    Connect Taskip to 6,000+ apps. Trigger workflows when tasks are created, updated, or completed.
+  </Card>
+  <Card title="Google Calendar" icon="sun">
+    Sync task due dates to Google Calendar. See your Taskip deadlines alongside your meetings.
+  </Card>
+</CardGrid>
+
+## Setting Up Slack
+
+<Tabs>
+  <TabItem label="Step 1 — Connect">
+    Go to **Settings → Integrations → Slack** and click **Connect to Slack**. Authorize Taskip in the Slack OAuth screen.
+  </TabItem>
+  <TabItem label="Step 2 — Choose a channel">
+    Select which Slack channel should receive notifications. You can set different channels per project.
+  </TabItem>
+  <TabItem label="Step 3 — Configure">
+    Choose what triggers a notification: task created, status changed, due date approaching, or comment posted.
+  </TabItem>
+</Tabs>
+
+## Setting Up GitHub
+
+1. Go to **Settings → Integrations → GitHub**
+2. Click **Install GitHub App** and select your repository (or organization)
+3. In any Taskip task, paste a GitHub PR or issue URL in the **Linked Issues** field
+4. GitHub PR status (open, merged, closed) will sync automatically to the task
+
+<Aside type="note">
+  The GitHub integration requires the **Taskip GitHub App** to be installed on your repository. It's free and only requests the permissions it needs.
+</Aside>
+
+## Zapier / Webhooks
+
+For custom integrations, use Taskip's **Webhooks**:
+
+```json
+// Example webhook payload (task.created event)
+{
+  "event": "task.created",
+  "workspace": "acme-corp",
+  "task": {
+    "id": "tsk_01abc123",
+    "title": "Design new landing page",
+    "assignee": "jane@acme.com",
+    "priority": "high",
+    "dueDate": "2026-04-01"
+  }
+}
+```
+
+Go to **Settings → Webhooks → + Add Webhook**, enter your endpoint URL, and select the events to subscribe to.

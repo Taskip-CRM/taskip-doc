@@ -1,0 +1,107 @@
+---
+// Custom ThemeSelect — replaces Starlight's default dropdown with a Lucide icon toggle button
+---
+
+<taskip-theme-toggle>
+  <button
+    id="theme-toggle-btn"
+    aria-label="Toggle light/dark theme"
+    title="Toggle theme"
+  >
+    <!-- Lucide Sun icon (shown in dark mode) -->
+    <svg
+      id="icon-sun"
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+    </svg>
+
+    <!-- Lucide Moon icon (shown in light mode) -->
+    <svg
+      id="icon-moon"
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+    </svg>
+  </button>
+</taskip-theme-toggle>
+
+<style>
+  taskip-theme-toggle {
+    display: flex;
+    align-items: center;
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    border: none;
+    border-radius: 6px;
+    background: transparent;
+    color: var(--sl-color-gray-3);
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  button:hover {
+    background: var(--sl-color-gray-6);
+    color: var(--sl-color-white);
+  }
+
+  /* Default: show moon (to switch TO dark), hide sun */
+  #icon-sun  { display: none; }
+  #icon-moon { display: block; }
+
+  /* In dark mode: show sun (to switch TO light), hide moon */
+  :root[data-theme='dark'] #icon-sun  { display: block; }
+  :root[data-theme='dark'] #icon-moon { display: none; }
+</style>
+
+<script>
+  class TaskipThemeToggle extends HTMLElement {
+    #btn: HTMLButtonElement;
+
+    constructor() {
+      super();
+      this.#btn = this.querySelector('button')!;
+    }
+
+    connectedCallback() {
+      this.#btn.addEventListener('click', () => this.#toggle());
+    }
+
+    #toggle() {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      // Persist so the next page load keeps the choice
+      try { localStorage.setItem('starlight-theme', next); } catch {}
+    }
+  }
+
+  customElements.define('taskip-theme-toggle', TaskipThemeToggle);
+</script>

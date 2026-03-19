@@ -47,6 +47,9 @@ export default defineConfig({
   ],
   output: 'server',
   adapter: vercel(),
+  security: {
+    allowedDomains: [{ hostname: 'docs.taskip.net', protocol: 'https' }],
+  },
   vite: {
     ssr: {
       // Bundle Keystatic + its deps (yjs, y-indexeddb) into the SSR output

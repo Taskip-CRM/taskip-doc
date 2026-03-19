@@ -8,6 +8,12 @@
   --sl-color-accent-high: #6efad9;
   --sl-font: 'Inter', system-ui, -apple-system, sans-serif;
   --sl-sidebar-width: 18rem;
+
+  /* Standard link blue (not brand green) */
+  --taskip-link: #2563eb;
+  --taskip-link-hover: #1d4ed8;
+  --taskip-link-dark: #60a5fa;
+  --taskip-link-dark-hover: #93c5fd;
 }
 
 :root[data-theme='light'] {
@@ -26,13 +32,13 @@
   --sl-color-bg-sidebar: #151a22;
 }
 
-/* ===== Header — hide default title text (custom SiteTitle component shows logo) ===== */
+/* ===== Header — hide default title text (SiteTitle component shows logo) ===== */
 .site-title {
   font-size: 0;
   gap: 0;
 }
 
-/* ===== Sidebar active link ===== */
+/* ===== Sidebar active link — brand green only here ===== */
 a[aria-current='page'],
 a[aria-current='page']:hover {
   background-color: var(--sl-color-accent);
@@ -52,16 +58,43 @@ code:not(pre code) {
   font-size: 0.9em;
 }
 
-/* ===== Links — scoped to content only, never affects buttons ===== */
+/* ===== Content links — standard blue, not brand green ===== */
 .sl-markdown-content a {
-  color: var(--sl-color-accent);
+  color: var(--taskip-link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 .sl-markdown-content a:hover {
-  color: var(--sl-color-accent-high);
+  color: var(--taskip-link-hover);
+}
+:root[data-theme='dark'] .sl-markdown-content a {
+  color: var(--taskip-link-dark);
+}
+:root[data-theme='dark'] .sl-markdown-content a:hover {
+  color: var(--taskip-link-dark-hover);
 }
 
-/* ===== Hero buttons ===== */
-/* Use maximum specificity so Starlight's own rules can't override */
+/* ===== Tabs — neutral gray colors, NOT brand green ===== */
+/* Inactive tab labels */
+.starlight-tabs .tabs-list [role='tab'] {
+  color: var(--sl-color-gray-2);
+  border-bottom-color: transparent;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+/* Active tab label */
+.starlight-tabs .tabs-list [role='tab'][aria-selected='true'] {
+  color: var(--sl-color-text);
+  border-bottom-color: var(--sl-color-text);
+  font-weight: 600;
+}
+/* Tab hover */
+.starlight-tabs .tabs-list [role='tab']:hover {
+  color: var(--sl-color-text);
+  background: var(--sl-color-gray-6);
+}
+
+/* ===== Hero buttons — brand green is intentional here ===== */
 :root a.action.primary,
 :root a.action.primary:link,
 :root a.action.primary:visited {
@@ -75,16 +108,43 @@ code:not(pre code) {
   border-color: color-mix(in srgb, var(--sl-color-accent) 82%, #000) !important;
   color: #ffffff !important;
 }
-:root a.action.secondary,
-:root a.action.secondary:link,
-:root a.action.secondary:visited {
-  border-color: var(--sl-color-accent) !important;
-  color: var(--sl-color-accent) !important;
+
+/* ===== Headings — reduced from Starlight defaults ===== */
+.sl-markdown-content h1 {
+  font-size: 1.875rem;  /* 30px */
+  line-height: 1.25;
+  font-weight: 700;
 }
-:root a.action.secondary:hover {
-  background-color: var(--sl-color-accent-low) !important;
+.sl-markdown-content h2 {
+  font-size: 1.375rem;  /* 22px */
+  line-height: 1.35;
+  font-weight: 600;
+  margin-top: 2rem;
+}
+.sl-markdown-content h3 {
+  font-size: 1.125rem;  /* 18px */
+  line-height: 1.4;
+  font-weight: 600;
+}
+.sl-markdown-content h4 {
+  font-size: 1rem;      /* 16px */
+  font-weight: 600;
 }
 
+/* ===== Pagination nav (Prev / Next) ===== */
+/* "Previous" / "Next" direction label */
+.pagination-links a > .sl-flex > span:first-child,
+.pagination-links a > span:not(.link-title) {
+  font-size: 0.875rem;  /* 14px */
+  color: var(--sl-color-gray-3);
+}
+/* Page title in pagination */
+.pagination-links .link-title {
+  font-size: 1rem;      /* 16px */
+  font-weight: 600;
+}
+
+/* ===== Hero gradient ===== */
 .hero {
   background: linear-gradient(
     135deg,
@@ -95,16 +155,18 @@ code:not(pre code) {
   padding: 2rem;
 }
 
+/* ===== Cards ===== */
 .card {
-  border: 1px solid color-mix(in srgb, var(--sl-color-accent) 30%, transparent);
+  border: 1px solid color-mix(in srgb, var(--sl-color-accent) 25%, transparent);
   border-radius: 8px;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 .card:hover {
   border-color: var(--sl-color-accent);
-  box-shadow: 0 4px 20px color-mix(in srgb, var(--sl-color-accent) 15%, transparent);
+  box-shadow: 0 4px 20px color-mix(in srgb, var(--sl-color-accent) 12%, transparent);
 }
 
+/* ===== YouTube embed ===== */
 .youtube-embed {
   position: relative;
   width: 100%;

@@ -1,0 +1,32 @@
+{
+  "title": "Taskip Documentation",
+  "description": "Everything you need to know about Taskip — the modern task and project management platform.",
+  "heroTagline": "Manage tasks, projects, and teams — all in one place.",
+  "heroPrimaryButton": {
+    "text": "Get Started",
+    "link": "/getting-started/introduction/"
+  },
+  "featuresSectionTitle": "What can Taskip do?",
+  "featureCards": [
+    {
+      "title": "Task Management",
+      "icon": "pencil",
+      "description": "Create, assign, and track tasks with due dates, priorities, and rich descriptions. Stay on top of everything, nothing slips through."
+    },
+    {
+      "title": "Projects & Boards",
+      "icon": "open-book",
+      "description": "Organize work with Kanban boards, Gantt charts, and custom workflows tailored to how your team operates."
+    },
+    {
+      "title": "Team Collaboration",
+      "icon": "group",
+      "description": "Comment, mention teammates, share files, and keep everyone aligned — no more chasing updates across tools."
+    },
+    {
+      "title": "Integrations",
+      "icon": "puzzle",
+      "description": "Connect with Slack, GitHub, Zapier, and hundreds of other tools. Taskip fits into your existing workflow."
+    }
+  ]
+}

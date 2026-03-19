@@ -1,0 +1,35 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { Card, CardGrid } from '@astrojs/starlight/components';
+import homeData from '../data/homepage.json';
+---
+
+<StarlightPage
+  frontmatter={{
+    title: homeData.title,
+    description: homeData.description,
+    template: 'splash',
+    hero: {
+      tagline: homeData.heroTagline,
+      image: { file: '../assets/hero.svg' },
+      actions: [
+        {
+          text: homeData.heroPrimaryButton.text,
+          link: homeData.heroPrimaryButton.link,
+          icon: 'right-arrow',
+          variant: 'primary',
+        },
+      ],
+    },
+  }}
+>
+  <h2>{homeData.featuresSectionTitle}</h2>
+
+  <CardGrid stagger>
+    {homeData.featureCards.map((card) => (
+      <Card title={card.title} icon={card.icon as any}>
+        {card.description}
+      </Card>
+    ))}
+  </CardGrid>
+</StarlightPage>

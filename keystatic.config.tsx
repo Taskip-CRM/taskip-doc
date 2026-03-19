@@ -1,4 +1,4 @@
-import { config, fields, collection } from '@keystatic/core';
+import { config, fields, collection, singleton } from '@keystatic/core';
 
 export default config({
   storage: {
@@ -13,6 +13,39 @@ export default config({
     brand: {
       name: 'Taskip Docs',
     },
+  },
+
+  singletons: {
+    // ── Homepage ─────────────────────────────────────────────
+    homepage: singleton({
+      label: 'Homepage',
+      path: 'src/data/homepage',
+      format: 'json',
+      schema: {
+        title: fields.text({ label: 'Page Title' }),
+        description: fields.text({ label: 'Meta Description', multiline: true }),
+        heroTagline: fields.text({ label: 'Hero Tagline' }),
+        heroPrimaryButton: fields.object(
+          {
+            text: fields.text({ label: 'Button Text' }),
+            link: fields.text({ label: 'Button Link' }),
+          },
+          { label: 'Hero Primary Button' }
+        ),
+        featuresSectionTitle: fields.text({ label: 'Features Section Title' }),
+        featureCards: fields.array(
+          fields.object({
+            title: fields.text({ label: 'Card Title' }),
+            icon: fields.text({
+              label: 'Icon',
+              description: 'Starlight icon name (e.g. pencil, open-book, group, puzzle)',
+            }),
+            description: fields.text({ label: 'Card Description', multiline: true }),
+          }),
+          { label: 'Feature Cards', itemLabel: (props) => props.fields.title.value }
+        ),
+      },
+    }),
   },
 
   collections: {

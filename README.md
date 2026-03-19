@@ -36,19 +36,22 @@ git push -u origin main
 4. Leave all build settings as defaults (Vercel auto-detects Astro)
 5. Click **Deploy** — your first deploy will succeed ✅
 
-### Step 3 — Create a GitHub OAuth App
+### Step 3 — Create a GitHub App
 
-Keystatic uses GitHub OAuth so your content writers can log in securely. You need to create a GitHub OAuth App in your organisation:
+Keystatic requires a **GitHub App** (not an OAuth App) because it expects expiring user tokens (`expires_in`, `refresh_token`). A standard OAuth App won't work.
 
-1. Go to **[github.com/organizations/Taskip-CRM/settings/applications](https://github.com/organizations/Taskip-CRM/settings/applications)**  
-   *(Or go to GitHub → Your Org → Settings → Developer Settings → OAuth Apps)*
-2. Click **"New OAuth App"**
+1. Go to **[github.com/organizations/Taskip-CRM/settings/apps](https://github.com/organizations/Taskip-CRM/settings/apps)**
+   *(GitHub → Your Org → Settings → Developer Settings → GitHub Apps)*
+2. Click **"New GitHub App"**
 3. Fill in:
-   - **Application name:** `Taskip Docs CMS`
-   - **Homepage URL:** `https://your-vercel-url.vercel.app`  
-     *(update this once you have your custom domain)*
-   - **Authorization callback URL:** `https://your-vercel-url.vercel.app/api/keystatic/github/oauth/callback`
-4. Click **Register application**
+   - **GitHub App name:** `Taskip Docs CMS`
+   - **Homepage URL:** `https://docs.taskip.net`
+   - **Callback URL:** `https://docs.taskip.net/api/keystatic/github/oauth/callback`
+   - **Expire user authorization tokens:** ✅ enabled (default)
+   - **Webhook → Active:** uncheck (not needed)
+   - **Permissions → Repository contents:** Read & write
+   - **Permissions → Metadata:** Read-only
+4. Click **Create GitHub App**
 5. Copy the **Client ID**
 6. Click **Generate a new client secret** and copy the **Client Secret**
 

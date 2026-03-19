@@ -40,6 +40,10 @@ export default defineConfig({
           tag: 'meta',
           attrs: { name: 'theme-color', content: '#00B289' },
         },
+        {
+          tag: 'link',
+          attrs: { rel: 'icon', type: 'image/png', href: '/favicon.png' },
+        },
       ],
     }),
     react(),

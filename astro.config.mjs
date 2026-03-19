@@ -5,6 +5,7 @@ import keystatic from '@keystatic/astro';
 import vercel from '@astrojs/vercel';
 
 export default defineConfig({
+  site: 'https://docs.taskip.net',
   integrations: [
     starlight({
       title: 'Taskip',

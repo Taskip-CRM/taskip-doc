@@ -3,6 +3,7 @@ import starlight from '@astrojs/starlight';
 import react from '@astrojs/react';
 import keystatic from '@keystatic/astro';
 import vercel from '@astrojs/vercel';
+import markdoc from '@astrojs/markdoc';
 
 export default defineConfig({
   site: 'https://docs.taskip.net',
@@ -51,6 +52,7 @@ export default defineConfig({
       ],
     }),
     react(),
+    markdoc(),
     keystatic(),
   ],
   output: 'server',

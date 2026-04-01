@@ -79,49 +79,6 @@ export const prerender = false;
       .ks-corner--tl { top: 24px; left: 24px; border-top: 1px solid var(--brand); border-left: 1px solid var(--brand); opacity: 0.4; }
       .ks-corner--br { bottom: 24px; right: 24px; border-bottom: 1px solid var(--brand); border-right: 1px solid var(--brand); opacity: 0.4; }
 
-      /* ── Brand header ── */
-      .ks-header {
-        position: fixed;
-        top: 0; left: 0; right: 0;
-        padding: 20px 32px;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        z-index: 10;
-        background: linear-gradient(to bottom, rgba(9,16,14,0.95), transparent);
-      }
-
-      .ks-logo {
-        width: 36px;
-        height: 36px;
-        border-radius: 8px;
-        flex-shrink: 0;
-      }
-
-      .ks-brand-text {
-        display: flex;
-        flex-direction: column;
-        gap: 1px;
-      }
-
-      .ks-brand-name {
-        font-family: 'Sora', sans-serif;
-        font-size: 15px;
-        font-weight: 700;
-        letter-spacing: -0.02em;
-        color: var(--text);
-        line-height: 1;
-      }
-
-      .ks-brand-label {
-        font-family: 'DM Mono', monospace;
-        font-size: 10px;
-        font-weight: 400;
-        color: var(--brand);
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        line-height: 1;
-      }
 
       /* ── Loading skeleton (shows before React hydrates) ── */
       .ks-loading {
@@ -247,15 +204,6 @@ export const prerender = false;
     <div class="ks-glow" aria-hidden="true"></div>
     <div class="ks-corner ks-corner--tl" aria-hidden="true"></div>
     <div class="ks-corner ks-corner--br" aria-hidden="true"></div>
-
-    <!-- Brand header -->
-    <header class="ks-header">
-      <img src="/favicon.png" class="ks-logo" alt="Taskip logo" />
-      <div class="ks-brand-text">
-        <p class="ks-brand-name">Taskip</p>
-        <p class="ks-brand-label">Docs CMS</p>
-      </div>
-    </header>
 
     <!-- Loading state (hidden once React hydrates) -->
     <div class="ks-loading" id="ks-loading">

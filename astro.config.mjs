@@ -15,6 +15,7 @@ export default defineConfig({
       components: {
         SiteTitle: './src/components/SiteTitle.astro',
         ThemeSelect: './src/components/ThemeSelect.astro',
+        Hero: './src/components/Hero.astro',
       },
       sidebar: [
         { label: 'Introduction', autogenerate: { directory: 'introduction' } },

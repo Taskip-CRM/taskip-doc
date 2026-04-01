@@ -21,17 +21,12 @@ function docCollection(label: string, path: string) {
         },
         { label: 'Sidebar Options' }
       ),
-      hero: fields.object(
-        {
-          youtubeId: fields.text({
-            label: 'YouTube Video ID',
-            description:
-              'Optional. Paste the YouTube video ID (e.g. dQw4w9WgXcQ) to show a video on this page.',
-            validation: { isRequired: false },
-          }),
-        },
-        { label: 'Hero / Video' }
-      ),
+      youtubeId: fields.text({
+        label: 'YouTube Video ID',
+        description:
+          'Optional. Paste the YouTube video ID (e.g. dQw4w9WgXcQ) to show a video after the page title.',
+        validation: { isRequired: false },
+      }),
       content: fields.markdoc({
         label: 'Content',
         components: {},

@@ -153,6 +153,26 @@ code:not(pre code) {
   );
   border-radius: 12px;
   padding: 2rem;
+  grid-template-columns: 1fr !important;
+}
+
+/* Remove 50ch cap so text fills full width */
+.hero .copy > * {
+  max-width: 100% !important;
+}
+
+.hero .stack {
+  text-align: start !important;
+}
+
+.hero .copy {
+  align-items: flex-start !important;
+}
+
+/* Hero h1 — 34px / 1.3 line-height */
+.hero h1 {
+  font-size: 34px !important;
+  line-height: 1.3 !important;
 }
 
 /* ===== Cards ===== */

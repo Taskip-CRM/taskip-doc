@@ -7,6 +7,10 @@ function docCollection(label: string, path: string) {
     slugField: 'title',
     path: `src/content/docs/${path}/*`,
     format: { contentField: 'content' },
+    images: {
+      directory: `src/content/docs/${path}`,
+      publicPath: `../../content/docs/${path}/`,
+    },
     schema: {
       title: fields.slug({ name: { label: 'Title' } }),
       description: fields.text({

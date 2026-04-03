@@ -4,7 +4,9 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "astro dev",
+    "prebuild": "bash scripts/validate-image-paths.sh",
     "build": "astro build",
+    "validate:images": "bash scripts/validate-image-paths.sh",
     "preview": "astro preview",
     "astro": "astro"
   },

@@ -3,3 +3,48 @@ title: How to configure Stripe Payment Gateway
 sidebar:
   order: 4
 ---
+**Step 1: Navigate to Payment Methods in Taskip**
+
+- Open Taskip Dashboard.
+- Go to **Settings > Payment Methods**.
+- Click on **Stripe** from the available payment gateways.
+
+**Step 2: Get API Keys from Stripe**
+
+- Log in to your Stripe account.
+- Go to **Developers > API Keys**.
+- Copy your **Secret Key** and **Publishable Key**.
+- Use **Test keys** if you want to run test transactions before going live.
+
+**Step 3: Configure Stripe in Taskip**
+
+- In Taskip’s Stripe Settings:
+  - Paste the **Secret Key** and **Publishable Key**.
+
+  - Toggle **Test Mode** if you want to test transactions first.
+
+  - Toggle **Is Default** if you want Stripe as the primary payment method.
+
+  - Verify or copy the **Webhook URL**:
+
+    ```
+    
+    ```
+
+  - The **Webhook Secret** is pre-generated:
+
+    ```
+    
+    ```
+
+**Step 4: Configure Webhook in Stripe**
+
+- In your Stripe account, go to **Developers > Webhooks**.
+- Click **Add endpoint** and paste the **Webhook URL** from Taskip.
+- Copy the **Webhook Secret** into Stripe’s webhook configuration.
+- Save the webhook settings.
+
+**Step 5: Save & Activate Stripe in Taskip**
+
+- Click **Save Changes** to complete the integration.
+- Stripe is now ready to process payments through Taskip.

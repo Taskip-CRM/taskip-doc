@@ -3,3 +3,50 @@ title: How to Configure FastSpring Payment Gateway In Taskip?
 sidebar:
   order: 3
 ---
+**Step 1: Navigate to Payment Methods in Taskip**
+
+- Open Taskip Dashboard.
+- Go to **Settings > Payment Methods**.
+- Click on **FastSpring** from the available payment gateways.
+
+**Step 2: Get API Credentials from FastSpring**
+
+- Log in to your FastSpring account.
+- Go to **Account Settings > API Settings**.
+- Copy your **API Username** and **API Password**.
+- Copy the **Storefront** name you want to use.
+
+**Step 3: Configure FastSpring in Taskip**
+
+- In Taskip’s FastSpring Settings:
+  - Paste your **API Username** and **API Password**.
+
+  - Paste your **Storefront** name.
+
+  - Toggle **Test Mode** if you want to test transactions before going live.
+
+  - Toggle **Is Default** if you want FastSpring as the primary payment method.
+
+  - Copy or verify the **Webhook URL**:
+
+    ```
+    
+    ```
+
+  - The **Webhook Secret** is pre-generated:
+
+    ```
+    
+    ```
+
+**Step 4: Configure Webhook in FastSpring**
+
+- In your FastSpring account, go to **Developers > Webhooks**.
+- Paste the **Webhook URL** from Taskip.
+- Add the **Webhook Secret** if requested.
+- Save the webhook settings.
+
+**Step 5: Save & Activate FastSpring in Taskip**
+
+- Click **Save Changes** to complete the integration.
+- FastSpring is now ready to process payments through Taskip.

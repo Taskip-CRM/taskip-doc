@@ -1,0 +1,85 @@
+---
+title: How to configure Google Recaptcha
+sidebar:
+  order: 2
+---
+**Protecting your forms and websites from spam and bot traffic is crucial to maintaining a secure and smooth user experience. Google reCAPTCHA is one of the most widely used tools to prevent bots from submitting forms or spamming your website. In this article, we’ll walk you through the process of configuring Google reCAPTCHA for your forms.**
+
+## **What is Google reCAPTCHA?**
+
+**Google reCAPTCHA is a free service that helps protect websites from spam and abuse. It uses advanced risk analysis techniques and provides a user-friendly CAPTCHA to identify bots and keep your site secure. There are different versions of reCAPTCHA, including reCAPTCHA v2 (which provides the “I’m not a robot” checkbox) and reCAPTCHA v3 (which runs seamlessly in the background without any user interaction).**
+
+## **How to Configure Google reCAPTCHA**
+
+### **Step 1: Register Your Site on Google reCAPTCHA**
+
+1. **Go to Google reCAPTCHA Dashboard:**
+   - **Visit the [Google reCAPTCHA](https://www.google.com/recaptcha/about/) site and sign in with your Google account.**
+1. **Register a New Site:**
+   - **On the reCAPTCHA dashboard, click on the “+” to add a new site.**
+   - **Fill in the details:**
+     - **Label: Choose a name for your site to identify it in your reCAPTCHA dashboard.**
+     - **reCAPTCHA Type: Select the type of reCAPTCHA you want to use (reCAPTCHA v2 or v3).**
+     - **Domains: Add the your workspace domains where you plan to use reCAPTCHA (e.g., `example.taskip.app`).**
+   - **Accept the Terms of Service and click Submit.**
+1. **Get Your Site Key and Secret Key:**
+   - **After registration, you will be given a Site Key and a Secret Key.**
+   - **Copy these keys as you will need them for your form configuration.**
+
+### **Step 2: Access Your Platform’s Integration Settings**
+
+1. **Log In to Your Platform:**
+   - **Access the platform or CMS where you want to integrate Google reCAPTCHA.**
+1. **Go to Integration Settings:**
+   - **Navigate to `Settings` > `Integration Settings`. This is where you can configure CAPTCHA settings for your forms.**
+
+### **Step 3: Configure Google reCAPTCHA in Your Platform**
+
+1. **Find Google reCAPTCHA Option:**
+   - **Look for the “Google reCAPTCHA” option in the integrations or security settings.**
+1. **Click on the Settings Icon:**
+   - **Select the settings gear icon next to Google reCAPTCHA to configure your site and secret keys.**
+1. **Enter Site Key and Secret Key:**
+   - **Site Key: Paste the site key that you copied from the Google reCAPTCHA dashboard.**
+   - **Secret Key: Paste the secret key provided by Google.**
+1. **Save the Configuration:**
+   - **Click on the Submit or Save button to ensure the keys are stored and the configuration is active.**
+
+### **Step 4: Add reCAPTCHA to Your Forms**
+
+1. **Navigate to Form Builder:**
+   - **Go to the form builder within your platform where you wish to add Google reCAPTCHA.**
+1. **Add reCAPTCHA Field to Form:**
+   - **Find and drag the `Recaptcha` or CAPTCHA field into your form design.**
+1. **Choose reCAPTCHA as Provider:**
+   - **Click on the reCAPTCHA field settings and select Google reCAPTCHA as your CAPTCHA provider.**
+1. **Save the Form:**
+   - **Save the form to apply Google reCAPTCHA protection.**
+
+### **Step 5: Test Your Form**
+
+1. **Preview the Form:**
+   - **Open a preview of your form or access it on the frontend to verify that the Google reCAPTCHA is correctly added.**
+1. **Check for Proper Validation:**
+   - **Submit the form to confirm that the CAPTCHA validation is working correctly and preventing bot submissions.**
+
+## **Troubleshooting Tips**
+
+1. **Invalid Key Error:**
+   - **If you receive an “Invalid Site Key” or “Invalid Secret Key” error, double-check that the keys are correctly copied and match the domain you registered on Google reCAPTCHA.**
+1. **No CAPTCHA Visible:**
+   - **Ensure that the reCAPTCHA field is enabled in your form builder and that you have saved your form changes.**
+1. **Ensure Google reCAPTCHA is Configured Correctly:**
+   - **If the CAPTCHA doesn’t load or validate properly, check that JavaScript is enabled in your browser and that there are no conflicting scripts.**
+
+## **Why Use Google reCAPTCHA?**
+
+- **Advanced Security: Google reCAPTCHA uses machine learning and behavior analysis to distinguish between bots and humans.**
+- **Easy User Experience: With options like the “I’m not a robot” checkbox (reCAPTCHA v2) or no interaction at all (reCAPTCHA v3), it provides a seamless experience.**
+- **Multiple Version Support: You can choose the type of reCAPTCHA that fits your needs—v2 for traditional challenges or v3 for invisible background validation.**
+
+## **Conclusion**
+
+**Setting up Google reCAPTCHA on your forms is an excellent way to protect your site from spam and bots. By following these steps, you can easily integrate and configure reCAPTCHA, enhancing the security of your website while ensuring a smooth user experience. Whether you choose reCAPTCHA v2 or v3, the implementation is simple and offers robust protection against malicious activity.**
+
+**Start configuring Google reCAPTCHA for your forms today to keep spam at bay and protect your site effectively!**

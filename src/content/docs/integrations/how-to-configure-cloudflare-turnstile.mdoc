@@ -1,0 +1,72 @@
+---
+title: How to configure Cloudflare Turnstile
+sidebar:
+  order: 1
+---
+**If you’re looking for an efficient and user-friendly way to protect your forms from spam and bots, Cloudflare Turnstile is a powerful solution. Unlike traditional CAPTCHAs, Cloudflare Turnstile is designed to be lightweight, privacy-first, and frictionless for your users. In this article, we will walk you through the steps to configure Cloudflare Turnstile for your forms.**
+
+## **What is Cloudflare Turnstile?**
+
+**Cloudflare Turnstile is an anti-bot solution that enhances user experience by making CAPTCHAs less intrusive and more efficient. Instead of challenging users with complex puzzles, it uses a combination of behavioral and context-based analysis to determine whether a user is a human or a bot, often without requiring any user interaction.**
+
+## **How to Configure Cloudflare Turnstile**
+
+### **Step 1: Access Your Dashboard**
+
+1. **Log in to Your Account: Access your platform where Cloudflare Turnstile needs to be integrated.**
+1. **Go to Integration Settings: Head over to the `Settings` section and look for `Integration Settings` where you can configure CAPTCHA settings.**
+
+### **Step 2: Locate Cloudflare Turnstile Settings**
+
+1. **Find Cloudflare Turnstile: In the integration settings, you should see an option for “Cloudflare Turnstile.”**
+1. **Click on the Settings Icon: Select the settings gear icon to configure the Turnstile settings.**
+
+### **Step 3: Set up Cloudflare Turnstile Keys**
+
+1. **Enter Site Key and Secret Key:**
+   - **To integrate Cloudflare Turnstile, you need two keys: a Site Key and a Secret Key.**
+   - **If you don’t have these keys, head over to the [Cloudflare Turnstile](https://www.cloudflare.com/products/turnstile/) dashboard and register your site. Cloudflare will provide you with both keys.**
+1. **Configure Your Keys:**
+   - **Copy and paste the Site Key into the respective field.**
+   - **Do the same for the Secret Key.**
+1. **Save the Configuration: Once the keys are entered, click the Submit button to save the settings.**
+
+### **Step 4: Add Cloudflare Turnstile to Your Forms**
+
+1. **Navigate to Form Builder:**
+   - **Go to the form builder within your platform or CMS where you wish to enable Cloudflare Turnstile.**
+1. **Add Turnstile Field:**
+   - **In the form field options, look for `Recaptcha` or a similar field type.**
+   - **Drag and drop the `Recaptcha` field into your form.**
+1. **Choose Provider as Cloudflare Turnstile:**
+   - **Click on the reCAPTCHA field settings.**
+   - **Under the `Provider` dropdown, select Cloudflare Turnstile as your CAPTCHA provider.**
+1. **Save the Form: Save your changes to the form to apply the Cloudflare Turnstile protection.**
+
+### **Step 5: Test Your Form**
+
+1. **Preview the Form: To ensure that Cloudflare Turnstile is working as expected, preview or access the form from the frontend.**
+1. **Check for Proper Validation: The Turnstile CAPTCHA should appear without interrupting the user experience, providing smooth validation without unnecessary friction.**
+
+## **Benefits of Using Cloudflare Turnstile**
+
+- **Frictionless User Experience: Turnstile reduces the inconvenience to users by detecting bots without user interaction whenever possible.**
+- **Privacy-First Solution: Unlike traditional CAPTCHAs, Cloudflare Turnstile respects user privacy by minimizing data collection.**
+- **Improved Security: The behavioral and context-based analysis provides robust security against bots and automated attacks.**
+- **Easy Integration: Adding Cloudflare Turnstile to your forms is a simple process with minimal configuration needed.**
+
+## **Troubleshooting Tips**
+
+1. **Invalid Site or Secret Key:**
+   - **If you encounter an error stating “Invalid Site Key or Secret Key,” double-check that you copied the correct keys from Cloudflare and pasted them without any extra spaces.**
+1. **CAPTCHA Not Displaying on Form:**
+   - **Make sure that you have saved the form after adding the Cloudflare Turnstile field.**
+   - **Ensure that JavaScript is enabled in your browser, as some CAPTCHA validations rely on client-side scripts.**
+1. **Issues with Turnstile Behavior:**
+   - **If you experience unexpected behavior or errors, check Cloudflare’s documentation or reach out to their support for assistance.**
+
+## **Conclusion**
+
+**Configuring Cloudflare Turnstile is a straightforward process that significantly enhances your form’s security while providing a smooth user experience. By following these steps, you can protect your forms from bots and spam without compromising on user convenience. Turnstile’s innovative approach makes it a superior choice over traditional CAPTCHAs, ensuring that your forms are both secure and user-friendly.**
+
+**Start implementing Cloudflare Turnstile today and enjoy hassle-free protection for your online forms!**

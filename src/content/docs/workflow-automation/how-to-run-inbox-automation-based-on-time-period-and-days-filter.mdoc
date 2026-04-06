@@ -1,0 +1,63 @@
+---
+title: How to Run Inbox Automation Based on Time Period and Days Filter in Taskip
+sidebar:
+  order: 10
+---
+**You can use this setup to automatically control when certain automations run—for example, only during working hours or specific days of the week. This is especially useful for auto-replies, assigning messages during shift times, or filtering messages received outside of business hours.**
+
+### **Step 1: Open the Workflow Panel**
+
+1. **Click on Workflow from the sidebar.**
+1. **Select + Create Workflow from the top right.**
+
+*workflow automation*
+
+### **Step 2: Set the Trigger**
+
+1. **Give your workflow a descriptive name such as `Weekday Working Hours Auto-Reply`.**
+1. **Under the Inbox tab, choose a trigger like New Message Received.**
+
+### **Step 3: Add a Time-Based Condition**
+
+1. **In the IF section, click the condition dropdown and select Time Based.**
+1. **You’ll be prompted to configure:**
+   - **Days of the Week – Choose which days this automation should run (e.g., Monday through Friday).**
+   - **Time Range – Set the hours during which this rule applies (e.g., 9:00 AM to 6:00 PM).**
+
+**You can combine this with other conditions such as:**
+
+- **Sender email**
+- **Subject line**
+- **Message content**
+
+**Click + Add Condition to include multiple filters.**
+
+### **Step 4: Define the Actions**
+
+**In the THEN section, choose what actions should happen when the time and day filters match. Example actions include:**
+
+- **Assign Tag&nbsp;– Example: “Contact Form”, “Urgent”**
+- **Move to Folder&nbsp;– Organize messages into inbox sections**
+- **Assign to Team Member&nbsp;– Automatically assign to the right person**
+- **Reply Email&nbsp;– Send an acknowledgment or automated response**
+- **Convert to Contact&nbsp;or&nbsp;Convert to Deal**
+- **Delete Conversation&nbsp;– it will delete the Email**
+- **Trigger Web-hook Call&nbsp;– it will trigger a web-hook call**
+
+**You can add more than one action using + Add Action.**
+
+### **Step 5: Save and Activate the Workflow**
+
+**Click Create Workflow to finalize and save your rule. Make sure it’s set to Active in the Workflow dashboard so it runs automatically when the conditions are met.**
+
+### **Example Use Case**
+
+**Workflow Name: After-Hours Responder\
+Condition:**
+
+- **Time: 6:00 PM to 9:00 AM**
+- **Days: Monday to Friday\
+  Action:**
+- **Send an auto-reply stating the team is currently unavailable**
+- **Assign tag `Off Hours`**
+- **Assign to support queue for next-day follow-up**

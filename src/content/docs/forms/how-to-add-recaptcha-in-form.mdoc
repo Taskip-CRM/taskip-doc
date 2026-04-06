@@ -1,0 +1,27 @@
+---
+title: How to add recaptcha in form
+sidebar:
+  order: 7
+---
+**To add phone number input support to a form, follow these steps:**
+
+1. **Navigate to Forms Section:**
+   - **Go to the “Forms” tab from the sidebar (indicated as step 1 in the second image).**
+1. **Select the Form to Edit:**
+   - **Select the form you want to edit from the list (indicated as step 2 in the second image).**
+
+**Add reCAPTCHA Field:**
+
+- **From the form field options on the right, find the `Recaptcha` option.**
+- **Drag and drop the `Recaptcha` field into your form wherever you want it to appear.**
+
+1. **Configure reCAPTCHA Settings:**
+   - **After adding the field, click on it to configure its settings.**
+   - **Under `Field Settings`, select the Provider (either `Google reCAPTCHA` or `Cloudflare Turnstile`).**
+   - **Make sure that the provider is already configured in the `Settings` -> `Integration Settings` (you should have the `siteKey` and `secretKey` set up).**
+   - **For the provider you have select Google Recaptcha or Clourdflare Tunrstile**
+1. **Save the Form:**
+   - **Once the `Recaptcha` field is added and configured, save the form.**
+   - **The form will now include the CAPTCHA validation as a security step before submission.**
+
+**That’s it! Your form is now protected with reCAPTCHA to prevent spam and bots from submitting fake entries.**

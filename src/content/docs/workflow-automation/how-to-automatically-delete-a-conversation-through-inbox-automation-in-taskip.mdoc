@@ -1,0 +1,49 @@
+---
+title: How to Automatically Delete a Conversation Through Inbox Automation in Taskip
+sidebar:
+  order: 1
+---
+**Use this automation to clean up your inbox by deleting unwanted messages, such as auto-replies, spam, or no-reply notifications based on specific rules.**
+
+### **Step 1: Go to the Workflow Panel**
+
+1. **Open Workflow from the sidebar.**
+1. **Click + Create Workflow to start a new automation.**
+
+*Taskip workflow*
+
+### **Step 2: Choose the Trigger**
+
+1. **Enter a Workflow Name (e.g., `Auto Delete No-Reply Emails`).**
+1. **Under the Inbox tab, choose New Message Received as the trigger.**
+
+### **Step 3: Set the Condition**
+
+1. **In the IF section, define the rule to target specific emails:**
+   - **Field: Subject or From Specific Sender**
+   - **Condition: Contain or Match**
+   - **Value: e.g., `noreply@domain.com`, `Out of Office`, etc.**
+
+**You can combine multiple conditions using + Add Condition.**
+
+### **Step 4: Set Action to “Conversation Delete”**
+
+1. **In the THEN section, select Conversation Delete as the action.**
+
+**This tells Taskip to delete any email that matches the condition automatically.**
+
+### **Step 5: Save and Activate the Workflow**
+
+1. **Click Create Workflow.**
+1. **Ensure it is set to Active in the workflow list.**
+
+### **Example Use Case**
+
+**Workflow Name: Delete No-Reply Emails\
+Condition:**
+
+- **Sender is `noreply@domain.com`\
+  Action:**
+- **Conversation Delete**
+
+**This setup ensures that messages from automated systems don’t clutter your team’s inbox.**

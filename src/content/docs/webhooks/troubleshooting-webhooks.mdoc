@@ -1,0 +1,25 @@
+---
+title: Troubleshooting Webhooks
+sidebar:
+  order: 6
+---
+Even with a proper setup, webhook issues can occur. This section helps you quickly identify and resolve common problems, ensuring your integrations run smoothly and reliably.
+
+### **Common Issues and Solutions**
+
+#### **1. Webhook Not Firing**
+
+- Make sure the webhook status is toggled on (active).
+- Verify that the webhook is subscribed to the correct event(s).
+- Ensure your endpoint URL is correct and publicly accessible.
+
+#### **2. Receiving Errors**
+
+- Confirm your server returns a 2xx HTTP status code for incoming webhook requests.
+- Check that the Content-Type header matches what your server expects.
+- Review server logs for parsing or authentication errors that may prevent successful processing.
+
+#### **3. Delayed Notifications**
+
+- Check your server’s response time; slow responses can delay webhook deliveries.
+- If using a third-party automation tool (e.g., Zapier, Make, Activepieces), ensure the tool’s webhook listener is active and properly configured.

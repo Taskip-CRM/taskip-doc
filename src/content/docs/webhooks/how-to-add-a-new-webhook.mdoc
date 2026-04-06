@@ -1,0 +1,33 @@
+---
+title: How to Add a New Webhook?
+sidebar:
+  order: 2
+---
+**To create a new webhook, click the + Add New Webhook button at the top-right corner of the Webhook Settings page. A dialog box will appear with the following fields:**
+
+#### **Webhook Name**
+
+**A descriptive label for your webhook (e.g., User Registration Hook or Form Automation with Activepieces). This name is for your own reference and helps you identify the webhook in the list.**
+
+#### **Webhook URL**
+
+**The destination endpoint URL where Taskip will send the HTTP request when the event occurs. This must be a publicly accessible HTTPS URL. For example: https://your-app.com/webhook**
+
+#### **HTTP Method**
+
+**Choose the HTTP method for the webhook request. The available options are:**
+
+- **POST – Sends event data in the request body (recommended for most use cases).**
+- **GET – Sends event data as query parameters in the URL.**
+
+#### **Custom Headers (Optional)**
+
+**You can add custom HTTP headers to the webhook request. This is useful for authentication or specifying content types. Each header consists of a key-value pair. For example:\
+*Content-Type : application/json*\
+Click Add Header to include additional headers as needed.**
+
+#### **Events to Subscribe**
+
+**Select which events should trigger the webhook. Events are organized by category. Each category dropdown allows you to subscribe to one or more specific events. A full reference of available events is provided in the next section.**
+
+**Once you have filled in all required fields, click Save Webhook to create the webhook. It will appear in the list on the Webhook Settings page with its status set to active by default.**

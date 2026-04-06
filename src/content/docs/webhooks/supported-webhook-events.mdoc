@@ -1,0 +1,179 @@
+---
+title: Supported Webhook Events
+sidebar:
+  order: 4
+---
+Taskip allows you to subscribe to a wide range of events so that your webhooks are triggered automatically whenever specific actions occur. By subscribing to these events, you can integrate Taskip with third-party applications, automate workflows, and receive real-time updates without manual monitoring.
+
+These events are organized by category—such as support tickets, forms, sales pipelines, projects, invoices, meetings, and more—so you can choose exactly which actions should notify your webhook endpoint.
+
+## **Events Supported By Webhook**
+
+{% table %}
+- Event Name
+- Description
+---
+- support.ticket.created
+- Triggered when a new support ticket is created.
+---
+- support.ticket.status.updated
+- Triggered when a support ticket’s status changes.
+---
+- support.ticket.deleted
+- Triggered when a support ticket is deleted.
+{% /table %}
+
+{% table %}
+- Event Name
+- Description
+---
+- form.created
+- Triggered when a new form is created.
+---
+- form.submitted
+- Triggered when a form is submitted by a user.
+{% /table %}
+
+{% table %}
+- Event Name
+- Description
+---
+- sales.pipeline.deal.created
+- Triggered when a new deal is created in the sales pipeline.
+---
+- sales.pipeline.deal.stage.change
+- Triggered when a deal moves to a different stage.
+---
+- sales.pipeline.deal.task.created
+- Triggered when a task is created within a deal.
+---
+- sales.pipeline.deal.task.activity.created
+- Triggered when a new activity is logged on a deal task.
+---
+- sales.pipeline.deal.task.meeting.created
+- Triggered when a meeting is scheduled for a deal task.
+{% /table %}
+
+{% table %}
+- Event Name
+- Description
+---
+- company.created
+- Triggered when a new company record is created.
+{% /table %}
+
+{% table %}
+- Event Name
+- Description
+---
+- contact.created
+- Triggered when a new contact is created.
+---
+- contact.invite_to_workspace
+- Triggered when a contact is invited to the workspace.
+---
+- contact.join_to_workspace
+- Triggered when a contact joins the workspace.
+{% /table %}
+
+{% table %}
+- Event Name
+- Description
+---
+- document.created
+- Triggered when a new contact is created.
+---
+- document.published
+- Triggered when a contact is invited to the workspace.
+{% /table %}
+
+{% table %}
+- Event Name
+- Description
+---
+- quotation.created
+- Triggered when a new contact is created.
+---
+- quotation.status.updated
+- Triggered when a contact is invited to the workspace.
+---
+- quotation.sent
+- Triggered when a quotation is sent to a client.
+---
+- quotation.published
+- Triggered when a quotation is published.
+{% /table %}
+
+{% table %}
+- Event Name
+- Description
+---
+- invoice.created
+- Triggered when a new invoice is created.
+---
+- invoice.status.update
+- Triggered when an invoice’s status changes.
+---
+- invoice.sent
+- Triggered when an invoice is sent to a client.
+---
+- invoice.publish
+- Triggered when an invoice is published.
+---
+- invoice.payment.paypal
+- Triggered when a PayPal payment is received for an invoice.
+---
+- invoice.payment.stripe
+- Triggered when a Stripe payment is received for an invoice.
+---
+- invoice.payment.mollie
+- Triggered when a Mollie payment is received for an invoice.
+---
+- invoice.payment.razorpay
+- Triggered when a Razorpay payment is received for an invoice.
+---
+- invoice.payment.xendit
+- Triggered when a Xendit payment is received for an invoice.
+{% /table %}
+
+{% table %}
+- Event Name
+- Description
+---
+- meeting.booked
+- Triggered when a new meeting is booked.
+---
+- meeting.cancelled
+- Triggered when a meeting is cancelled.
+---
+- meeting.rescheduled
+- Triggered when a meeting is rescheduled to a new time.
+{% /table %}
+
+{% table %}
+- Event Name
+- Description
+---
+- project.created
+- Triggered when a new project is created.
+---
+- project.status.updated
+- Triggered when a project’s status changes.
+---
+- project.task.created
+- Triggered when a task is created within a project.
+---
+- project.task.status.updated
+- Triggered when a project task’s status changes.
+---
+- project.task.comment.created
+- Triggered when a comment is added to a project task.
+{% /table %}
+
+{% table %}
+- Event Name
+- Description
+---
+- discussion.created
+- Triggered when a new discussion thread is created.
+{% /table %}

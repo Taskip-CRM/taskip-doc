@@ -1,0 +1,94 @@
+---
+title: How to Configure Custom Quotation Number Format in Taskip
+sidebar:
+  order: 3
+---
+**Taskip allows you to personalize how quotation numbers are structured. This helps you stay organized, maintain consistency, and meet your business documentation standards.**
+
+### **Steps to Configure Quotation Number Format**
+
+*How to Set Up Automated Quotation Reminders in Taskip*
+
+**1. Go to Settings\
+Click Settings in the sidebar.**
+
+**2. Select Quotation Settings\
+Navigate to Quotation Settings.**
+
+**3. Click the General Tab\
+Open the General tab under Quotation Settings.**
+
+### **Customization Options**
+
+**Quotation Number Prefix\
+Set a prefix to appear before the quotation number, such as `QT-`, `QUOTE-`, or `TASK-`.**
+
+**Quotation Number Format\
+Define your format using dynamic placeholders:**
+
+{% table %}
+- Placeholder
+- Description
+---
+- `{year}`
+- Current year (e.g., 2025)
+---
+- `{month}`
+- Current month (e.g., 07)
+---
+- `{serial}`
+- Simple incrementing number
+---
+- `{2_digit_serial}`
+- Two-digit serial (01)
+---
+- `{3_digit_serial}`
+- Three-digit serial (001)
+---
+- `{4_digit_serial}`
+- Four-digit serial (0001)
+---
+- `{5_digit_serial}`
+- Five-digit serial (00001)
+---
+- `{6_digit_serial}`
+- Six-digit serial (000001)
+{% /table %}
+
+**Example Format:\
+`QT-{year}-{month}-{4_digit_serial}`\
+This will generate quotation numbers like `QT-2025-07-0001`.**
+
+**Initial Number of the Quotation\
+Set a starting value for the quotation serial. For instance, if you enter `301`, your first quotation number will be `QT-2025-07-0301`.**
+
+**Save Changes\
+Click Save Changes to activate the new format.**
+
+### **Best Practices**
+
+- **Use `{year}` and `{month}` to keep quotations chronological.**
+- **Use a recognizable prefix for easy document filtering.**
+- **Set an initial number if you’re continuing from another system.**
+
+### **Frequently Asked Questions (FAQ)**
+
+### **Can I change the format later?**
+
+**Yes, you can edit the format anytime. Previously issued quotations won’t be affected.**
+
+### **Is the prefix mandatory?**
+
+**No, but it’s helpful for clarity, especially if you issue different types of documents.**
+
+### **Will quotation numbers reset yearly or monthly?**
+
+**No. The numbering continues sequentially unless manually changed.**
+
+### **Can I define a different format for each workspace or project?**
+
+**Currently, the format is global within your Taskip workspace.**
+
+### **Can I include a client’s name in the quotation number?**
+
+**No, dynamic fields in quotation numbers are limited to date and serial elements.**

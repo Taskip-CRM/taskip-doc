@@ -1,0 +1,82 @@
+---
+title: Email Sequence Guide
+sidebar:
+  order: 15
+---
+## **Overview**
+
+Taskip’s Email Sequence feature automates follow-up emails within the Sales Pipeline. Users can set triggers based on deal activity and create multi-step sequences to engage prospects efficiently.
+
+## **1. Initializing an Email Sequence**
+
+To set up an email sequence for a deal:
+
+![](image-8-1024x484.png)
+
+### **Steps:**
+
+1. **Navigate to Sales Pipeline**
+   - Click on **Sales Pipeline** from the left sidebar.
+   - Select a deal from the pipeline.
+1. **Open the Email Sequence Tab**
+   - Inside the deal, click on the **Email Sequence** tab.
+1. Click “**Initialize**”
+   - If no sequence exists, click “Initialize” to start.
+   - A setup modal will appear.
+1. **Fill in the Required Details**
+   - **From Email:** Select the sender’s email.
+   - **Title:** Enter a name for the sequence.
+   - **Trigger Type:** Choose when the sequence should start (e.g., Deal Closed Date).
+   - **Description:** Provide an optional summary.
+1. Click “**Initialize**” to save.
+
+## **2. Setting Triggers for an Email Sequence**
+
+**A trigger determines when the email sequence starts.**
+
+![](image-11.png)
+
+### **Steps:**
+
+1. **Go to the Email Sequence Tab**
+   - Inside a deal, click on **Email Sequence**.
+1. **Click “Update Sequence”**
+   - This opens the update modal.
+1. **Select a Trigger Type**
+   - Options:
+     - **Deal Created Date –** Triggers when a deal is created.
+     - **Deal Closed Date –** Starts after the deal is closed.
+     - **Deal Stage Change –** Triggers when the deal moves to another stage.
+     - **Deal Task Complete –** Starts when a task in the deal is completed.
+     - **Deal Meeting Complete –** Triggers after a meeting is completed.
+     - **Custom Date –** Allows a manual start.
+1. Click “**Update**” to save.
+
+## **3. Adding Email Steps to the Sequence**
+
+Once a sequence is initialized, follow these steps to add email steps.
+
+![](image-9.png)
+
+### **Steps:**
+
+1. **Click “+ Add Step”** in the Email Sequence tab.
+1. **Fill in Step Details:**
+   - **Step Title:** A name for the email step.
+   - **Email Subject:** The subject line of the email.
+   - **Wait Days / Hours:** The delay before sending this email.
+   - **Email Content:** Write your email body. Use dynamic variables like:
+     - `{{Name}}` – Recipient’s full name.
+     - `{{Email}}` – Recipient’s email.
+     - `{{Workspace Name}}` – The workspace name.
+1. Click “**Add Step**” to save.
+
+## **4. Managing and Updating the Email Sequence**
+
+- **Edit Steps:** Click on an email step to modify it.
+- **Reorder Steps:** Drag and drop email steps to adjust the sequence order.
+- **Delete Steps:** Remove unwanted steps by clicking the **delete** icon.
+
+## **Conclusion**
+
+Taskip’s **Email Sequences** help automate deal follow-ups based on various triggers. With flexible scheduling, personalized emails, and sequence tracking, you can improve your sales engagement effortlessly.

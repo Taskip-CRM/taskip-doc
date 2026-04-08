@@ -5,46 +5,46 @@ sidebar:
 ---
 # **Webhooks**
 
-**Webhooks let external applications receive real-time notifications when events occur in Taskip.**&nbsp;
+Webhooks let external applications receive real-time notifications when events occur in Taskip.&nbsp;
 
-**Instead of repeatedly checking for updates, your system automatically receives HTTP callbacks whenever subscribed events are triggered.**
+Instead of repeatedly checking for updates, your system automatically receives HTTP callbacks whenever subscribed events are triggered.
 
 ### **Navigation Path**
 
-**Settings → Webhook**
+Settings → Webhook
 
 ### **Creating a Webhook**
 
-1. **Go to Settings and open Webhook.**
-1. **Click + Add New Webhook.**
-1. **Enter a Webhook Name to identify the integration**\
-   ***(e.g., “CRM Contact Sync”)*****.**
-1. **Paste your Webhook URL — the endpoint that will receive event data.**
-1. **Select an HTTP Method:**
-   - **POST — Sends event data in the request body *(recommended)***
-   - **GET — Sends event data as URL parameters**
-1. **Add Custom Headers by clicking + Add Header (Optional)**\
-   ***(useful for authentication tokens)*****.**
-1. **Select the Events to Subscribe to by choosing one or more categories:**
-   - **Support — Support ticket events**
-   - **Form — Form submission events**
-   - **Sales — Sales pipeline events**
-   - **Company — Workspace and company events**
-   - **Contact — Contact creation and updates**
-   - **Document — Document-related events**
-   - **Quotation — Quotation events**
-   - **Invoice — Invoice events**
-   - **Meeting — Meeting and booking events**
-   - **Project — Project and task events**
+1. Go to Settings and open Webhook.
+1. Click + Add New Webhook.
+1. Enter a Webhook Name to identify the integration\
+   *(e.g., “CRM Contact Sync”)*.
+1. Paste your Webhook URL — the endpoint that will receive event data.
+1. Select an HTTP Method:
+   - POST — Sends event data in the request body *(recommended)*
+   - GET — Sends event data as URL parameters
+1. Add Custom Headers by clicking + Add Header (Optional)\
+   *(useful for authentication tokens)*.
+1. Select the Events to Subscribe to by choosing one or more categories:
+   - Support — Support ticket events
+   - Form — Form submission events
+   - Sales — Sales pipeline events
+   - Company — Workspace and company events
+   - Contact — Contact creation and updates
+   - Document — Document-related events
+   - Quotation — Quotation events
+   - Invoice — Invoice events
+   - Meeting — Meeting and booking events
+   - Project — Project and task events
 
-**Using the dropdown menu to select sections:**
+Using the dropdown menu to select sections:
 
-8. **Click Save Webhook to activate the webhook.**
+8. Click Save Webhook to activate the webhook.
 
 ### **Testing Your Webhook**
 
-- **Trigger an event in Taskip related to the subscribed category**
-- **Check your receiving application’s logs to confirm the webhook payload is received and parsed correctly.**
+- Trigger an event in Taskip related to the subscribed category
+- Check your receiving application’s logs to confirm the webhook payload is received and parsed correctly.
 
 {% table %}
 ---

@@ -1,0 +1,187 @@
+---
+title: SMTP Config
+description: >-
+  Configure SMTP in Taskip to send transactional emails using providers like
+  SendGrid, Mailgun, Amazon SES, or custom SMTP. Set up credentials, test
+  connection, and enable email delivery.
+sidebar:
+  order: 2
+---
+## Overview
+
+SMTP Configuration in Taskip allows you to connect an external email provider to send transactional emails from your workspace. These emails include notifications, invoices, order updates, and system communications.
+
+Each provider requires specific credentials to establish a secure connection.
+
+## Purpose
+
+- Enable email sending from your workspace
+- Use trusted email providers for better deliverability
+- Send system notifications and transactional emails
+- Maintain branded communication with custom sender details
+
+## Supported Email Providers
+
+Taskip supports multiple SMTP and API-based email providers:
+
+- SendGrid
+- Mailgun
+- Postmark
+- Amazon SES
+- Resend
+- MailerLite
+- Brevo
+- Custom SMTP
+
+## Common Configuration Fields
+
+Most providers require the following:
+
+- **API Key / Credentials** – Authentication key from provider
+- **From Email** – Sender email address
+- **From Name** – Sender display name
+- **Test Connection** – Verify configuration
+- **Connect** – Save and activate provider
+- **Clear** – Reset fields
+
+## Provider Configurations
+
+### SendGrid
+
+#### Required Fields
+
+- API Key
+- From Email
+- From Name
+
+### Mailgun
+
+#### Required Fields
+
+- API Key
+- Domain
+- Region (Select region)
+- From Email
+- From Name
+
+### Postmark
+
+#### Required Fields
+
+- Server Token
+- From Email
+- From Name
+
+### Amazon SES
+
+#### Required Fields
+
+- Access Key ID
+- Secret Access Key
+- Region
+- From Email
+- From Name
+
+### Resend
+
+#### Required Fields
+
+- API Key
+- From Email
+- From Name
+
+### MailerLite
+
+#### Required Fields
+
+- API Key
+- From Email
+- From Name
+
+### Brevo
+
+#### Required Fields
+
+- API Key
+- From Email
+- From Name
+
+### Custom SMTP
+
+#### Required Fields
+
+- SMTP Host
+- Port
+- Username
+- Password
+- Encryption (SSL/TLS/None)
+- From Email
+- From Name
+
+## How to Configure SMTP
+
+### Step 1: Choose Provider
+
+Select your preferred email provider from the list.
+
+### Step 2: Enter Credentials
+
+Fill in all required fields based on the provider.
+
+### Step 3: Set Sender Details
+
+- Enter **From Email**
+- Enter **From Name**
+
+These will appear in outgoing emails.
+
+### Step 4: Test Connection
+
+Click **Test Connection** to verify:
+
+- Credentials are valid
+- Connection is successful
+
+### Step 5: Connect Provider
+
+Click **Connect** to activate the configuration.
+
+### Step 6: Save or Reset
+
+- Use **Clear** to reset fields if needed
+
+## System Behavior
+
+- Only one active SMTP provider is used at a time
+- Emails are sent using configured provider
+- Failed connections prevent email sending
+- Test connection validates setup before activation
+
+## Best Practices
+
+- Use verified sender email domains
+- Choose a reliable provider (e.g. SendGrid, SES)
+- Regularly test connection after updates
+- Keep API keys secure
+- Monitor email delivery and bounce rates
+
+## Troubleshooting
+
+### Common Issues
+
+**Invalid API Key**
+
+- Recheck credentials from provider dashboard
+
+**Connection Failed**
+
+- Verify region, domain, or SMTP host
+
+**Emails Not Sending**
+
+- Ensure provider is connected
+- Check sender email verification
+
+## Summary
+
+SMTP Configuration in Taskip enables reliable and scalable email delivery by integrating with leading email providers or custom SMTP servers. Proper setup ensures smooth communication, better deliverability, and consistent transactional messaging from your workspace.

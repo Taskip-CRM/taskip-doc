@@ -1,0 +1,318 @@
+---
+title: IMAP / Webmail Connections
+sidebar:
+  order: 4
+---
+The IMAP / Webmail Connections module allows users to connect external email accounts to Taskip using IMAP and SMTP credentials. This enables full email synchronization, sending, and receiving directly within the workspace.
+
+## Purpose
+
+- Connect external email accounts
+- Sync incoming and outgoing emails
+- Manage multiple inboxes in one interface
+- Enable real-time email communication
+- Centralize email workflows
+
+## Key Features
+
+- Multiple email account connections
+- IMAP-based email retrieval
+- SMTP-based email sending
+- Connection testing before activation
+- Support for major email providers
+- Custom email configuration support
+
+## IMAP Accounts List
+
+### Description
+
+Displays all connected email accounts.
+
+### Table Structure
+
+{% table %}
+- Email
+- Status
+- Action
+{% /table %}
+
+### Empty State
+
+If no accounts are connected:
+
+> No IMAP accounts connected
+
+## Add New Account
+
+### Workflow
+
+1. Click **Add New Account**
+1. Select provider (Gmail, Outlook, etc.)
+1. Enter credentials
+1. Test connection
+1. Save connection
+
+## Configuration Schema
+
+### Common Fields
+
+{% table %}
+- Field
+- Type
+- Required
+- Description
+---
+- email_address
+- string
+- Yes
+- Email account
+---
+- password
+- string
+- Yes
+- App password
+---
+- imap_host
+- string
+- Yes
+- IMAP server
+---
+- port
+- integer
+- Yes
+- IMAP port
+---
+- encryption
+- enum
+- Yes
+- SSL/TLS
+---
+- smtp_host
+- string
+- Yes
+- SMTP server
+---
+- smtp_port
+- integer
+- Yes
+- SMTP port
+{% /table %}
+
+## Provider Configurations
+
+### Gmail
+
+{% table %}
+- Field
+- Value
+---
+- IMAP Host
+- imap.gmail.com
+---
+- Port
+- 993
+---
+- Encryption
+- SSL
+---
+- SMTP Host
+- smtp.gmail.com
+---
+- SMTP Port
+- 587
+{% /table %}
+
+⚠️ Requires **App Password** (not regular password)
+
+### Outlook
+
+{% table %}
+- Field
+- Value
+---
+- IMAP Host
+- outlook.office365.com
+---
+- Port
+- 993
+---
+- Encryption
+- SSL
+---
+- SMTP Host
+- smtp.office365.com
+---
+- SMTP Port
+- 587
+{% /table %}
+
+### Yahoo
+
+{% table %}
+- Field
+- Value
+---
+- IMAP Host
+- imap.mail.yahoo.com
+---
+- Port
+- 993
+---
+- Encryption
+- SSL
+---
+- SMTP Host
+- smtp.mail.yahoo.com
+{% /table %}
+
+⚠️ Requires **App Password**
+
+### Zoho
+
+{% table %}
+- Field
+- Value
+---
+- IMAP Host
+- imap.zoho.com
+---
+- Port
+- 993
+---
+- Encryption
+- SSL
+---
+- SMTP Host
+- smtp.zoho.com
+{% /table %}
+
+### Apple (iCloud Mail)
+
+{% table %}
+- Field
+- Value
+---
+- IMAP Host
+- imap.mail.me.com
+---
+- Port
+- 993
+---
+- Encryption
+- SSL
+---
+- SMTP Host
+- smtp.mail.me.com
+{% /table %}
+
+⚠️ Requires **App Password**
+
+### Fastmail
+
+{% table %}
+- Field
+- Value
+---
+- IMAP Host
+- imap.fastmail.com
+---
+- Port
+- 993
+---
+- Encryption
+- SSL
+---
+- SMTP Host
+- smtp.fastmail.com
+{% /table %}
+
+---
+
+### Custom Email
+
+{% table %}
+- Field
+- Example
+---
+- IMAP Host
+- imap.example.com
+---
+- Port
+- 993
+---
+- Encryption
+- SSL
+---
+- SMTP Host
+- smtp.example.com
+---
+- SMTP Port
+- 587
+{% /table %}
+
+## Connection Actions
+
+### Clear
+
+- Resets all input fields
+
+### Test Connection
+
+- Validates IMAP and SMTP credentials
+- Checks authentication and connectivity
+
+### Save Connection
+
+- Stores configuration
+- Activates email account
+
+## System Behavior
+
+- Multiple IMAP accounts can be connected
+- Emails are synced from external servers
+- SMTP is used for sending emails
+- Failed connections prevent saving
+- App passwords required for secure providers
+
+## Security Requirements
+
+- Use App Passwords instead of regular passwords
+- Credentials are stored securely (encrypted)
+- Avoid exposing credentials in logs
+- Restrict access to authorized users
+
+## Error Handling
+
+{% table %}
+- Error
+- Cause
+- Resolution
+---
+- Authentication failed
+- Wrong password
+- Use correct App Password
+---
+- Connection timeout
+- Server issue
+- Check IMAP/SMTP host
+---
+- Invalid port
+- Incorrect configuration
+- Use standard ports (993, 587)
+---
+- SSL error
+- Encryption mismatch
+- Use SSL where required
+{% /table %}
+
+## Best Practices
+
+- Use App Passwords for all major providers
+- Test connection before saving
+- Connect multiple accounts for centralized inbox
+- Keep credentials secure
+- Regularly verify connections
+
+## Summary
+
+The IMAP / Webmail Connections module enables seamless integration of external email accounts into Taskip. It provides secure, scalable, and centralized email management by supporting multiple providers and custom configurations.

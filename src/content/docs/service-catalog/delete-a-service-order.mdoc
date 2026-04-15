@@ -1,0 +1,104 @@
+---
+title: Delete a Service Order
+sidebar:
+  order: 6
+---
+## Overview
+
+The Delete Service Order feature in Taskip allows authorized users to permanently remove a service order from the system. This is useful for cleaning up invalid, duplicate, or test orders that are no longer required for tracking or execution.
+
+⚠️ This action is irreversible and cannot be undone once completed.
+
+## Purpose
+
+- Remove unwanted or incorrect service orders
+- Maintain a clean and organized order list
+- Eliminate duplicate or test data
+- Improve system accuracy and reporting
+
+## Pre-Conditions
+
+Before deleting a service order, ensure:
+
+- User has a valid Taskip account
+- User is logged in
+- At least one service order exists
+- User has **Super Admin or Admin** permissions
+- The order is not required for ongoing reporting or auditing
+
+## How to Delete a Service Order
+
+### Step 1: Navigate to Service Orders
+
+Go to:
+
+**Main Menu → Orders → Service Orders**
+
+You will see a list of all created orders.
+
+### Step 2: Locate the Order
+
+Find the service order you want to delete using:
+
+- Order ID
+- Service Name
+- Client Name
+
+### Step 3: Open Action Menu
+
+Click the **three-dot (⋮) menu** on the right side of the order row.
+
+A dropdown menu will appear with available actions.
+
+### Step 4: Select Delete Option
+
+Click **Delete Order** from the menu.
+
+### Step 5: Confirmation Prompt
+
+A confirmation dialog will appear to prevent accidental deletion.
+
+You will be asked to confirm:
+
+- Do you really want to delete this order?
+
+### Step 6: Final Confirmation
+
+Confirm the deletion.
+
+⚠️ Note: Once confirmed, the order will be permanently removed from the system.
+
+### Step 7: Order Deletion Complete
+
+After confirmation:
+
+- The service order is permanently deleted
+- It is removed from the Service Orders list
+- All related order data becomes inaccessible
+
+## System Behavior After Deletion
+
+When an order is deleted:
+
+- It is removed from the order table
+- Linked project and task references are disconnected (if applicable)
+- It no longer appears in reports or filters
+- History logs may retain minimal audit traces depending on system configuration
+
+## Important Notes
+
+- Deletion is permanent and cannot be reversed
+- Only authorized users can perform this action
+- Avoid deleting active or in-progress orders
+- Use caution when removing financial or completed records
+
+## Best Practices
+
+- Verify order details before deletion
+- Avoid deleting orders with completed payments
+- Use archiving (if available) instead of deletion for records
+- Restrict deletion permissions to Admin roles only
+
+## Summary
+
+Deleting a Service Order in Taskip permanently removes an order from the system. This feature helps maintain data cleanliness and system accuracy but should be used carefully due to its irreversible nature.

@@ -1,0 +1,181 @@
+---
+title: Webhooks
+sidebar:
+  order: 1
+---
+Webhooks in Taskip allow your application to receive real-time HTTP notifications when specific events occur. Instead of polling the API for changes, Taskip automatically sends event data to your configured endpoint whenever a subscribed event is triggered.
+
+This enables seamless integrations with external services, automation platforms (Zapier, Make, Activepieces, n8n), and custom backend systems.
+
+## Access Webhook Settings
+
+**Description:**\
+The Webhook Settings page is where you can manage all webhook configurations including creation, updates, status control, and deletion.
+
+**URL:**\
+`https://app.taskip.com/settings/webhook`
+
+**Steps to Access:**
+
+- Log in to your Taskip workspace
+- Go to **Settings** in the sidebar
+- Click **Webhook**
+
+## Create a Webhook
+
+**Description:**\
+Create a new webhook to start receiving real-time event notifications from Taskip.
+
+**URL (UI Action):**\
+`https://app.taskip.com/settings/webhook`
+
+### Required Fields:
+
+- **Webhook Name:** Identifier for internal use
+- **Webhook URL:** Public HTTPS endpoint to receive events
+- **HTTP Method:** `POST` (recommended) or `GET`
+- **Custom Headers (Optional):** For authentication or metadata
+- **Events:** Select which events trigger the webhook
+
+Once saved, the webhook becomes active immediately.
+
+## Manage Webhooks
+
+**Description:**\
+Manage existing webhooks by enabling, disabling, editing, or deleting them.
+
+**URL:**\
+`https://app.taskip.com/settings/webhook`
+
+### Available Actions:
+
+- **Enable/Disable:** Temporarily control delivery
+- **Edit:** Update configuration fields
+- **Delete:** Permanently remove webhook
+- **Activity Tracking:** View last triggered timestamp
+
+## Supported Events
+
+**Description:**\
+Taskip supports event-based triggers across multiple modules including support, forms, CRM, invoices, meetings, projects, and more.
+
+### Support
+
+- `support.ticket.created`
+- `support.ticket.status.updated`
+- `support.ticket.deleted`
+
+### Forms
+
+- `form.created`
+- `form.submitted`
+
+### Sales Pipeline
+
+- `sales.pipeline.deal.created`
+- `sales.pipeline.deal.stage.change`
+- `sales.pipeline.deal.task.created`
+- `sales.pipeline.deal.task.activity.created`
+- `sales.pipeline.deal.task.meeting.created`
+
+### Contacts & Companies
+
+- `company.created`
+- `contact.created`
+- `contact.invite_to_workspace`
+- `contact.join_to_workspace`
+
+### Documents & Quotations
+
+- `document.created`
+- `document.published`
+- `quotation.created`
+- `quotation.status.updated`
+- `quotation.sent`
+- `quotation.published`
+
+### Invoices & Payments
+
+- `invoice.created`
+- `invoice.status.update`
+- `invoice.sent`
+- `invoice.publish`
+- `invoice.payment.paypal`
+- `invoice.payment.stripe`
+- `invoice.payment.mollie`
+- `invoice.payment.razorpay`
+- `invoice.payment.xendit`
+
+### Meetings
+
+- `meeting.booked`
+- `meeting.cancelled`
+- `meeting.rescheduled`
+
+### Projects
+
+- `project.created`
+- `project.status.updated`
+- `project.task.created`
+- `project.task.status.updated`
+- `project.task.comment.created`
+
+### Discussions
+
+- `discussion.created`
+
+## Webhook Payload
+
+**Description:**\
+When an event is triggered, Taskip sends an HTTP request to the configured endpoint.
+
+### Key Details:
+
+- Content is sent via selected HTTP method
+- Payload includes event name, timestamp, and related data
+- Custom headers can be used for authentication
+
+**Example Endpoint:**
+
+```
+https://your-domain.com/webhook
+
+```
+
+## Best Practices
+
+**Description:**\
+Follow these guidelines to ensure reliable and secure webhook integration:
+
+- Always use **HTTPS endpoints**
+- Respond with **2xx status quickly**
+- Process events asynchronously
+- Verify requests using headers or tokens
+- Handle duplicate events safely
+- Maintain logs for debugging
+- Validate incoming payloads
+- Secure endpoints using IP whitelist or secrets
+- Test webhooks before production use
+
+## Troubleshooting
+
+### Webhook Not Firing
+
+- Ensure webhook is active
+- Check correct event subscription
+- Verify endpoint URL is reachable
+
+### Receiving Errors
+
+- Ensure server returns `2xx` response
+- Validate headers and payload format
+- Check backend logs
+
+### Delayed Delivery
+
+- Ensure fast endpoint response time
+- Check third-party automation tools (Zapier, Make, etc.)
+
+## Summary
+
+Webhooks in Taskip provide a powerful way to automate workflows and integrate external systems with real-time event delivery. Proper configuration, security practices, and monitoring ensure reliable performance across all integrations.

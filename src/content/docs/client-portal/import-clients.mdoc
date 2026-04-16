@@ -1,0 +1,137 @@
+---
+title: Import Clients
+description: >-
+  Import clients into Taskip using CSV files. Download a sample file, map
+  fields, and upload client data quickly through the data management settings.
+sidebar:
+  order: 3
+---
+The Clients Import feature in Taskip allows users to bulk upload client data using a CSV file. This helps in quickly migrating or adding multiple client records into the system.
+
+## Purpose
+
+- Bulk import client data
+- Save time on manual data entry
+- Migrate data from other platforms
+- Standardize client records
+
+## Navigation Path
+
+Go to:
+
+**Settings → Data Management**
+
+## Import Module
+
+### Steps to Access
+
+1. Open **Data Management**
+1. Toggle to **Import** section
+1. Select data type:
+   - Clients
+   - Leads
+   - Companies
+
+## Download Sample CSV
+
+### Description
+
+Before importing, you can download a sample CSV file.
+
+### Purpose
+
+- Understand required format
+- Match system fields correctly
+- Avoid import errors
+
+## Import Workflow
+
+### Step 1: Upload CSV File
+
+- Upload your prepared CSV file
+- Ensure data is properly formatted
+
+### Step 2: Field Mapping
+
+Match your CSV columns with system fields.
+
+#### Example
+
+{% table %}
+- System Field
+- CSV Column
+---
+- First Name
+- first_name
+---
+- Last Name
+- last_name
+---
+- Email
+- email
+---
+- Phone
+- phone
+{% /table %}
+
+### Step 3: Validate Mapping
+
+- Ensure all required fields are mapped
+- Verify data accuracy
+
+### Step 4: Start Import
+
+Click **Import** button.
+
+## System Response
+
+After starting the import, the system shows:
+
+**Notification:**
+
+> Import started. Records will appear in the system shortly.
+
+## System Behavior
+
+- Import runs in the background
+- Records are processed asynchronously
+- Data appears after processing completes
+- Invalid rows may be skipped or flagged
+
+## Supported Data Types
+
+- Clients
+- Leads
+- Companies
+
+## Best Practices
+
+- Use the sample CSV template
+- Ensure correct field mapping
+- Avoid duplicate email entries
+- Validate data before uploading
+- Keep file format clean (no extra columns)
+
+## Error Handling
+
+{% table %}
+- Issue
+- Cause
+- Solution
+---
+- Import failed
+- Incorrect format
+- Use sample CSV
+---
+- Missing fields
+- Required fields not mapped
+- Map all required fields
+---
+- Duplicate records
+- Same email exists
+- Clean data before import
+{% /table %}
+
+## Summary
+
+The Clients Import feature in Taskip simplifies bulk data entry by allowing structured CSV uploads. With proper mapping and validation, users can efficiently import and manage large volumes of client data within the system.

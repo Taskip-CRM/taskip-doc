@@ -3,3 +3,30 @@ title: Webhook Best Practices
 sidebar:
   order: 5
 ---
+Webhooks are a powerful way to receive real-time updates from Taskip, but to ensure reliability, security, and efficiency, it’s important to follow best practices. Proper implementation helps prevent missed events, duplicate processing, and security risks while making integrations more robust and maintainable.
+
+## **Best Practices To Follow**
+
+1. Use HTTPS Endpoints - Always use HTTPS URLs for your webhook endpoints to ensure data is transmitted securely.
+
+1. Respond Quickly - Your webhook endpoint should return a 2xx HTTP status code as quickly as possible. Process heavy or long-running tasks asynchronously after acknowledging receipt to avoid timeouts.
+
+1. Verify the Payload - If using custom headers for authentication, validate them to ensure the request is genuinely from Taskip.
+
+1. Handle Duplicates Gracefully - Taskip may occasionally send the same event more than once. Use unique identifiers in the payload to ensure idempotent processing.
+
+1. Monitor and Log - Keep server-side logs of all incoming webhook requests to help with debugging, monitoring, and auditing. The Last Triggered column in Taskip provides a quick snapshot but is not a replacement for full logs.
+
+1. Use Automation Platforms - If you don’t want to build a custom server, platforms like Activepieces, Zapier, Make, or n8n allow you to process webhook events with no-code workflows.
+
+1. Validate Payload Format - Ensure your endpoint can handle unexpected or malformed payloads gracefully without crashing. Implement schema validation if possible.
+
+1. Retry Mechanism for Failures - Design your endpoint to handle retries. If a webhook fails due to temporary issues, make sure it can safely process the event again when retried.
+
+1. Limit Processing in Synchronous Request - Avoid heavy computations during the webhook request. Quickly acknowledge the event and process it asynchronously in the background to maintain speed and reliability.
+
+1. Secure Endpoint - Restrict access to your webhook endpoint by IP whitelisting, secret tokens, or other authentication methods to prevent unauthorized requests.
+
+1. Test Webhooks Regularly - Use test events to verify that your webhook implementation works correctly and triggers as expected before relying on it in production.
+
+1. Use Automation Platforms - If you don’t want to build a custom server, you can use platforms like Activepieces, Zapier, Make, or n8n to receive and act on webhook events with no-code workflows.

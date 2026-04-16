@@ -3,179 +3,83 @@ title: Webhooks
 sidebar:
   order: 1
 ---
-Webhooks in Taskip allow your application to receive real-time HTTP notifications when specific events occur. Instead of polling the API for changes, Taskip automatically sends event data to your configured endpoint whenever a subscribed event is triggered.
+Webhooks allow your application to receive real-time HTTP notifications whenever specific events occur within Taskip. Instead of repeatedly polling the API for changes, you can configure webhook endpoints that Taskip will call automatically when a subscribed event is triggered.\
+\
+This enables seamless integration with third-party services, automation platforms (such as Activepieces, Zapier, or Make), and your own custom applications.
 
-This enables seamless integrations with external services, automation platforms (Zapier, Make, Activepieces, n8n), and custom backend systems.
+## **Getting Started**
 
-## Access Webhook Settings
+#### **To access the Webhook Settings page, follow these steps:**
 
-**Description:**\
-The Webhook Settings page is where you can manage all webhook configurations including creation, updates, status control, and deletion.
+1. Log in to your Taskip workspace.
 
-**URL:**\
-`https://app.taskip.com/settings/webhook`
+1. Click on Settings in the left sidebar menu.
 
-**Steps to Access:**
+1. In the Settings sub-menu, click on Webhook.
 
-- Log in to your Taskip workspace
-- Go to **Settings** in the sidebar
-- Click **Webhook**
+1. You will see the Webhook Settings page with a list of your existing webhooks (if any).\
 
-## Create a Webhook
+   ![](image-11-1024x411.png)
 
-**Description:**\
-Create a new webhook to start receiving real-time event notifications from Taskip.
+![](image-12-1024x1007.png)\
 
-**URL (UI Action):**\
-`https://app.taskip.com/settings/webhook`
+Webhook Settings Overview
 
-### Required Fields:
+**From this page, you can view all configured webhooks along with their ID, Name, URL, HTTP Method, subscribed Events, Status, and Last Triggered timestamp.\
+\
+How to Add a New Webhook?**
 
-- **Webhook Name:** Identifier for internal use
-- **Webhook URL:** Public HTTPS endpoint to receive events
-- **HTTP Method:** `POST` (recommended) or `GET`
-- **Custom Headers (Optional):** For authentication or metadata
-- **Events:** Select which events trigger the webhook
+**To create a new webhook, click the + Add New Webhook button at the top-right corner of the Webhook Settings page. A dialog box will appear with the following fields:**
 
-Once saved, the webhook becomes active immediately.
+#### **Webhook Name**
 
-## Manage Webhooks
+**A descriptive label for your webhook (e.g., User Registration Hook or Form Automation with Activepieces). This name is for your own reference and helps you identify the webhook in the list.**
 
-**Description:**\
-Manage existing webhooks by enabling, disabling, editing, or deleting them.
+#### **Webhook URL**
 
-**URL:**\
-`https://app.taskip.com/settings/webhook`
+**The destination endpoint URL where Taskip will send the HTTP request when the event occurs. This must be a publicly accessible HTTPS URL. For example: https://your-app.com/webhook**
 
-### Available Actions:
+#### **HTTP Method**
 
-- **Enable/Disable:** Temporarily control delivery
-- **Edit:** Update configuration fields
-- **Delete:** Permanently remove webhook
-- **Activity Tracking:** View last triggered timestamp
+**Choose the HTTP method for the webhook request. The available options are:**
 
-## Supported Events
+- **POST – Sends event data in the request body (recommended for most use cases).**
+- **GET – Sends event data as query parameters in the URL.**
 
-**Description:**\
-Taskip supports event-based triggers across multiple modules including support, forms, CRM, invoices, meetings, projects, and more.
+#### **Custom Headers (Optional)**
 
-### Support
+**You can add custom HTTP headers to the webhook request. This is useful for authentication or specifying content types. Each header consists of a key-value pair. For example:\
+*Content-Type : application/json*\
+Click Add Header to include additional headers as needed.**
 
-- `support.ticket.created`
-- `support.ticket.status.updated`
-- `support.ticket.deleted`
+#### **Events to Subscribe**
 
-### Forms
+**Select which events should trigger the webhook. Events are organized by category. Each category dropdown allows you to subscribe to one or more specific events. A full reference of available events is provided in the next section.**
 
-- `form.created`
-- `form.submitted`
+**Once you have filled in all required fields, click Save Webhook to create the webhook. It will appear in the list on the Webhook Settings page with its status set to active by default.**
 
-### Sales Pipeline
+# **How to Manage Webhooks?**
 
-- `sales.pipeline.deal.created`
-- `sales.pipeline.deal.stage.change`
-- `sales.pipeline.deal.task.created`
-- `sales.pipeline.deal.task.activity.created`
-- `sales.pipeline.deal.task.meeting.created`
+**Managing webhooks in Taskip allows you to control how and when your integrations are triggered. You can easily enable, disable, edit, or delete webhooks based on your needs, while also monitoring their activity.**
 
-### Contacts & Companies
+## **How Does It Work?**
 
-- `company.created`
-- `contact.created`
-- `contact.invite_to_workspace`
-- `contact.join_to_workspace`
+**Each webhook in the Webhook Settings page comes with action controls that let you manage its behavior. You can update configurations, control its active status, or remove it entirely.**
 
-### Documents & Quotations
+## **How to Manage Webhooks?**
 
-- `document.created`
-- `document.published`
-- `quotation.created`
-- `quotation.status.updated`
-- `quotation.sent`
-- `quotation.published`
+1. **Click on Webhook to open the Webhook Settings page.**
+1. **Log in to your Taskip account.**
+1. **Go to Settings from the main menu.**
+1. **Here, each webhook provides the following options:**
 
-### Invoices & Payments
-
-- `invoice.created`
-- `invoice.status.update`
-- `invoice.sent`
-- `invoice.publish`
-- `invoice.payment.paypal`
-- `invoice.payment.stripe`
-- `invoice.payment.mollie`
-- `invoice.payment.razorpay`
-- `invoice.payment.xendit`
-
-### Meetings
-
-- `meeting.booked`
-- `meeting.cancelled`
-- `meeting.rescheduled`
-
-### Projects
-
-- `project.created`
-- `project.status.updated`
-- `project.task.created`
-- `project.task.status.updated`
-- `project.task.comment.created`
-
-### Discussions
-
-- `discussion.created`
-
-## Webhook Payload
-
-**Description:**\
-When an event is triggered, Taskip sends an HTTP request to the configured endpoint.
-
-### Key Details:
-
-- Content is sent via selected HTTP method
-- Payload includes event name, timestamp, and related data
-- Custom headers can be used for authentication
-
-**Example Endpoint:**
-
-```
-https://your-domain.com/webhook
-
-```
-
-## Best Practices
-
-**Description:**\
-Follow these guidelines to ensure reliable and secure webhook integration:
-
-- Always use **HTTPS endpoints**
-- Respond with **2xx status quickly**
-- Process events asynchronously
-- Verify requests using headers or tokens
-- Handle duplicate events safely
-- Maintain logs for debugging
-- Validate incoming payloads
-- Secure endpoints using IP whitelist or secrets
-- Test webhooks before production use
-
-## Troubleshooting
-
-### Webhook Not Firing
-
-- Ensure webhook is active
-- Check correct event subscription
-- Verify endpoint URL is reachable
-
-### Receiving Errors
-
-- Ensure server returns `2xx` response
-- Validate headers and payload format
-- Check backend logs
-
-### Delayed Delivery
-
-- Ensure fast endpoint response time
-- Check third-party automation tools (Zapier, Make, etc.)
-
-## Summary
-
-Webhooks in Taskip provide a powerful way to automate workflows and integrate external systems with real-time event delivery. Proper configuration, security practices, and monitoring ensure reliable performance across all integrations.
+- **Status Toggle: Use the toggle switch to enable or disable a webhook without deleting it.**
+- \**Edit Webhook: Click the Edit icon to modify details such as:\**
+  - **Name**
+  - **URL**
+  - **HTTP Method**
+  - **Headers**
+  - **Subscribed Events**
+- **Delete Webhook: Click the Delete (trash) icon to permanently remove a webhook.**
+- **View Activity: Check the Last Triggered column to see the most recent time the webhook was executed.**
+- #

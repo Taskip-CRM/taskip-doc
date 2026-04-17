@@ -1,6 +1,10 @@
 import { defineMiddleware } from 'astro:middleware';
 
 export const onRequest = defineMiddleware(async (context, next) => {
+  if (context.url.pathname === '/') {
+    return context.redirect('/introduction/introduction-to-taskip/', 301);
+  }
+
   const response = await next();
 
   // Wrap plain-text "Authorization failed" from Keystatic's OAuth callback

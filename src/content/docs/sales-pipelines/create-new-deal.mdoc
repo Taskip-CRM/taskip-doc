@@ -1,0 +1,297 @@
+---
+title: Create New Deal
+description: >-
+  Create a new deal in your sales pipeline and track its progress from lead to
+  closure. Assign owners, set deal value, add contacts, and manage every stage
+  of your sales process in one place.
+sidebar:
+  order: 3
+---
+The **Create New Deal** feature allows users to add a new sales opportunity into a pipeline and begin tracking its lifecycle from the earliest stage to closure. A deal represents a potential revenue-generating interaction with a lead, contact, or client.
+
+This section explains each field, behavior, and best practice in detail.
+
+## Overview
+
+Creating a deal initializes:
+
+- A record in the selected pipeline
+- A starting stage (e.g., Draft or Lead)
+- Ownership and responsibility
+- Deal value for forecasting
+- Associated contact or client
+
+Once created, the deal becomes visible in the pipeline board and can be managed through its lifecycle.
+
+## Field-Level Breakdown
+
+### A. Deal Name
+
+**Type:** Text input (required)\
+**Purpose:** Identifies the deal uniquely within the pipeline.
+
+**Guidelines:**
+
+- Use clear, descriptive naming
+- Recommended format:\
+  `Client Name – Service/Product – Month`
+
+**Example:**
+
+- “Acme Corp – Website Redesign – May”
+
+### B. Assignee
+
+**Type:** User selection (required)\
+**Purpose:** Assigns responsibility for managing the deal.
+
+**Behavior:**
+
+- The selected user becomes the deal owner
+- Receives notifications for updates (if enabled)
+- Appears in reporting and performance tracking
+
+### C. Select Company
+
+**Type:** Dropdown (optional)\
+**Purpose:** Links the deal to an existing company account.
+
+**Behavior:**
+
+- Enables organization-level tracking
+- Useful for B2B sales workflows
+- Multiple deals can belong to the same company
+
+### D. Select Contact Type
+
+**Type:** Toggle / selection (required)\
+Options:
+
+- **Contact**
+- **Lead**
+
+**Purpose:** Defines the relationship type of the deal.
+
+**Behavior:**
+
+- **Lead:** Early-stage, not yet qualified
+- **Contact:** Verified or existing relationship
+
+### E. Select a Client *
+
+**Type:** Dropdown (required)\
+**Purpose:** Associates the deal with a specific person.
+
+**Behavior:**
+
+- Pulls from Contacts or Leads based on selection
+- Enables communication tracking
+- Links deal history to the client profile
+
+### F. Stage
+
+**Type:** Dropdown\
+**Default:** First stage or “Draft”
+
+**Purpose:** Defines the current position of the deal in the pipeline.
+
+**Behavior:**
+
+- Determines where the deal appears in the pipeline board
+- Can be changed later via drag-and-drop or edit
+
+### G. Draft
+
+**Type:** Status indicator (system or manual)
+
+**Purpose:** Indicates the deal is not fully active yet.
+
+**Behavior:**
+
+- Draft deals may not be included in reports or forecasts
+- Useful for incomplete or internal deals
+
+### H. Priority
+
+**Type:** Dropdown\
+Options:
+
+- Low
+- Medium
+- High (if configured)
+
+**Purpose:** Helps prioritize deal handling.
+
+**Use Cases:**
+
+- High-value deals
+- Time-sensitive opportunities
+
+### I. Lead Type
+
+**Type:** Dropdown\
+Options:
+
+- Cold
+- Warm
+- Hot (depending on configuration)
+
+**Purpose:** Indicates the engagement level of the opportunity.
+
+**Meaning:**
+
+- **Cold:** Minimal interaction
+- **Warm:** Some engagement
+- **Hot:** High intent / ready to convert
+
+### J. Deal Amount *
+
+**Type:** Numeric input (required)\
+**Purpose:** Defines the monetary value of the deal.
+
+**Behavior:**
+
+- Used for revenue forecasting
+- Can be updated as negotiations progress
+
+### K. Currency *
+
+**Type:** Dropdown (required)\
+Default example:
+
+- 🇺🇸 United States Dollar (USD)
+
+**Purpose:** Specifies the currency for the deal value.
+
+**Behavior:**
+
+- Supports multi-currency systems
+- Ensures accurate financial reporting
+
+### L. Tags
+
+**Type:** Multi-select\
+**Purpose:** Categorizes deals for filtering and segmentation.
+
+**Examples:**
+
+- Enterprise
+- SaaS
+- Urgent
+- Renewal
+
+### M. Closing Date
+
+**Type:** Date picker\
+**Purpose:** Expected deal completion date.
+
+**Behavior:**
+
+- Used for forecasting
+- Helps identify delays or overdue deals
+
+### N. Description
+
+**Type:** Rich text input\
+**Purpose:** Stores additional deal context.
+
+**Use Cases:**
+
+- Requirements summary
+- Client expectations
+- Internal notes
+
+### O. Select Documents
+
+**Type:** File selector / attachment
+
+**Purpose:** Attach relevant files such as:
+
+- Proposals
+- Contracts
+- Quotations
+- Supporting documents
+
+### O. Notify Client
+
+**Type:** Toggle / checkbox
+
+**Purpose:** Sends notification to the client upon deal creation.
+
+**Behavior:**
+
+- May trigger email or portal notification
+- Depends on system configuration
+
+### P. Add Custom Field
+
+**Type:** Dynamic input
+
+**Purpose:** Extend deal data beyond default fields.
+
+**Examples:**
+
+- Industry
+- Deal Source
+- Competitor
+- Contract Duration
+
+## Actions
+
+### A. Create Deal
+
+- Validates all required fields
+- Saves deal into the selected pipeline
+- Assigns it to the chosen stage
+- Triggers automation (if configured)
+
+### B. Cancel
+
+- Discards all inputs
+- No data is saved
+
+## System Behavior After Creation
+
+Once a deal is created:
+
+- It appears in the pipeline board under the selected stage
+- It becomes accessible via the Deal View Page
+- Activity tracking begins (timeline logging)
+- Notifications may be triggered
+
+## Validation Rules
+
+- Required fields must be completed:
+  - Deal Name
+  - Assignee
+  - Client
+  - Deal Amount
+  - Currency
+- Invalid or missing data will prevent submission
+- Numeric fields must accept valid numbers only
+
+## Best Practices
+
+- Use consistent naming conventions for deals
+- Assign deals immediately to avoid ownership gaps
+- Set realistic closing dates for accurate forecasting
+- Update deal amount as negotiations evolve
+- Use tags for better filtering and reporting
+- Avoid leaving deals in Draft for long periods
+
+## Example Deal Creation Flow
+
+1. User clicks **Create Deal**
+1. Enters:
+   - Deal Name: “ABC Ltd – Mobile App Development”
+   - Assignee: John
+   - Client: ABC Ltd
+   - Amount: $5,000
+1. Selects:
+   - Stage: Lead
+   - Priority: High
+   - Lead Type: Warm
+1. Adds description and documents
+1. Clicks **Create Deal**
+
+→ Deal is added to the pipeline and visible to the team

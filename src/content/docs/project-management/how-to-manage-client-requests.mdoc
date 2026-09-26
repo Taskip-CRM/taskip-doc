@@ -1,0 +1,77 @@
+---
+title: How to Manage Client Requests
+sidebar:
+  order: 13
+---
+**Clients can submit feedback, bugs, and change requests straight from a project, without ever seeing your internal task board. Their request lands in your triage queue, they track it from their own "My requests" list, and they're notified the moment you accept, decline, or complete it.**
+
+### **Why Is This Feature Included?**
+
+Clients used to need a phone call or an email to ask for something on a project. This turns that into a short in-app form, keeps the conversation on the task itself, and closes the loop automatically instead of leaving the client wondering what happened to their request.
+
+## What a Client Can Do
+
+### Submitting a Request
+
+A client sees a **Give feedback** button floating in the bottom-right corner of any project they're a member of, on every tab. Clicking it opens a short form (a bottom sheet on mobile, a side panel on desktop):
+
+- **Type** — chips for the kinds of requests your project allows (for example Feedback, Bug, Change Request), configured by staff.
+- **What's the problem or idea?** — a short title.
+- **Tell us more** — a rich-text description.
+- **Where did you see it?** — a free-text field (for example a page name or URL); this is folded into the description once submitted and isn't editable afterward.
+- **How bad is it?** — a severity picker: Low, Medium, High, or Blocking. This maps to the task's priority behind the scenes, but the client never sees "priority" as its own field.
+- **Screenshots** — up to 10 image attachments.
+
+Submitting shows a confirmation ("Thanks — we'll review this and let you know.") with buttons to **View my requests** or **Send another**. The **Give feedback** button only appears if staff have turned client requests on for the project (see [Staff configuration](#staff-configuration) below).
+
+### Tracking Requests: "My Requests"
+
+Every client sees a **My requests** tab inside the project, grouped into three sections:
+
+- **Waiting for review** — submitted, not yet looked at.
+- **In progress** — accepted by staff, not yet finished.
+- **Done** — resolved, showing the outcome and, if declined, the reason.
+
+Each row shows the request's type icon, its task key, title, age (for example "3d"), and a one-line snippet of the latest staff reply so the client can see progress without opening it. The same grouped list also appears as a "Your requests" summary across all their projects on the client portal home.
+
+While a request is still **Waiting for review**, the client can **Edit** it (reopens the same form, prefilled) or **Withdraw** it entirely. Once a request is **Done**, the row offers **Not fixed? Reopen**.
+
+### Commenting
+
+Clients can reply on their own request the same way staff do: write a comment, reply to a comment (one level of threading — a reply to a reply isn't allowed), react with one of 8 emoji (👍 ❤️ 🎉 👀 ✅ 🙏 😕 🚀), attach a screenshot, and edit or delete their own comments. A client never sees an internal comment, an internal task, or an internal file — those are filtered out before they ever reach their browser, not just hidden in the UI.
+
+### Notifications and Reopening
+
+When a request is accepted, declined, or completed, the client gets a plain-language email and an in-app notice — no internal details, just what happened. A completed request's notice includes a **Reopen** link; clicking it from the email asks the client to log in first (there's no token-only access), then reopens the request. The same reopen action is always available from **My requests** directly while logged in.
+
+## Staff Configuration
+
+### Turning Requests On
+
+Go to a project's **Settings → Access & client portal** to control:
+
+- **Let clients submit requests** — turns the **Give feedback** button on or off for this project.
+- **Clients can submit** — which request types (Feedback, Bug, Change Request, etc.) are offered in the client's form.
+- **Show new tasks to clients by default** — whether a newly created staff task is visible to clients unless you say otherwise.
+
+### Where Requests Go
+
+A submitted request lands as a pending, unassigned task with no visibility restrictions of its own — from there, staff triage it the same way as any other incoming item. See [How to Triage Feedback](/project-management/how-to-triage-feedback/) for accepting, declining, or merging it.
+
+### Internal Comments and Visibility
+
+Any staff reply can be marked **Internal** with the lock icon next to the comment box — internal comments get an amber left border and a "Internal — clients can't see this" caption, and are invisible to the client both in the UI and in every notification, email, and realtime update.
+
+Separately, an eye icon on a task's header, on its card, and on file rows lets a planner (admin, manager, or project manager) flip whether that specific task or file is visible to clients at all, individually or in bulk from the board toolbar's Visibility filter.
+
+## Known Limitations
+
+- Comment threads are one level deep — you can reply to a top-level comment, not to a reply.
+- Reactions are limited to the 8 emoji listed above; there's no free-form emoji picker.
+- Flipping a task's visibility can take up to about 10 seconds (plus a live update) to reach everyone currently viewing it.
+- Reopening from an email link requires the client to log in — there's no guest or link-only access.
+
+## Related
+
+- [How to Triage Feedback](/project-management/how-to-triage-feedback/)
+- [How to Use the Backlog Tab](/project-management/how-to-use-the-backlog-tab/)

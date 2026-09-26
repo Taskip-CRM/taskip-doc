@@ -1,0 +1,66 @@
+---
+title: How to Use the Backlog Tab
+sidebar:
+  order: 11
+---
+**The Backlog tab holds work that hasn't started yet, kept off the board as a single ranked list. Add ideas straight into it, reorder them by priority, and start them onto the board when the team has room.**
+
+### **What Is the Backlog?**
+
+Every project has one hidden Backlog stage that the board itself never shows. The Backlog tab gives that stage a dedicated, ranked view — a flat list ordered top to bottom, instead of a column of cards. Tasks keep everything (description, priority, labels, assignees, comments, files, estimate) while they sit here; they only lose their place on the board.
+
+This tab is **internal-only** — planners and team members see it, clients never do. A client's own submitted item still shows up for them under **My requests** once it's accepted, even if staff choose to keep it in the backlog rather than starting it right away.
+
+### **Navigation**
+
+1. **Go to the Main Menu and select Projects.**
+1. **Open the project you want to work in.**
+1. **Click the Backlog tab.** A badge on the tab shows how many items are waiting.
+
+### **Adding an Item**
+
+Use the **quick-add row** at the top of the list: pick a type, type a title, optionally set a priority, then click **Add** (or press Enter). The item lands at the bottom of the backlog and the row stays focused so you can keep adding the next one. Quick-add is hidden if your role can't create tasks in this project.
+
+You can also send an existing task into the backlog from:
+- Its card menu on the board, or its detail view's menu — **Send to backlog**.
+- Dragging a card from any board column onto the **Drop to send to backlog** zone that appears at the edge of the board while you're dragging.
+
+A resolved task can't be sent to the backlog — resolve/reopen it first. Sending a task to the backlog keeps its assignees; it doesn't unassign anyone.
+
+### **Reordering**
+
+- **Drag** a row (desktop) using its handle to move it anywhere in the list.
+- **Row menu** — Move up, Move down, Move to top, Move to bottom.
+- **On mobile**, there's no drag handle; use the same Move up/down/top/bottom options from the row's overflow menu instead.
+- **Keyboard**: `j`/`k` move focus between rows, `Shift+↑`/`Shift+↓` swap the focused row with its neighbor, `t`/`b` jump it straight to the top/bottom, `s` opens Start for the focused row, `o` opens it, `x` toggles its selection, `n` jumps to quick-add, and `?` shows the shortcut list.
+
+Reordering (drag, the row menu's Move up/down, and the keyboard swap shortcuts) is turned off while a search, a filter, or any sort other than **Rank** is active — sorting or filtering changes what "the next row" even means, so Taskip disables reordering rather than risk placing an item next to the wrong neighbor. Move to top/bottom keep working regardless, since they don't depend on neighbors.
+
+### **Starting an Item**
+
+Click **Start** on a row (or select several rows and use **Start selected** from the bulk bar) to move it out of the backlog and onto the board. The Start popover lets you set:
+- **Stage** — defaults to the project's first To Do stage.
+- **Assignees** — optional, added on top of whoever was already assigned.
+- **Priority** — leave as **Unchanged** or set a new one.
+- **Estimate** — free text like "2h 30m".
+
+### **Filtering, Searching, and Sorting**
+
+The toolbar has a search box, filters for **Type**, **Priority**, **Assignee**, and **Label**, and a **Sort** control (Rank, Priority, Newest, Estimate). A summary line shows the item count and total estimated hours for whatever's currently filtered.
+
+### **Working in Bulk**
+
+Select rows with their checkboxes to open the bulk bar:
+- **Select all** / **Deselect all**
+- **Start selected**
+- **Move to stage** — moves the selected items directly onto the board without opening the Start popover.
+- **Set priority**
+- **Set type**
+- **Delete**
+
+Any action you don't have permission for on a particular row is skipped automatically, with a toast telling you how many of the selected items were actually updated.
+
+### **Related**
+
+- [How to Use Milestones](/project-management/how-to-use-milestones/)
+- [How to Set Up Task Dependencies](/project-management/how-to-set-up-task-dependencies/)

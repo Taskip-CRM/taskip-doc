@@ -1,0 +1,76 @@
+---
+title: Using Taspi
+description: How a conversation with Taspi actually works, from asking a question to confirming an action.
+sidebar:
+  order: 2
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+
+## Opening the panel
+
+Click Taspi's brain icon (top bar, or inline on a record) to slide open the chat panel. Every
+fresh, unscoped conversation greets you by name with a short status line, for example how many
+invoices, tasks, or leads you have, and four quick-action cards you can click instead of typing.
+Opened from a specific record instead, the greeting and quick actions are about that record, for
+example opening it from a lead offers *"Suggest a follow-up"*, *"Add a note"*, or *"Convert to
+contact"*.
+
+## A conversation, step by step
+
+<Steps>
+
+1. **Ask for something**
+
+   Type in plain language and press Enter (Shift+Enter for a new line), or click a quick-action
+   card. For example:
+   - *"Create invoice for Acme Inc."*
+   - *"Show unpaid invoices"*
+   - *"Move the Acme deal to the next stage"*
+   - *"Show open tickets"*
+
+2. **Watch it think**
+
+   While Taspi works, a live list of steps builds up above its reply (for example looking up a
+   client, then drafting the invoice), each one checked off as it completes. Once the reply is
+   ready, this collapses to a single line like *"3 steps taken"* that you can expand any time to
+   see what it actually did.
+
+3. **Confirm anything that changes data**
+
+   Creating, sending, or updating something always stops for your confirmation first, nothing is
+   created or sent silently. You'll see a card headed **"Ready to [action]"** with a one-line
+   summary of what's about to happen, and **Confirm** / **Cancel** buttons. Sending or replying to
+   an email gets a fuller preview card instead, with the actual subject and body so you can read
+   before it goes out. Actions Taskip considers destructive (like deleting something) are shown
+   with a red accent instead of the default blue, so they stand out. If one request needs several
+   confirmable steps, each one is labeled *"#2 this request"*, *"#3 this request"*, and so on, so
+   you can tell how many are left.
+
+4. **Get a typed result card**
+
+   Once confirmed (or for read-only requests, immediately), Taspi replies with a card shaped for
+   what you asked about, an invoice card shows the invoice's number, client, amount, and line
+   items; a dashboard-stats card shows revenue, contacts, and leads up top with paid/unpaid,
+   completed/pending, and open/closed breakdowns underneath. Leads, contacts, companies, projects,
+   tasks, and quotations each get their own card in the same style. Anything without a dedicated
+   card layout still gets a readable generic result card, nothing is dropped silently.
+
+</Steps>
+
+<Aside type="note">
+  If a confirm attempt fails or times out, the same card stays on screen with an inline error and
+  the button changes to **Try again**, you don't lose the request and have to start over.
+</Aside>
+
+## Conversation history
+
+Click the history icon in the panel header to see your past conversations, each with a preview of
+the last message, when it was updated, and how many messages it has. Click one to reopen it where
+you left off, or click **New chat** to start fresh. The refresh icon in the header also starts a
+new conversation without leaving the history view.
+
+## Credits
+
+The panel header shows how many AI credits you've used this billing period (or an infinity icon if
+your plan is unlimited). Credits refresh after every response so the count is always current.

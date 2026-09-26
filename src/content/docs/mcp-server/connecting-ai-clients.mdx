@@ -1,0 +1,160 @@
+---
+title: Connecting AI Clients
+description: Step-by-step setup for connecting Claude, Claude Code, Claude Desktop, Cursor, VS Code, ChatGPT, and other MCP-compatible AI clients to your Taskip workspace.
+sidebar:
+  order: 2
+  badge: New
+---
+
+import { Tabs, TabItem, Steps, Aside } from '@astrojs/starlight/components';
+
+Every AI client connects the same way: generate a connection in Taskip, then either paste its URL
+and secret into that client's MCP configuration, or (for Claude's web app) sign in through your
+browser.
+
+<Steps>
+
+1. **Start a connection**
+
+   Go to **Settings → MCP Server** in your Taskip workspace and click **Set Up MCP**. Pick the
+   client you're connecting from the list.
+
+2. **Generate — or sign in**
+
+   For most clients, click **Generate Connection** to get:
+   - **Endpoint URL** — `https://mcp.taskip.net/mcp` (the same URL for every client)
+   - **Secret** — a unique value for this app (shown once, copy it immediately)
+
+   For Claude's web app, there's no secret to copy — pick **Sign in now** and Claude authenticates
+   through your browser instead.
+
+3. **Paste it into your AI client**
+
+   Follow the setup steps for your client below.
+
+4. **Try it**
+
+   Ask your AI assistant something like *"List my open leads"* or *"What's the status of invoice
+   #1042?"* — if it calls a Taskip tool and returns real data, you're connected.
+
+</Steps>
+
+<Aside type="caution">
+  Treat your secret like a password. Anyone who has it can act on your workspace through that AI
+  client. Revoke it from **Settings → MCP Server** if it's ever exposed.
+</Aside>
+
+## Setup by client
+
+<Tabs>
+  <TabItem label="Claude">
+    For Claude's web app (claude.ai), you sign in — there's no secret to copy or paste.
+
+    1. In Claude, go to **Settings → Connectors**.
+    2. Click **Add custom connector** and name it `Taskip`.
+    3. Paste the MCP URL from Taskip (it must end with `/mcp`).
+    4. If Claude shows "Couldn't check the server", click **Continue anyway**.
+    5. Choose **Sign in now** — Claude opens your Taskip login in the browser.
+    6. Enter the Taskip address you normally log in at, log in, then click **Allow**.
+    7. Back in Claude, the connector shows as connected.
+  </TabItem>
+
+  <TabItem label="Claude Desktop">
+    Edit your Claude Desktop config file:
+    - **macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
+    - **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
+
+    ```json
+    {
+      "mcpServers": {
+        "taskip": {
+          "url": "https://mcp.taskip.net/mcp",
+          "headers": {
+            "Authorization": "Bearer YOUR_SECRET"
+          }
+        }
+      }
+    }
+    ```
+
+    Create the file with `{ }` first if it doesn't exist yet, save, then fully restart Claude
+    Desktop. Verify under **Settings → Developer** — Taskip's tools appear in the tool picker.
+
+    <Aside type="tip">
+      Add a Project instruction like *"You are connected to my Taskip workspace, use the Taskip
+      tools when I ask about clients, projects, invoices, or tasks."* so Claude reaches for the
+      right tools without being reminded every time.
+    </Aside>
+  </TabItem>
+
+  <TabItem label="Claude Code">
+    ```bash
+    claude mcp add --transport http taskip https://mcp.taskip.net/mcp \
+      --header "Authorization: Bearer YOUR_SECRET"
+    ```
+
+    Verify the connection with `claude mcp list`. Taskip's tools will appear in the tool picker.
+  </TabItem>
+
+  <TabItem label="VS Code">
+    1. Press `Cmd+Shift+P` (Mac) or `Ctrl+Shift+P` (Windows), type **MCP: Add Server**, and select it.
+    2. Choose transport type **HTTP**, then paste the URL: `https://mcp.taskip.net/mcp`.
+    3. Add a header: `Authorization: Bearer YOUR_SECRET`.
+    4. Enter the server name: `Taskip`.
+
+    Requires an MCP-compatible extension installed in VS Code.
+  </TabItem>
+
+  <TabItem label="Cursor">
+    1. Open **Settings** (`Cmd+,` or `Ctrl+,`).
+    2. Go to **Tools & Integration → MCP Tools**.
+    3. Click **Add Custom MCP** and name it `Taskip`.
+    4. Set the URL to `https://mcp.taskip.net/mcp`.
+    5. Add a header: `Authorization: Bearer YOUR_SECRET`.
+    6. Save and reload Cursor. Taskip's tools will be available in the AI panel.
+  </TabItem>
+
+  <TabItem label="ChatGPT">
+    ChatGPT connects as a custom connector, behind Developer Mode:
+
+    1. Requires a ChatGPT Plus/Team/Enterprise account.
+    2. Enable Developer Mode: **Settings → Apps & Connectors → Advanced** → toggle it on.
+    3. Go to **Settings → Apps & Connectors** and click **Create App**.
+    4. Name it `Taskip`, and set the URL to `https://mcp.taskip.net/mcp`.
+    5. Under Authentication, add a header: `Authorization: Bearer YOUR_SECRET`.
+    6. Click **Create** to finish connecting.
+  </TabItem>
+
+  <TabItem label="Other MCP clients">
+    Any MCP-compatible client that speaks Streamable HTTP with custom headers can connect the
+    same way. The two values you need are always:
+
+    - **URL:** `https://mcp.taskip.net/mcp`
+    - **Header:** `Authorization: Bearer YOUR_SECRET`
+
+    Most clients use the same `mcpServers` JSON shape shown in the tabs above:
+    ```json
+    {
+      "mcpServers": {
+        "taskip": {
+          "url": "https://mcp.taskip.net/mcp",
+          "headers": {
+            "Authorization": "Bearer YOUR_SECRET"
+          }
+        }
+      }
+    }
+    ```
+    Refer to your client's own documentation for where its MCP server config lives.
+  </TabItem>
+</Tabs>
+
+## What to try first
+
+- *"What workspace am I connected to?"*
+- *"List my open leads."*
+- *"Show me overdue tasks in [project name]."*
+- *"Draft an invoice for [client name]."*
+
+See [Available Tools](/mcp-server/available-tools/) for the full list of what you can ask, by
+module.

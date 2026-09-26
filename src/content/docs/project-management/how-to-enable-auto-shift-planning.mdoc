@@ -1,0 +1,42 @@
+---
+title: How to Enable Auto-Shift Planning
+sidebar:
+  order: 10
+---
+**Auto-shift planning decides how a project reacts when a task's dates change and other tasks depend on it: shift everything downstream automatically, or just get warned about the overlap.**
+
+### **Why Is This Feature Included?**
+
+Moving one task's dates can leave its dependents out of sync — a successor left starting before its predecessor finishes, for example. Auto-shift planning lets you choose whether Taskip fixes that for you automatically, or simply flags it so you can decide.
+
+### **Where to Find It**
+
+1. **Open the project and go to its Settings tab.**
+1. **Select the Planning section.**
+
+### **The Setting**
+
+**Shift dependent tasks automatically** — off by default.
+
+- **Off:** if moving a task's dates would now overlap a dependent, you get an info toast explaining the overlap, with a link back to this setting. Nothing is changed for you.
+- **On:** when a task's dates move, everything that depends on it moves too, following the relationship type:
+  - A **Finish to start** dependent is pushed to start after its predecessor now finishes.
+  - A **Start to start** dependent is dragged to start alongside its predecessor.
+  - A **Finish to finish** dependent is kept level with its predecessor's finish date.
+
+Shifting only ever moves a dependent's dates forward or backward to stay in sync — a task's own duration doesn't change, and tasks already in a Done stage are never moved. Shifts propagate through the whole chain: if C depends on B and B depends on A, moving A can shift both B and C.
+
+### **What You'll See**
+
+- Turning the setting on and moving a predecessor's dates shows a toast confirming how many dependent tasks moved.
+- Each shifted task's activity history records that it moved because a predecessor's dates changed.
+- On the [Gantt view](/project-management/how-to-use-the-gantt-view/), shifted dependency links update immediately.
+
+### **Saving**
+
+Toggle the switch, then click **Save** on the Planning section to apply it.
+
+### **Related**
+
+- [How to Set Up Task Dependencies](/project-management/how-to-set-up-task-dependencies/)
+- [How to Use the Gantt View](/project-management/how-to-use-the-gantt-view/)

@@ -40,6 +40,8 @@ export default defineConfig({
         { label: 'Integrations', autogenerate: { directory: 'integrations' } },
         { label: 'Webhooks', autogenerate: { directory: 'webhooks' } },
         { label: 'Public APIs', autogenerate: { directory: 'public-apis' } },
+        { label: 'MCP Server', autogenerate: { directory: 'mcp-server' } },
+        { label: 'Taspi AI', autogenerate: { directory: 'taspi-ai' } },
       ],
       head: [
         {

@@ -1,0 +1,84 @@
+---
+title: MCP Server Overview
+description: What Taskip's MCP server is, how it connects your AI assistant to your workspace, and what it can do.
+sidebar:
+  order: 1
+  badge: New
+---
+
+import { Card, CardGrid, Aside } from '@astrojs/starlight/components';
+import McpArchitectureDiagram from '../../../components/McpArchitectureDiagram.astro';
+
+Taskip runs a native **MCP (Model Context Protocol) server**, so AI assistants like Claude, Claude
+Code, Claude Desktop, Cursor, VS Code, and ChatGPT can connect directly to your workspace. Instead
+of copy-pasting data between Taskip and your AI assistant, your AI tools can look up clients,
+create tasks, draft invoices, and manage projects on your behalf, right inside the conversation
+you're already having.
+
+[Model Context Protocol](https://modelcontextprotocol.io) is an open standard for connecting AI
+assistants to real applications through a secure, standardized connection, instead of a
+one-off integration per tool.
+
+## How it connects
+
+<McpArchitectureDiagram />
+
+Each AI client you connect gets its **own unique secret** (or, for Claude's web app, its own
+signed-in session), generated from **Settings → MCP Server** in your workspace, not a shared
+password. You can revoke any single connection at any time without affecting the others. See
+[Security & FAQ](/mcp-server/security-and-faq/) for details.
+
+<Aside type="tip">
+  Taskip also ships **[Taspi](/taspi-ai/overview/)**, a built-in AI agent inside your workspace.
+  The MCP server is for connecting *external* AI tools you already use, they both work side by
+  side.
+</Aside>
+
+## What your AI can do
+
+<CardGrid>
+  <Card title="Contacts & Leads" icon="user">
+    Look up clients, search leads, create new contacts and leads from a conversation.
+  </Card>
+  <Card title="Projects & Tasks" icon="rocket">
+    List projects, create and update tasks, check status, add comments.
+  </Card>
+  <Card title="Sales Pipeline" icon="star">
+    Browse deals, move stages, add notes and follow-up tasks, schedule meetings.
+  </Card>
+  <Card title="Invoices & Quotations" icon="document">
+    Draft invoices and quotations, send them, check payment status, convert quotes to invoices.
+  </Card>
+  <Card title="Support Tickets" icon="comment-alt">
+    List and reply to tickets, update status, manage assignees.
+  </Card>
+  <Card title="Inbox & Email" icon="email">
+    Read threads, compose and send email, manage tags and folders.
+  </Card>
+  <Card title="WhatsApp" icon="comment">
+    Read conversations, send messages, add internal notes.
+  </Card>
+  <Card title="Documents" icon="document">
+    Create, share, and track e-signature documents.
+  </Card>
+  <Card title="Discussions" icon="comment">
+    Post and reply in internal team channels and direct messages.
+  </Card>
+  <Card title="Meetings" icon="calendar">
+    Manage booking pages, schedule and reschedule meetings.
+  </Card>
+  <Card title="Time Tracking & Billing" icon="seti:clock">
+    Start/stop timers, log time, review the billable ledger, generate invoices from approved hours.
+  </Card>
+  <Card title="Team & Settings" icon="setting">
+    Manage team members, business hours, tax rates, notification and invoice numbering settings.
+  </Card>
+</CardGrid>
+
+See [Available Tools](/mcp-server/available-tools/) for the full breakdown by module.
+
+## Next step
+
+Head to [Connecting AI Clients](/mcp-server/connecting-ai-clients/) for step-by-step setup
+instructions for Claude, Claude Code, Claude Desktop, Cursor, VS Code, ChatGPT, and any other
+MCP-compatible tool.

@@ -36,7 +36,7 @@ To access lead management:
 1. Click **Leads**
 1. You will be directed to the Lead List Page where you can:
    - View all leads
-   - Filter by status, source, or owner
+   - Filter by status, source, tags, country, company, deal amount (min/max), owner, or lead type
    - Search and manage lead records
    - Create new leads
 
@@ -72,14 +72,30 @@ Stores the lead’s last name.
 **Type:** Email\
 Primary communication channel for the lead.
 
+### Preferred Contact Method
+
+**Type:** Searchable dropdown\
+How the lead prefers to be reached (Email, Phone, WhatsApp, etc.). Type to search existing options or click **+ New** to add one on the fly.
+
 ### Phone
 
 **Type:** Phone number\
-Used for direct communication or WhatsApp integration.
+Used for direct communication or WhatsApp integration. Defaults to your workspace's configured country.
+
+### Mobile Phone
+
+**Type:** Phone number\
+A second number for the lead, shown right next to Phone.
+
+### Job Title
+
+**Type:** Text\
+The lead's role at their company, e.g. *Marketing Manager*.
 
 ### Company Name
 
-Represents the organization the lead is associated with.
+**Type:** Searchable dropdown\
+Represents the organization the lead is associated with. Search existing companies or create a new one without leaving the form.
 
 ### Website
 
@@ -127,6 +143,11 @@ Examples:
 - Email Campaign
 - Cold Outreach
 
+### Lead Type
+
+**Type:** Searchable dropdown\
+Categorizes the kind of opportunity (e.g. *New Business*, *Upsell*, *Renewal*). Same search-and-create behavior as Lead Source — type to search, or click **+ New** to add a value.
+
 ### Last Interaction Date
 
 Tracks the most recent engagement with the lead.
@@ -136,6 +157,11 @@ Used for:
 - Follow-up scheduling
 - Activity tracking
 - Engagement analysis
+
+### Next Follow-up Date
+
+**Type:** Date\
+When you plan to reach out next. Shown right next to Last Interaction Date so past and upcoming contact are easy to compare at a glance.
 
 ### Lead Owner
 
@@ -192,6 +218,8 @@ The system will:
 - Create a new lead record
 - Add it to the Leads list
 - Make it available for filtering and conversion
+
+Ready to move a qualified lead forward? See [Lead Details Page](/leads/lead-details-page/) for how converting a lead to a client actually works.
 
 ## Best Practices
 

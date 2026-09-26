@@ -41,25 +41,37 @@ This file contains the correct format and field structure required for successfu
 
 ## Prepare Your CSV File
 
-Ensure your CSV includes relevant columns such as:
+The importer's columns are:
 
-- First Name
+- First Name (required)
 - Last Name
 - Email
 - Phone
-- Company Name
+- Mobile Phone
+- Job Title
+- Preferred Contact Method
+- Lead Type
+- Next Follow-up Date
 - Website
-- Status
-- Currency
-- Lead Value
-- Lead Source
-- Last Interaction Date
-- Lead Owner
+- Company
+- Address
 - Country
 - State
-- City
 - Zip Code
 - Description
+- Value
+
+**Optional deal columns** — fill these in and the import also creates a matching deal in your sales pipeline for that lead, placed on the stage named in **Stage Title**:
+
+- Deal Name
+- Deal Amount
+- Currency
+- Deal Assignee Email
+- Deal Description
+- Deal Status
+- Stage Title
+
+Leave the deal columns blank to import leads without creating any deals.
 
 ## Upload CSV File
 
@@ -75,11 +87,21 @@ After uploading:
 
 - Match each **CSV column** to the corresponding **system field**
 - Ensure all required fields are correctly mapped
+- Your file is converted to UTF-8 automatically, so unusual characters from other encodings won't turn into garbled text
 
 ### Example:
 
 - CSV “email” → System “Email”
 - CSV “first_name” → System “First Name”
+
+### Mapping Custom Fields
+
+Any custom fields already set up on your Leads module appear as extra rows in the same mapping table, each with its own **Skip**-or-column dropdown. If a CSV column doesn't match anything, you don't have to leave it out — click **Create a custom field** right there in the mapping screen to define one on the spot, then map the column to it.
+
+### Name and Email Fallback Rules
+
+- If a row has no name but does have an email, the part before the `@` is used as the first name
+- If a row has no valid email, the lead still imports — you'll get a warning after the import finishes for any rows worth a closer look
 
 ## Start Import
 

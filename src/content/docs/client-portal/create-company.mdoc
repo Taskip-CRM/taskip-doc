@@ -95,6 +95,22 @@ Fill in the following details:
 **Example:**\
 GB123456789
 
+### Industry & Company Size
+
+{% table %}
+- Field
+- Required
+- Description
+---
+- Industry
+- No
+- Pick from a workspace-wide list; type to search or add a new option on the fly
+---
+- Number of Employees
+- No
+- Headcount, as a whole number
+{% /table %}
+
 ### People (Contacts)
 
 {% table %}
@@ -138,9 +154,8 @@ Custom fields allow you to store additional company-specific data.
 
 **Examples:**
 
-- Industry
-- Company Size
 - Annual Revenue
+- Founded Year
 
 ### Invite Client to Workspace
 
@@ -151,6 +166,10 @@ Custom fields allow you to store additional company-specific data.
 - Enable Invite
 - Sends invitation to associated contacts
 {% /table %}
+
+Pending invites work the same way as they do for individual clients: the Companies/Clients list
+shows an **Invitation Pending** badge until the invite is accepted, and the row's **⋮** menu offers
+**Copy Invitation URL** while it's still pending.
 
 ## Actions
 

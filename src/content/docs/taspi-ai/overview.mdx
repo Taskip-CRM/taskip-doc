@@ -1,0 +1,66 @@
+---
+title: Taspi Overview
+description: What Taspi is, who can use it, and how it differs from the MCP server.
+sidebar:
+  order: 1
+  badge: New
+---
+
+import { Card, CardGrid, Aside } from '@astrojs/starlight/components';
+
+Taspi is Taskip's **built-in AI agent**, already inside your workspace. Click its brain icon in
+the top bar and a chat panel opens, right there in the app, no external tool or setup required.
+Ask it to do something in plain language and it drafts invoices, creates tasks, moves deals,
+replies to tickets, and more, checking with you first before anything gets created or sent.
+
+<Aside type="tip">
+  Taspi and the [MCP server](/mcp-server/overview/) are two different ways to bring AI into
+  Taskip. Taspi is built in and lives inside your workspace UI, no connection to set up. The MCP
+  server is for connecting *external* AI tools you already use, like Claude Code, Claude Desktop,
+  Cursor, or ChatGPT, to your workspace. You can use either, or both, side by side.
+</Aside>
+
+## Who can use it
+
+Taspi's icon only appears for people who actually have access to it. It's included for
+**Administrators, Managers, and Members** on a paid, internal, or active trial plan with the AI
+module enabled, **Clients never see it**. If your plan or role doesn't include Taspi, the icon is
+simply not shown, there's no locked-out button or upgrade prompt in its place.
+
+## Where you'll find it
+
+- **Top bar** — a brain icon next to your notifications opens the main panel, available from any
+  page in the workspace.
+- **Inline on records** — the same brain icon appears on invoice, quotation, lead, contact, and
+  company pages (including their Quick View sheets), and inside the email compose/reply view.
+  Opening Taspi from one of these scopes the conversation to that specific record, for example
+  opening it from an invoice greets you with options to check its status, send it, or update it,
+  instead of a generic greeting.
+
+## What Taspi can do
+
+<CardGrid>
+  <Card title="Invoicing" icon="document">
+    Create and send invoices, check what's unpaid, turn a workflow into an invoice.
+  </Card>
+  <Card title="Tasks & Projects" icon="rocket">
+    Create and list tasks, update task status, add a team member to a project.
+  </Card>
+  <Card title="Leads & Deals" icon="star">
+    Create and list leads, move a deal to its next pipeline stage, list active deals.
+  </Card>
+  <Card title="Support Tickets" icon="comment-alt">
+    Create tickets, list open ones, update ticket status.
+  </Card>
+  <Card title="Reports" icon="seti:clock">
+    Pull dashboard stats, monthly or sales reports, and a pipeline/leads summary.
+  </Card>
+  <Card title="WhatsApp" icon="comment">
+    Send a message to a contact, or broadcast to multiple clients at once.
+  </Card>
+  <Card title="Email" icon="email">
+    Draft a reply, send one, summarize a thread, or write a new email from scratch.
+  </Card>
+</CardGrid>
+
+See [Using Taspi](/taspi-ai/using-taspi/) for what an actual conversation looks like, step by step.

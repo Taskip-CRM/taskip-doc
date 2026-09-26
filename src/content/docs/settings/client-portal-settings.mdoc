@@ -1,0 +1,59 @@
+---
+title: Client Portal Settings
+description: >-
+  Configure everything a client sees and can do in your workspace's portal —
+  navigation, announcements, login branding, terminology, and appearance —
+  from one consolidated hub.
+sidebar:
+  order: 14
+---
+**The Client Portal hub is the single place to customize everything a client sees and can do in your workspace's portal.** It's available to Administrators and Managers only — Team Members and Clients have no access to it, not even read-only.
+
+### **Navigation Path**
+
+**Settings → Client Portal**
+
+The hub is organized into eight tabs. Four of them — **Permissions**, **Dashboard**, **Welcome & Onboarding**, and **Announcements** — link out to the existing page that already configures that area, with a short "How this works" note first, instead of duplicating the settings here. The other four — **Entry & Authentication**, **Navigation**, **Terminology**, and **Appearance** — are configured directly in this hub.
+
+### **Permissions, Dashboard, Welcome & Onboarding, Announcements**
+
+These four tabs are shortcuts, not separate settings:
+
+- **Permissions** explains that the Client role is managed alongside every other role, and links to **Permissions → Client** column.
+- **Dashboard** explains that each role has its own saved dashboard layout, and links to **Dashboard Customization → Client tab**.
+- **Welcome & Onboarding** explains the Welcome Wizard shown the first time a client enters the portal, and links to the **Welcome Wizard** builder.
+- **Announcements** explains that announcement banners can target everyone, clients only, team only, or specific people, optionally with a call-to-action button, and links to **Portal Announcements**.
+
+### **Entry & Authentication**
+
+Clients only ever enter the portal through an invite link — there's no self-registration. This tab controls the branding of that entry point, split into two sub-tabs:
+
+- **Login Page** — an optional, separate login screen just for clients, with its own left-side and right-side title/description/background color, matching the split-screen layout of your main login page. Leave every field blank to keep clients on the same login page your team uses. This only changes branding, not how clients sign in (still email + password via an invite).
+- **Client Invitation Page** — the page a client sees when they click their invite link, before they set a password: title, description, background color, and image. There's no "send invite" action here — that happens from the client's Contact record. This same setting is also reachable from **Settings → Global → Page Settings → Client Invitation Page**; both places edit the same thing.
+
+### **Navigation**
+
+This is Menu Visibility, which used to live only under Settings → Workspace, now extended with per-item rename and drag-to-reorder. Three audience tabs — **All Users**, **Team Members**, **Clients** — each list every sidebar module (Pipelines, Clients, Quotations, Invoices, Forms, Workflow, Tasks, Emails, Documents, Proposals, Discussions, Reports, Leads, Projects, Tickets, WhatsApp, Meetings, Embeds, Services):
+
+- **Toggle visibility** per item, per audience. All Users sets the baseline — Team Members and Clients can only hide an item further, never show one that's already hidden for All Users (a greyed-out toggle tells you to enable it in All Users first).
+- **Rename** an item by typing in its label field — renames apply per audience group.
+- **Drag to reorder** using the grip handle; the order you set is the order items appear in that group's sidebar nav.
+- Switching between the All Users / Team Members / Clients tabs automatically saves any rename you were mid-typing.
+
+Changes take effect for other users the next time they log in.
+
+### **Terminology**
+
+Rename five fixed terms as they appear across the workspace: **Client, Project, Meeting, Document, Task**. Leave a field blank and save to reset that term back to its default.
+
+- Renaming **Project, Task, Document, or Meeting** changes the matching sidebar nav item's label, pluralized automatically (for example, renaming Project to "Engagement" changes the nav item to "Engagements"). **Client** has no matching nav item, so renaming it only affects wording elsewhere.
+- This applies workspace-wide, for every role — it's a wording change, not a client-only or per-role setting.
+- If you've already renamed that same nav item directly in the **Navigation** tab above, that specific rename takes priority over the word set here.
+
+### **Appearance**
+
+Controls the logo and brand color clients see in the portal.
+
+- By default the portal reuses your workspace's own logo and brand color (the same ones set in **Settings → Workspace → Appearance**), via a **Use workspace branding** toggle that's on by default.
+- Turn the toggle off to set a **Portal Logo** and **Portal Brand Color** just for the portal, independent of the rest of your workspace.
+- Turning the toggle back on doesn't discard anything — your portal-specific logo and color stay saved and reappear if you turn it off again.

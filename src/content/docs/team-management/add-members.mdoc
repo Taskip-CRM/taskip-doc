@@ -73,6 +73,30 @@ Enter valid email address.
 
 Assign user to one or more teams.
 
+### Send Invitation Now
+
+A toggle, on by default, shown only when adding a new member (not when editing an existing one).
+
+- **On:** the invitation email goes out immediately.
+- **Off:** the member is created without emailing an invite — send it later from the Members table.
+
+## Invitation Status
+
+A member who hasn't accepted their invitation yet shows a badge next to their name:
+
+- **Not Invited** — created with **Send Invitation Now** off; no invite email has gone out yet.
+- **Invitation Pending** — an invite email was sent and is awaiting acceptance.
+- **Invitation Expired** — the invite link expired before it was accepted.
+
+A member who has accepted shows no badge.
+
+## Managing a Pending Invitation
+
+For any member who is **Not Invited**, **Invitation Pending**, or **Invitation Expired**, open the row's **⋯** actions menu (Admin and Manager only) to:
+
+- **Send Invitation** — sends the invite email (or resends it). This can be temporarily disabled shortly after the last send, to prevent sending duplicates in quick succession.
+- **Copy Invitation URL** — copies the same acceptance link the invitation email contains, so you can share it yourself instead of resending the email.
+
 ## Member Details Page
 
 ### Example

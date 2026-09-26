@@ -1,0 +1,59 @@
+---
+title: Security & FAQ
+description: How Taskip's MCP connections are secured, and answers to common questions.
+sidebar:
+  order: 4
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+## How connections are secured
+
+- **Per-app secrets, not a shared password.** Every AI client you connect (Claude, Claude Code,
+  Claude Desktop, Cursor, VS Code, ChatGPT, or anything else) gets its own unique secret, generated
+  from **Settings → MCP Server**. Compromising one client's secret doesn't expose the others.
+  Claude's web app is the one exception — it signs in through your browser instead of using a
+  secret at all.
+- **Scoped to your workspace.** A connection can only see and act on the workspace it was
+  generated in, never another workspace, even on the same Taskip account.
+- **Revocable instantly.** Revoking a connection from Settings disconnects that AI client
+  immediately, no restart or propagation delay.
+- **Every action is logged.** Tool calls made through a connection are recorded (which tool ran,
+  when, and whether it succeeded), so you can audit what an AI assistant actually did.
+
+<Aside type="danger">
+  Never paste your secret into a prompt, a shared document, or a public repository. Treat it
+  exactly like an API key.
+</Aside>
+
+## FAQ
+
+**Is the MCP server available on my plan?**
+The MCP server connects to any Taskip workspace with AI/MCP access enabled. Check
+**Settings → MCP Server** — if you see the **Set Up MCP** button, you have access.
+
+**Can I connect more than one AI client at once?**
+Yes. Start a separate connection for each client (Claude, Claude Code, Claude Desktop, Cursor,
+VS Code, ChatGPT, etc.). Each gets its own secret (or its own signed-in session, for Claude's web
+app) and can be revoked independently without affecting the others.
+
+**Can I revoke access?**
+Yes, at any time, from **Settings → MCP Server**. Revoking a connection disconnects that client
+immediately.
+
+**Does this work with ChatGPT?**
+Yes. ChatGPT connects as a native custom connector under Developer Mode, no bridge required. See
+[Connecting AI Clients](/mcp-server/connecting-ai-clients/) for the exact steps.
+
+**Do I need to write code to set this up?**
+No. Start a connection in Settings, then either paste the URL and secret into your AI client's MCP
+config or sign in through your browser (Claude's web app), no custom integration code required.
+
+**Will an AI assistant do things I didn't ask for?**
+No. Every action still runs through the same tool call your AI assistant explicitly makes in
+response to your request, nothing runs automatically or on a schedule on its own.
+
+**What's the difference between the MCP server and Taspi?**
+[Taspi](/taspi-ai/overview/) is Taskip's own built-in AI agent, already inside your workspace. The
+MCP server is for connecting AI tools you use *outside* Taskip, like Claude Code or Cursor, they
+work independently of each other.

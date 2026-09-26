@@ -1,0 +1,37 @@
+---
+title: How to Use the Gantt View
+sidebar:
+  order: 9
+---
+**The Gantt view lays out a project's tasks on a timeline, and shows how milestones and task dependencies fit into that schedule.**
+
+### **Opening the Gantt View**
+
+1. **Go to the Main Menu and select Projects.**
+1. **Open the project you want to view.**
+1. **On the top bar, select the Gantt view.**
+
+### **Milestone Markers**
+
+Milestones with a due date appear as diamond markers on the timeline, positioned on their due date. Milestones with no due date aren't shown on the Gantt, since they have no point in time to sit at.
+
+### **Dependency Links**
+
+Lines are drawn between the bars of tasks that have a [dependency](/project-management/how-to-set-up-task-dependencies/) between them. A link is only drawn when both tasks are visible on the current Gantt — a task hidden by a filter or a collapsed group won't show a line.
+
+- **Hover a task's row** to highlight the links connected to it.
+- Use the **Show links** toggle in the Gantt controls to hide or show the lines entirely.
+- **Blocked tasks** are shown with a hatched bar so you can spot them without leaving the timeline.
+
+### **Rescheduling from the Gantt**
+
+Drag a task's bar to move or resize it, the same way as before. What happens to its dependents depends on your [auto-shift planning setting](/project-management/how-to-enable-auto-shift-planning/):
+
+- **Off (default):** moving a task that would now overlap a dependent just shows an info toast about the overlap — nothing else moves.
+- **On:** dependent tasks shift along with it, and a toast confirms how many tasks moved.
+
+### **Related**
+
+- [How to Use Milestones](/project-management/how-to-use-milestones/)
+- [How to Set Up Task Dependencies](/project-management/how-to-set-up-task-dependencies/)
+- [How to Switch Views for Projects](/project-management/how-to-switch-views-for-projects/)

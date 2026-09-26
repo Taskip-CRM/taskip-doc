@@ -1,0 +1,61 @@
+---
+title: How to Set Up Task Dependencies
+sidebar:
+  order: 8
+---
+**Task dependencies let you link tasks in the same project so Taskip can tell you when one is waiting on another — and, if you turn on auto-shift planning, keep their dates in sync automatically.**
+
+### **Dependency Types**
+
+When you link two tasks, you choose how they relate:
+
+- **Finish to start** — the second task can't finish until the first one is done. This is the most common type.
+- **Start to start** — the two tasks are meant to start together.
+- **Finish to finish** — the two tasks are meant to wrap up together.
+
+You can also add an optional **lag (days)** — extra time to leave between the two tasks beyond the relationship itself.
+
+### **Where to Manage Dependencies**
+
+1. **Open a task's detail view.**
+1. **Go to the Dependencies section.**
+
+**You'll see two lists:**
+
+- **Blocked by** — tasks this one depends on (its predecessors).
+- **Blocks** — tasks that depend on this one (its dependents).
+
+### **Adding a Dependency**
+
+1. **In the Dependencies section, click Add dependency.**
+1. **Search for and select the task this one depends on.**
+1. **Choose the relationship type (Finish to start / Start to start / Finish to finish).**
+1. **Optionally set a lag in days.**
+1. **Click Add dependency to save.**
+
+Dependencies can only be made between tasks in the same project, and Taskip won't let you create a loop — if a link would create a cycle (for example, A depends on B, and you try to make B depend on A), the request is refused with an error.
+
+### **What "Blocked" Means**
+
+A task is marked **Blocked** when a predecessor hasn't reached the stage the relationship requires:
+
+- A **Finish to start** predecessor that isn't yet in a Done-category stage.
+- A **Start to start** predecessor that's still in Backlog or To Do.
+- A **Finish to finish** predecessor that isn't Done while this task already is.
+
+Blocked status is computed live from your board — you never set it by hand.
+
+### **Finding Blocked Work**
+
+- A **Blocked** badge appears on task cards and rows across the board and list views.
+- Use the **Blocked** filter on the board to show only blocked tasks.
+
+### **Removing a Dependency**
+
+Open the task's Dependencies section and remove the link from either the **Blocked by** or **Blocks** list. Removing a dependency doesn't change either task's dates.
+
+### **Related**
+
+- [How to Enable Auto-Shift Planning](/project-management/how-to-enable-auto-shift-planning/) — automatically move dependent tasks' dates when a predecessor's dates change.
+- [How to Use the Gantt View](/project-management/how-to-use-the-gantt-view/) — see dependency links drawn between tasks on the timeline.
+- [How to Use Milestones](/project-management/how-to-use-milestones/)

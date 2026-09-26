@@ -58,8 +58,7 @@ At the top of the page, you will see:
 - **Call Icon**
   - Initiate or log a phone call (requires Twilio configuration)
 - **Convert To Client**
-  - Converts the lead into a client record
-  - Used when the lead is qualified
+  - Turns the lead into a full client record — see [Lead Conversion](#lead-conversion) below for exactly what carries over
 
 ![](./lead-details-page/content/image.png)
 
@@ -162,9 +161,18 @@ Leads can be converted into clients directly from this page.
 
 ### Convert to Client
 
-- Moves the lead into the client database
-- Retains important information
-- Typically used after qualification
+Clicking **Convert To Client** requires an email address on the lead first — without one, Taskip shows an error and stops rather than creating an incomplete client.
+
+Once conversion starts, a single loading message updates in place as each step completes (copying contact details, copying address details, copying lead notes, setting up custom fields), so you can see it working rather than just waiting. Behind that one message, Taskip:
+
+- Creates the client record and backfills anything it left empty: company, job title (as the client's position), phone, mobile phone, preferred contact method, address, description, and tags
+- Resolves the lead's tags to their client-side equivalents, reusing a matching tag if one already exists or creating one if not
+- Carries over custom field values, auto-creating a matching custom field on the Contacts side if the lead's field doesn't have one yet
+- Redirects you straight to the new client's page
+
+If everything copies over cleanly you'll see a success message; if a step couldn't be copied, you still land on the new client with a warning that some details need a manual check, rather than losing the conversion entirely.
+
+Once converted, the button is replaced with **"This lead is converted to client"** and a **Client** badge — both on this page and in the leads list — so it's clear at a glance which leads have already crossed over.
 
 # Workflow Example
 
@@ -173,7 +181,7 @@ Leads can be converted into clients directly from this page.
 1. Logs interaction or adds notes
 1. Uploads relevant files
 1. Tracks activity in timeline
-1. Clicks **Convert To Client** when ready
+1. Confirms the lead has an email address, then clicks **Convert To Client** when ready
 
 # Best Practices
 

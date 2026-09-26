@@ -7,21 +7,23 @@ description: >-
 sidebar:
   order: 3
 ---
-The **Create New Deal** feature allows users to add a new sales opportunity into a pipeline and begin tracking its lifecycle from the earliest stage to closure. A deal represents a potential revenue-generating interaction with a lead, contact, or client.
+The **Create New Deal** feature allows users to add a new sales opportunity into a pipeline and begin tracking its lifecycle from the earliest stage to closure. A deal represents a potential revenue-generating interaction with a lead, contact, or company.
 
 This section explains each field, behavior, and best practice in detail.
 
 ## Overview
 
-Creating a deal initializes:
+Clicking **+ Add Deal** opens a side panel with three parts:
 
-- A record in the selected pipeline
-- A starting stage (e.g., Draft or Lead)
-- Ownership and responsibility
-- Deal value for forecasting
-- Associated contact or client
+- A **Deal Name** and **Link this deal to** section, always visible at the top
+- A collapsible **Deal Details** section (stage, priority, amount, currency, tags)
+- A collapsible **Additional** section (description, documents, custom fields)
 
-Once created, the deal becomes visible in the pipeline board and can be managed through its lifecycle.
+Both collapsible sections start closed, so a new deal can be created with just a name, an owner, and a linked client/lead/company — everything else is optional until you expand it.
+
+Once created, the deal becomes visible in the pipeline board under the selected stage and can be managed through its lifecycle.
+
+*Note: the pipeline list on the left of the Sales Pipeline screen can be collapsed to a slim icon rail to give the board more room — this doesn't affect deal creation, it only changes how you switch between pipelines.*
 
 ## Field-Level Breakdown
 
@@ -40,149 +42,90 @@ Once created, the deal becomes visible in the pipeline board and can be managed 
 
 - “Acme Corp – Website Redesign – May”
 
-### B. Assignee
+### B. Link this deal to
 
-**Type:** User selection (required)\
+**Type:** Tab selector — **Client**, **Lead**, or **Company** (required, choose exactly one)\
+**Purpose:** Connects the deal to the person or organization it's being pursued with.
+
+**Behavior:**
+
+- Switching tabs clears whatever was selected on the other tabs, so a deal is only ever linked to one client, one lead, or one company at a time
+- **Client:** picks from existing Contacts
+- **Lead:** picks from existing Leads
+- **Company:** picks from existing Company accounts, useful for B2B deals not yet tied to one specific contact
+- At least one of the three must be selected before the deal can be created
+
+### C. Owner & Assignee
+
+**Type:** Team member selection (required)\
 **Purpose:** Assigns responsibility for managing the deal.
 
 **Behavior:**
 
 - The selected user becomes the deal owner
-- Receives notifications for updates (if enabled)
 - Appears in reporting and performance tracking
 
-### C. Select Company
+### D. Stage
 
-**Type:** Dropdown (optional)\
-**Purpose:** Links the deal to an existing company account.
-
-**Behavior:**
-
-- Enables organization-level tracking
-- Useful for B2B sales workflows
-- Multiple deals can belong to the same company
-
-### D. Select Contact Type
-
-**Type:** Toggle / selection (required)\
-Options:
-
-- **Contact**
-- **Lead**
-
-**Purpose:** Defines the relationship type of the deal.
-
-**Behavior:**
-
-- **Lead:** Early-stage, not yet qualified
-- **Contact:** Verified or existing relationship
-
-### E. Select a Client *
-
-**Type:** Dropdown (required)\
-**Purpose:** Associates the deal with a specific person.
-
-**Behavior:**
-
-- Pulls from Contacts or Leads based on selection
-- Enables communication tracking
-- Links deal history to the client profile
-
-### F. Stage
-
-**Type:** Dropdown\
-**Default:** First stage or “Draft”
+**Type:** Dropdown (required, inside **Deal Details**)\
+**Default:** The stage of the pipeline column you clicked **+ Add Deal** from, or the pipeline's first stage if none was pre-selected
 
 **Purpose:** Defines the current position of the deal in the pipeline.
 
 **Behavior:**
 
-- Determines where the deal appears in the pipeline board
+- Options are the real stages configured for the current pipeline
+- Determines where the deal appears on the pipeline board
 - Can be changed later via drag-and-drop or edit
 
-### G. Draft
+### E. Priority
 
-**Type:** Status indicator (system or manual)
-
-**Purpose:** Indicates the deal is not fully active yet.
-
-**Behavior:**
-
-- Draft deals may not be included in reports or forecasts
-- Useful for incomplete or internal deals
-
-### H. Priority
-
-**Type:** Dropdown\
+**Type:** Dropdown (inside **Deal Details**)\
 Options:
 
-- Low
+- Low (default)
 - Medium
-- High (if configured)
+- High
+- Urgent
 
 **Purpose:** Helps prioritize deal handling.
 
-**Use Cases:**
+### F. Lead Type
 
-- High-value deals
-- Time-sensitive opportunities
-
-### I. Lead Type
-
-**Type:** Dropdown\
+**Type:** Dropdown (inside **Deal Details**)\
 Options:
 
 - Cold
 - Warm
-- Hot (depending on configuration)
+- Hot
 
-**Purpose:** Indicates the engagement level of the opportunity.
+**Purpose:** Indicates engagement level. Only shown when the deal is linked to a **Lead** (section B) — it doesn't apply to Client- or Company-linked deals.
 
-**Meaning:**
+### G. Deal Status
 
-- **Cold:** Minimal interaction
-- **Warm:** Some engagement
-- **Hot:** High intent / ready to convert
+**Type:** Dropdown (inside **Deal Details**)\
+Options:
 
-### J. Deal Amount *
+- Open (default)
+- Negotiation
+- Won
+- Lost
 
-**Type:** Numeric input (required)\
+**Purpose:** Tracks where the deal stands independently of its pipeline stage.
+
+### H. Deal Amount
+
+**Type:** Numeric input (required, inside **Deal Details**)\
 **Purpose:** Defines the monetary value of the deal.
 
 **Behavior:**
 
-- Used for revenue forecasting
+- Used for revenue forecasting and pipeline column totals
 - Can be updated as negotiations progress
 
-### K. Currency *
+### I. Closing Date
 
-**Type:** Dropdown (required)\
-Default example:
-
-- 🇺🇸 United States Dollar (USD)
-
-**Purpose:** Specifies the currency for the deal value.
-
-**Behavior:**
-
-- Supports multi-currency systems
-- Ensures accurate financial reporting
-
-### L. Tags
-
-**Type:** Multi-select\
-**Purpose:** Categorizes deals for filtering and segmentation.
-
-**Examples:**
-
-- Enterprise
-- SaaS
-- Urgent
-- Renewal
-
-### M. Closing Date
-
-**Type:** Date picker\
+**Type:** Date picker (inside **Deal Details**)\
 **Purpose:** Expected deal completion date.
 
 **Behavior:**
@@ -190,51 +133,45 @@ Default example:
 - Used for forecasting
 - Helps identify delays or overdue deals
 
-### N. Description
+### J. Currency
 
-**Type:** Rich text input\
-**Purpose:** Stores additional deal context.
+**Type:** Dropdown (inside **Deal Details**)\
+**Default:** Your workspace's configured business currency
 
-**Use Cases:**
-
-- Requirements summary
-- Client expectations
-- Internal notes
-
-### O. Select Documents
-
-**Type:** File selector / attachment
-
-**Purpose:** Attach relevant files such as:
-
-- Proposals
-- Contracts
-- Quotations
-- Supporting documents
-
-### O. Notify Client
-
-**Type:** Toggle / checkbox
-
-**Purpose:** Sends notification to the client upon deal creation.
+**Purpose:** Specifies the currency for the deal value.
 
 **Behavior:**
 
-- May trigger email or portal notification
-- Depends on system configuration
+- Can be overridden per deal
+- Ensures accurate financial reporting across the pipeline
 
-### P. Add Custom Field
+### K. Tags
 
-**Type:** Dynamic input
+**Type:** Multi-select (inside **Deal Details**)\
+**Purpose:** Categorizes deals for filtering and segmentation.
 
-**Purpose:** Extend deal data beyond default fields.
+**Behavior:**
 
-**Examples:**
+- Pick from existing tags or type a new one to create it on the fly
 
-- Industry
-- Deal Source
-- Competitor
-- Contract Duration
+### L. Description
+
+**Type:** Rich text editor (inside **Additional**)\
+**Purpose:** Stores additional deal context — requirements, client expectations, internal notes.
+
+**Behavior:**
+
+- Includes an AI-assist option to help draft the description
+
+### M. Select Documents
+
+**Type:** Multi-select (inside **Additional**)\
+**Purpose:** Attach existing workspace documents such as proposals, contracts, or quotations to the deal.
+
+### N. Add Custom Field
+
+**Type:** Dynamic input, opened from the **+ Add Custom Field** button in the panel footer\
+**Purpose:** Extend deal data beyond the default fields (e.g. Industry, Deal Source, Competitor, Contract Duration).
 
 ## Actions
 
@@ -255,18 +192,17 @@ Default example:
 Once a deal is created:
 
 - It appears in the pipeline board under the selected stage
-- It becomes accessible via the Deal View Page
+- It becomes accessible via the Deal Details page
 - Activity tracking begins (timeline logging)
-- Notifications may be triggered
 
 ## Validation Rules
 
 - Required fields must be completed:
   - Deal Name
-  - Assignee
-  - Client
+  - A linked Client, Lead, or Company (exactly one)
+  - Owner & Assignee
+  - Stage
   - Deal Amount
-  - Currency
 - Invalid or missing data will prevent submission
 - Numeric fields must accept valid numbers only
 
@@ -277,21 +213,19 @@ Once a deal is created:
 - Set realistic closing dates for accurate forecasting
 - Update deal amount as negotiations evolve
 - Use tags for better filtering and reporting
-- Avoid leaving deals in Draft for long periods
 
 ## Example Deal Creation Flow
 
-1. User clicks **Create Deal**
+1. User clicks **+ Add Deal**
 1. Enters:
    - Deal Name: “ABC Ltd – Mobile App Development”
-   - Assignee: John
-   - Client: ABC Ltd
-   - Amount: $5,000
-1. Selects:
-   - Stage: Lead
+   - Link this deal to: **Client** → ABC Ltd
+   - Owner & Assignee: John
+1. Expands **Deal Details** and sets:
+   - Stage: (defaults to the column clicked, or first stage)
    - Priority: High
-   - Lead Type: Warm
-1. Adds description and documents
+   - Deal Amount: $5,000
+1. Expands **Additional**, adds a description and attaches a proposal document
 1. Clicks **Create Deal**
 
 → Deal is added to the pipeline and visible to the team

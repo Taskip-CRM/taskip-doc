@@ -2,5 +2,17 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "installCommand": "npm install",
-  "framework": "astro"
+  "framework": "astro",
+  "redirects": [
+    {
+      "source": "/sales-pipelines/how-to-add-files-to-a-deal/",
+      "destination": "/sales-pipelines/deal-details-view/",
+      "permanent": true
+    },
+    {
+      "source": "/sales-pipelines/how-to-add-files-to-a-deal",
+      "destination": "/sales-pipelines/deal-details-view/",
+      "permanent": true
+    }
+  ]
 }

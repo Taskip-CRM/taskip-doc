@@ -1,0 +1,83 @@
+---
+title: How to Use the Profit Tracker
+description: >-
+  Compare revenue, cost, profit and margin across your projects, over a period,
+  and export the result to CSV.
+sidebar:
+  order: 15
+---
+**The Profit tracker shows what your projects earn, cost and leave behind. Pick a period, compare it with the one before, and see which projects make money.**
+
+### **Who Can Open It**
+
+The Profit tracker follows the **Project Finance** permission (Teams → Permissions, in the Work group).
+
+- **Administrators and Managers** can open it by default and see every project.
+- **Members and custom roles** have no access until an administrator grants **Project Finance**. With the **own** scope, they see only the projects they lead. With the **all** scope, they see every project.
+- **Clients** never see it.
+
+The **Projects** page shows a **Profit** button for people who have access. For everyone else the page doesn't exist: opening the address shows a "not found" page. Having the **Projects** permission does not open it.
+
+**Navigation:** Main Menu → Projects → **Profit** (or go to `/projects/profit`).
+
+### **What You See**
+
+For each currency there is a block of figures:
+
+- **Revenue**, **Total cost**, **Profit**, **Margin**, **Invoiced** and **Projects** (how many projects the figures cover).
+- A bar chart, **Revenue and cost**, for the ten projects with the biggest profit on the page.
+
+Below, a **Projects** table lists one row per project with **Project**, **Billing type**, **Revenue**, **Cost**, **Profit**, **Margin**, **Budget used** and **vs planned**. It shows 25 projects to a page.
+
+- Click **Project**, **Revenue**, **Cost**, **Profit** or **Margin** to sort. Click again to reverse the order. The default is the biggest profit first.
+- Click a project name to open its Finance tab.
+- **Budget used** is the share of the project's budget used over its whole life. It does not change with the period.
+- **vs planned** is revenue minus the project's contract value. It is a dash when no contract value is set.
+
+Every row uses the same calculation as the project's own Finance tab, which shows all time, here limited to your period. Each total is the sum of its rows. See [The Finance Tab](/project-management/how-to-manage-project-in-taskip/#the-finance-tab) for how revenue, cost and profit are worked out.
+
+### **Periods and Comparison**
+
+Use the **Period** menu: **All time**, **This month**, **Last 30 days**, **This quarter** or **This year**. You can also set **From** and **To** dates yourself. A period needs both dates.
+
+A period limits the figures like this: hourly revenue and labor by the day the work was done, expenses by the date incurred, and invoices by their issue date.
+
+Tick **Compare with the previous period** to see how the figures moved. It needs a period. The previous period is the same length and ends the day before yours starts. **Revenue**, **Total cost** and **Profit** then show their change under the figure (**vs previous period**), and each project's profit shows its change. A rise in cost is shown as bad, the rest as good.
+
+### **Filters**
+
+- **Billing type.** **All billing types**, or one of **Hourly**, **Fixed price**, **Retainer**, **Non-billable** and **Internal**.
+
+Filters and sorting are kept in the page address, so you can bookmark or share a view. Click **Clear filters** to reset the filters.
+
+### **Several Currencies**
+
+Taskip never converts money. Each project reports in its own currency, and the page shows a separate block of figures for each currency. Projects in different currencies are never added together.
+
+### **Export to CSV**
+
+Click **Export CSV**. The file is named `project-profit-` followed by today's date, and holds every project that matches your filters, in the order you see on screen (all pages). The columns are **Project**, **Billing type**, **Currency**, **Revenue**, **Total cost**, **Profit**, **Margin %**, **Planned**, **Invoiced**, **Collected**, **Revenue vs planned** and **Budget used %**. With a comparison on, it also has **Previous revenue**, **Previous cost**, **Previous profit** and **Profit change**. A **Total** line for each currency follows the projects.
+
+### **Common Questions**
+
+**Why is a project missing?**
+- You may only be allowed to see projects you lead (the **own** scope).
+- The **Billing type** filter or another page of results may be hiding it.
+- If there is a period, a project with no activity in it still appears, with zeros.
+
+**Why is a margin blank (a dash)?**
+Margin is profit divided by revenue, so it can't be worked out when revenue is zero. This is normal for **Non-billable** and **Internal** projects, for **Fixed price** and **Retainer** projects with nothing invoiced yet in the period, and for **Hourly** projects with no approved billable hours yet.
+
+**Why is a project's revenue lower than I expected?**
+- Hourly revenue counts approved billable hours that haven't been written off.
+- Fixed price and retainer revenue counts invoices, not hours. Draft, void, canceled and failed invoices are ignored.
+- Money in another currency than the project's currency is left out and not converted.
+
+**Why is a project's profit higher than I expected?**
+Time with no cost rate is left out of labor rather than counted as free. Open the project's Finance tab to see what percentage of its time was costed, and set a cost rate to fix it.
+
+**Why are there several blocks of figures?**
+Each currency has its own block. A project's currency is set under **Project → Settings → Billing & budget**. A project's invoices, expenses and time in a different currency are left out of its figures, and its Finance tab shows a note about it.
+
+**Why do the totals differ from the Expense tracker?**
+The Profit tracker adds a project's expenses in the project's currency only, and only inside the period. The [Expense tracker](/project-management/how-to-use-the-expense-tracker/) lists all expenses, each under its own currency.

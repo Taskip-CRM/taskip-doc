@@ -1,0 +1,38 @@
+---
+title: Time Tracking Settings
+description: Set the workspace rules for timers, rounding, working hours, billing profiles and budgets.
+sidebar:
+  order: 15
+---
+**Time Tracking Settings control how timers and hours behave for your whole workspace. Open them from Settings → Time Tracking. You need the Time Tracking settings permission to change anything.**
+
+The page has up to three tabs.
+
+### **Workspace Settings**
+
+- **Allow multiple running timers.** Off by default. When off, starting a new timer stops the one already running for that person.
+- **Stale timer threshold (minutes).** If Taskip has not heard from a running timer for this long, the timer is stopped automatically and the person is asked to review it (see [How to Use the Time Tracking Page](/project-management/how-to-use-the-time-tracking-page/)).
+- **Rounding increment (minutes).** Rounds each entry to a neat block, for example 15 minutes. Enter 0 to switch rounding off.
+- **Rounding mode.** **Nearest**, **Up** or **Down**.
+- **Default currency.** Used for billable amounts.
+- **First day of week.** Decides where your timesheet weeks start.
+- **Working hours per day.** Used to judge whether a day is missing hours and to measure workload.
+
+Click **Save** after changing anything.
+
+### **Billing Profiles**
+
+A billing profile is a saved set of billing defaults you can reuse, so you do not type rates for every project.
+
+1. Click **New profile**.
+1. Give it a **Name**.
+1. Choose the **Billing type**: **Hourly**, **Fixed price**, **Retainer**, **Non-billable** or **Internal**.
+1. Set the **Default billable rate** (what you charge) and the **Default cost rate** (what the work costs you).
+1. Choose the **Currency**.
+1. Set **Lock period (days)**: after this many days, entries can no longer be changed.
+1. Tick **Set as workspace default** if new projects should use it.
+1. Click **Create**.
+
+### **Budget Policy**
+
+This tab is only shown to the workspace owner. It decides how project budgets, alerts and requests for more budget work. It is explained in full in [How to Track Time in a Project](/project-management/how-to-track-time-in-a-project/).

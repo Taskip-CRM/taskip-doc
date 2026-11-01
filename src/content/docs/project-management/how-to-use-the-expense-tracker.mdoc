@@ -1,0 +1,62 @@
+---
+title: How to Use the Expense Tracker
+description: >-
+  See every project expense in one place, filter it, read totals per currency,
+  and export it to CSV.
+sidebar:
+  order: 14
+---
+**The Expense tracker lists the money spent across your projects in one place. Filter it by category, date, vendor or person, read the totals for each currency, and export what you see to a CSV file.**
+
+### **Who Can Open It**
+
+The Expense tracker follows the **Project Expenses** permission (Teams → Permissions, in the Work group).
+
+- **Administrators and Managers** can open it by default and see every project.
+- **Members and custom roles** have no access until an administrator grants **Project Expenses**. With the **own** scope, they see only the projects they lead. With the **all** scope, they see every project.
+- **Clients** never see it.
+
+The **Projects** page shows an **Expenses** button next to **Profit** and **Insights** for people who have access. For everyone else the page doesn't exist: opening the address shows a "not found" page. Having the **Projects** permission does not open it.
+
+**Navigation:** Main Menu → Projects → **Expenses** (or go to `/projects/expenses`).
+
+### **What You See**
+
+- **Totals.** One block for each currency, headed **Total (USD)**, **Total (EUR)** and so on, with the number of expenses. Each block shows **By category** and **By month** (the latest 12 months). Currencies are never added together or converted. The totals cover everything that matches your filters, not only the page you are looking at.
+- **Expenses.** A list, newest first, 25 to a page, with the date, the project, the category, the description and vendor, who added it, a paperclip icon when there is a receipt, and the amount. Click a project name to open that project's Finance tab. Use **Previous** and **Next** to change page.
+
+### **Filters**
+
+Filters are kept in the page address, so you can bookmark or share a filtered view. Changing a filter returns you to the first page.
+
+- **Category.** **All categories**, or one of **Subcontractor**, **Software**, **Travel**, **Hosting** and **Other**.
+- **From** and **To.** The date the expense was incurred, both ends included.
+- **Vendor.** Type part of a name and press Enter.
+- **Added by.** The person who recorded the expense.
+- **One project.** When you arrive from a link for a single project, this chip shows. Click it to see all projects again.
+
+Click **Clear filters** to reset everything.
+
+### **Export to CSV**
+
+Click **Export CSV** at the top right. The file is named `project-expenses-` followed by today's date, and holds every expense that matches your filters (all pages, not only the one on screen). The columns are **Date**, **Project**, **Category**, **Description**, **Vendor**, **Amount**, **Currency** and **Added by**. The export only contains what you are allowed to see.
+
+### **How It Relates to a Project's Finance Tab**
+
+Each expense is recorded on a project, from that project's **Finance** tab with **Add expense**. The tracker is the same data across projects. Adding, editing or deleting an expense on the Finance tab changes the tracker, and the project's cost and profit, straight away. You can't add an expense from the tracker itself. See [The Finance Tab](/project-management/how-to-manage-project-in-taskip/#the-finance-tab).
+
+### **Common Questions**
+
+**Why is a project or an expense missing?**
+- You may only be allowed to see projects you lead (the **own** scope).
+- A filter may be excluding it. Check **Category**, the dates, **Vendor** and **Added by**, and look for the **One project** chip.
+- The expense may have been deleted on the project's Finance tab.
+
+**Why are there several totals?**
+Each currency has its own block because Taskip never converts money. An expense is recorded in the currency of its project.
+
+**Why doesn't the total match the Finance tab of a project?**
+A project's Finance tab leaves out expenses that are in a different currency from the project, and shows a note. The tracker still lists them under their own currency.
+
+**Why can I see the page but not add an expense?**
+Adding, editing and deleting need the **create**, **edit** and **delete** rights of **Project Expenses**, which are separate from viewing.

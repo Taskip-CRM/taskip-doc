@@ -77,3 +77,65 @@ sidebar:
 
 - **Let clients submit feedback, bugs, and change requests without seeing your internal board.**
 - **Track and reply to [client requests](/project-management/how-to-manage-client-requests/), with internal comments staying invisible to them.**
+
+#### **13. Follow the Money**
+
+- **See what the project earns, costs and leaves behind in its [Finance tab](#the-finance-tab).**
+- **Record [expenses](#expenses), set a [budget](/project-management/how-to-track-time-in-a-project/#time-limits-and-budgets) and decide what happens when it runs out.**
+- **Compare all your projects in the [Profit tracker](/project-management/how-to-use-the-profit-tracker/) and the [Expense tracker](/project-management/how-to-use-the-expense-tracker/).**
+
+### **The Finance Tab**
+
+The Finance tab shows whether a project makes money. It appears in the project's top bar for staff who may see that project's finances. By default that is Administrators and Managers. Members and custom roles need the **Project Finance** permission (see [Permissions](/team-management/permissions-role-management/)). Clients never see this tab.
+
+**Navigation:** Projects → open a project → **Finance**.
+
+The tab has these cards:
+
+- **Profit.** **Revenue**, **Total cost**, **Profit** and **Margin**. A loss is shown in red. Margin shows a dash when revenue is zero.
+- **Billing.** **Planned** (the contract value), **Invoiced** and **Collected**, plus **Refunded** when there has been a refund. These sit beside revenue and are never added to it.
+- **Cost.** **Labor**, **Expenses** and **Total cost**.
+- **Budget.** Hours and amount used against the project's budget, with the cap mode taken into account.
+- **Budget requests.** Requests for more budget and their history. See [Asking the Client for More Budget](/project-management/how-to-track-time-in-a-project/#asking-the-client-for-more-budget).
+- **Expenses.** The project's expenses, with add, edit and delete.
+- **Labor by member.** Each person's hours and labor cost.
+
+#### **How the Figures Are Worked Out**
+
+- **Revenue** depends on the project's billing type. For **Hourly** projects it is the approved billable hours that haven't been written off. For **Fixed Price** and **Retainer** projects it is the amount invoiced on the project, not hours times rate. For **Non-billable** and **Internal** projects it is zero.
+- **Labor** is tracked time that is no longer a draft and was not rejected, multiplied by the cost rate of each entry.
+- **Total cost** is labor plus expenses. **Profit** is revenue minus total cost, and **Margin** is profit divided by revenue. This is gross profit: overheads are not included.
+- **Collected** counts paid invoices and recorded part payments, and does not count refunded invoices.
+- An invoice that was created for an advance budget request counts as billed in its own right. The hours it covers are not billed again.
+
+Taskip never converts money between currencies. Figures are in the project's currency. Anything recorded in another currency (an invoice, an expense, a time entry) is left out and a note under the cards says how many rows were left out. Time with no cost rate is also left out of labor rather than counted as free, and the note shows what percentage of the time was costed. To fix this, set a cost rate for the person, the project, its billing profile or the workspace.
+
+#### **Expenses**
+
+Click **Add expense** on the Finance tab and fill in:
+
+- **Category.** **Subcontractor**, **Software**, **Travel**, **Hosting** or **Other**.
+- **Description.**
+- **Amount.** In the project's currency.
+- **Date.**
+- **Vendor.** Optional.
+- **Receipt.** Optional attachment.
+
+Click **Save**. The project's cost and profit update straight away. Use the pencil icon to edit an expense and the bin icon to delete it (**Delete this expense?**). A deleted expense no longer counts toward the cost. Adding, editing and deleting follow the **Project Expenses** permission, so a person may be able to see expenses but not change them.
+
+#### **Billing and Budget Settings**
+
+Go to **Project → Settings → Billing & budget**.
+
+- **Billing** block: **Billing Type** (Hourly, Fixed Price, Retainer, Non-billable, Internal), **Currency**, **Billable Rate (per hour)**, **Cost Rate (per hour)**, **Contract value**, **Billing Profile** and **Billable by default**. Click **Save billing**. The contract value is what the client agreed to pay. It is compared with what is invoiced and paid, and it is not the budget cap. The rates and the contract value are only shown to people who can see rates on the project (Administrators and Managers by default).
+- **Budget** block: **Maximum hours**, **Maximum billable amount** and **When the budget is reached**. Click **Save budget**. See [Time Limits and Budgets](/project-management/how-to-track-time-in-a-project/#time-limits-and-budgets).
+
+#### **Showing Finances to the Client**
+
+Go to **Project → Settings → Access & client portal** and turn on **Show finances to client**. It is off by default, and only people who can see rates can change it.
+
+When it is on, the project's client sees a **Project finances** card on the project Overview with **Agreed** (when a contract value is set), **Invoiced**, **Paid**, **Still to pay**, and **Paid in advance, not yet used** when they have paid for budget in advance. Costs, time spent and profit are never shown to the client, and are never sent to their browser.
+
+#### **Final Figures When You Close a Project**
+
+When a project is closed, Taskip records its final figures. Open the project's menu in the project header and choose **Close project…**. People with finance access see **Final figures** in the dialog: **Revenue**, **Total cost**, **Profit** and **Margin**, with the date they were **Recorded**. If the project is reopened and you open the dialog to close it again, the earlier figures are shown as **At the previous close**, with the number of earlier closes on record. Closing and reopening keeps the record.

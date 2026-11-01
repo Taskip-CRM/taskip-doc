@@ -21,3 +21,71 @@ sidebar:
    - **Duration**
    - **Type**
    - **Tracked By**
+
+### **Time Limits and Budgets**
+
+A project can have a budget in hours, a budget in money (the billable amount), or both. A task can also have its own maximum working time. When someone tries to log time that would go past a limit, Taskip refuses that new time. Time that was already logged is never removed or invalidated, even if a budget is later lowered below what has been spent.
+
+Set a project's budget under **Project → Settings → Billing & budget**, in the **Budget** block: **Maximum hours** and **Maximum billable amount**. Leave a field empty for no limit. Only the people who may change the caps can edit this block (see the **Budget policy** section below).
+
+### **What Happens at the Budget**
+
+The **When the budget is reached** setting, in the same Budget block, decides what the budget means for that project:
+
+- **Hard limit.** Time can no longer be tracked once the budget is reached. Every existing project uses this, and new projects start with it unless the workspace owner chose another default.
+- **Limited overrun.** Time can go over the budget by a percentage you set in **Allowed overrun (%)**, then stops. Enter a value above 0 and up to 100. The budget bar on the project shows the overrun zone beyond the budget.
+- **Warn only.** Time is never stopped. People are told as the budget is used up.
+
+Only the modes your workspace owner allows are offered. A task's own maximum working time is a separate limit and is not changed by the mode.
+
+### **When Time Is Refused**
+
+If you try to log time past a limit, Taskip shows a message saying which limit was reached. If you work on the project and may ask the client for more, the message has a **Request more** button. If a request is already waiting for the client's answer, you can't file another one for the same budget until it is settled. If a request has been approved and is waiting for payment, the message says **A request for more budget is waiting for payment.** and, once the invoice exists, offers **View invoice**.
+
+### **Budget Alerts**
+
+Taskip tells people as a project's budget is used up. The alert goes out when usage crosses each percentage the workspace owner has set, and once more when the budget is exceeded. With **Limited overrun**, there is also an alert when the end of the allowed overrun is reached. Each alert is sent once per percentage. They are sent from a background check, so they can arrive a little after the time was logged.
+
+By default the percentages are 80, 90 and 100. The owner is always told. Administrators and project leads are told by default, and managers can be added. Alerts go as an in-app notification and by email unless the owner turns one off. The owner can also choose to be told when someone is refused time (off by default, and at most once a day per project).
+
+### **Asking the Client for More Budget**
+
+When a budget runs out, the team can ask the project's client for more hours or more money instead of waiting.
+
+1. **Open the project and go to the Finance tab, then click Request more budget.** If you can't see the Finance tab, click **Request more** on the refusal message instead.
+1. **Choose what to extend** (**Hours budget** or **Money budget**). This choice only appears when the project has both.
+1. **Enter the extra amount** in **Extra**, in hours or in the project's currency.
+1. **Choose how it should be paid** under **How should it be paid?**, if the workspace offers more than one way (see below).
+1. **Add a reason** under **Why is it needed?** (optional), then click **Send request**.
+
+Administrators, managers, and members or leads of the project can send a request. The person who sent it, administrators, managers and the project's leads can cancel it with **Cancel request** while it waits.
+
+The client sees it on the project's **Overview**, in a **Budget approval** card, with the amount, the reason and what approving will do. They can add a note and click **Approve** or **Decline**. Only the project's client can answer, unless the workspace owner lets administrators answer for the client (off by default). In that case the request shows that an administrator answered, and the client is told.
+
+A request waits up to 7 days. The client is reminded half way and on the last day, the administrators are told if it waits longer than the owner's limit (48 hours by default), and it expires if nobody answers.
+
+#### **Bill Later or Invoice First**
+
+- **Bill later.** When the client approves, the budget goes up and time tracking carries on. The extra work is invoiced later, as usual. This is the only way offered until the workspace owner opens the other one.
+- **Invoice first.** When the client approves, an invoice for the amount is sent to them. By default the budget goes up, and time tracking carries on, once that invoice is paid. Until then the request shows **Waiting for payment** with a link to the invoice. The client sees **Approved. Waiting for your payment.** with **View invoice**.
+
+If the invoice couldn't be sent yet, the request shows **The invoice has not been sent yet**. If the invoice is voided, canceled, refunded or the payment fails, the request shows what went wrong.
+
+An administrator can click **Let work go on** on a waiting request, enter a note under **Why may work go on?**, and the budget goes up at once. The invoice stays owed and the note is kept on the request. This button only appears when the workspace owner has turned on **Administrators can let work go on before payment** (off by default).
+
+### **Budget Policy (Workspace Owner)**
+
+The workspace owner sets the rules for all projects under **Settings → Time Tracking → Budget policy**. This tab only appears for the workspace owner, not for other administrators. Click **Save** after changing it. A **What this does** box under the form describes the effect of the current choices in plain words.
+
+- **Cap modes.** Tick which modes projects may use (**Hard limit**, **Limited overrun**, **Warn only**), choose **Mode for new projects** (hard limit by default) and **Default overrun (%)** (10 by default).
+- **Project leads can change budget caps.** On by default. When off, only administrators and managers can change a project's caps.
+- **Budget alerts.** **Alert at these percents of a budget** (80, 90, 100 by default), **Who is told**, **How** (**In-app notification**, **Email**), and **Tell them when time is refused**.
+- **Budget requests.**
+  - **The team must ask the client for more budget.** Off by default. When on, nobody on the team can raise a budget directly, administrators included. The client approves each increase instead.
+  - **Administrators can answer for the client.** Off by default.
+  - **Tell administrators after (hours).** 48 by default.
+  - **Ways to fulfil a request.** **Bill later** and **Invoice first**. Only **Bill later** is on until you tick the other. **Default for new requests** picks which one is preselected.
+  - **Work waits for payment.** On by default. With an invoice first, the budget goes up only when the invoice is paid. When off, it goes up as soon as the client approves.
+  - **Administrators can let work go on before payment.** Off by default. They must leave a note, and the invoice stays owed.
+
+Existing projects keep working as before: they stay on **Hard limit** until someone changes them.

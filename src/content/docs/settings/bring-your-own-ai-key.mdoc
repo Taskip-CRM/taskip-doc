@@ -1,0 +1,47 @@
+---
+title: Bring Your Own AI Key
+description: Connect your own OpenAI or DeepSeek key so Taskip's AI features run on your account and use no AI credits.
+sidebar:
+  order: 16
+  badge: New
+---
+**Normally Taskip's AI assistant, Taspi, uses the AI credits that come with your plan. With "Bring your own key" you connect your own account at OpenAI or DeepSeek instead. Taspi then works the same way, but the usage is billed by that provider to you, and Taskip takes no AI credits.**
+
+### **Why Would I Use My Own Key?**
+
+- You already pay for OpenAI or DeepSeek and want one bill.
+- You use Taspi a lot and would rather not run out of credits.
+- You want to choose the AI model yourself.
+
+### **What You Need First**
+
+- A **paid plan**. On other plans the page says **Using your own AI key is available on paid plans**.
+- You must be an **administrator**. Other people do not see the page.
+- An **API key** from your provider. This is a long secret text, usually starting with `sk-`, that you create in your OpenAI or DeepSeek account. Ask your provider's account owner if you do not have one.
+
+### **How to Connect Your Key**
+
+1. Go to **Settings → AI Keys**.
+1. Under **Use your own AI key**, choose the **Provider**: **OpenAI** or **DeepSeek**.
+1. Paste your key into **API key**.
+1. If you want a specific model, type its name into **Model (optional)**. Leave it empty to use the suggested one (the box shows an example).
+1. Click **Save**. A message says **AI key saved**.
+
+From now on, Taspi answers using your key and no AI credits are deducted.
+
+### **Turn It Off or Change It**
+
+- **Pause it.** Use the **Enabled** switch at the top right of the card. When off, Taskip goes back to its own AI and your plan's credits, and your key stays saved.
+- **Replace the key.** Choose the provider, paste the new key and click **Save**.
+- **Change only the model.** Edit **Model (optional)** and leave the key box empty. The box shows the end of your saved key with **leave blank to keep**.
+- **Remove it.** Click **Remove key**. The key is deleted from Taskip and credits are used again.
+
+### **Is My Key Safe?**
+
+After you save, Taskip never shows the full key again, only a short masked hint so you can tell which key is saved. Keep your provider's own spending limits switched on, because Taskip cannot see or cap what your provider charges.
+
+### **Good to Know**
+
+- If the key is wrong, expired or has no balance left, Taspi cannot answer. Check the key in your provider's dashboard.
+- The **knowledge base** feature of the AI assistant still uses Taskip's own key, so it still uses AI credits even when your key is connected.
+- Your own key applies to the whole workspace, not just to you.

@@ -1,0 +1,90 @@
+---
+title: How to Use the Time Tracking Page
+description: Start a timer, review your week, and (for admins) approve hours, bill them to clients, and see team workload.
+sidebar:
+  order: 16
+---
+**The Time Tracking page gathers the hours of every project in one place. You use it to see your own week, send it for approval, and, if you manage a team, to approve hours, turn them into invoices and see who has too much work.**
+
+You find it in the main menu under **Time Tracking**. Clients do not see this page.
+
+### **Start a Timer**
+
+You can start a timer from anywhere in Taskip, so you do not have to open the Time Tracking page first.
+
+1. Click **Track time** in the top bar.
+1. Pick the **project**. You can also pick a **task** or a **subtask**, or choose **No task, track on the project**.
+1. Write what you are working on in the note box (optional).
+1. If your work is for a particular customer, you can narrow the project list by **client or company** first.
+1. Click **Start timer**.
+
+While a timer runs, the top bar shows it counting. Click it to see details. You can **Pause**, **Resume** or **Stop** it from there. If you would rather type the hours in yourself, click **Log time manually instead**.
+
+By default only one timer runs at a time for each person. Starting a new one stops the one before it. Your workspace administrator can allow several timers at once (see [Time Tracking Settings](/settings/time-tracking-settings/)).
+
+If you start a timer on one device and look at Taskip on another, the timer shows on both and stays in step without reloading.
+
+### **If You Forget to Stop a Timer**
+
+Sometimes a timer keeps going because a tab stayed open or the device went offline. The next time you open Taskip you see **Timer still running**. It shows when the timer started, when Taskip last heard from it, and two lengths of time. Choose one:
+
+- **Trim to last heartbeat.** Keeps only the time Taskip could actually see you working.
+- **Keep full.** Keeps the whole time from start to now.
+- **Discard.** Removes the time, so nothing is logged.
+
+You must choose before you carry on, so a forgotten timer never turns into hours nobody checked.
+
+### **Your Week (My Week)**
+
+**My Week** shows the hours you logged, day by day. Click a day to see its entries.
+
+- Each entry shows where it came from, the project, and whether it is **Billable** or **Non-billable**.
+- Use the **...** menu on an entry to **Edit entry**, **Copy link** or **Delete entry**.
+- Days with no time are marked **no time logged**, and a warning shows on days with missing hours.
+- The week's total, and how much of it is billable, shows at the bottom.
+
+When the week is complete, click **Submit week for approval**. After you submit, the button reads **Submitted**.
+
+### **Team Timesheet, Approvals, Billable Ledger and Workload**
+
+These tabs are for administrators, managers and anyone your workspace owner has given time tracking access.
+
+#### **Team Timesheet**
+
+See the hours of everyone on your team, week by week, so you can spot missing time early.
+
+#### **Approvals**
+
+Weeks that people submitted wait here under **Pending entries**.
+
+1. Tick the entries you want to answer. You can filter by project or team member first.
+1. Click **Approve**, or click **Reject**.
+1. When you reject, write **why** the hours are being rejected. The reason is kept on the record.
+
+Only approved hours can be billed.
+
+#### **Billable Ledger**
+
+The ledger lists approved, billable hours that have not been invoiced yet, and the ones that have. Each row shows the project, the member, the hours, the rate and the amount.
+
+- Use **Group by** and the filters to look at one client, project or team member.
+- A row that has no client shows **Unassigned**. Click **Assign client** to say who it is for.
+- Tick rows, then click **Generate Invoice**. Taskip asks **Which client is this invoice for?** if it cannot tell, then creates the invoice. If something goes wrong, the hours are released so you can try again.
+- Hours you will never bill can be removed with **Write off**. They show as **Written off** and are kept for the record.
+- **Export** gives you the rows as a file.
+
+You can also pull hours into an invoice from the invoice screen with **Import billable hours**.
+
+#### **Workload**
+
+Workload shows how many hours each person has planned and logged, so you can see who is overloaded and who has room before you hand out more work.
+
+### **Who Can Do What**
+
+| You are | You can |
+|---|---|
+| Any team member | Start timers, log time, see **My Week**, submit your week |
+| Someone with time tracking access | Also see Team Timesheet, Approvals, Billable Ledger and Workload |
+| A client | No access to this page |
+
+Your workspace owner can change these abilities for each role. See [Permissions and Role Management](/team-management/permissions-role-management/).

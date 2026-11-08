@@ -121,6 +121,9 @@ export default config({
     // ── Project Management ────────────────────────────────────
     projectManagement: docCollection('Project Management', 'project-management'),
 
+    // ── Reports ──────────────────────────────────────────────
+    reports: docCollection('Reports', 'reports'),
+
     // ── Documents ────────────────────────────────────────────
     documents: docCollection('Documents', 'documents'),
 

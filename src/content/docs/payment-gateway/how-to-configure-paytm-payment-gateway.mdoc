@@ -1,0 +1,44 @@
+---
+title: How to configure Paytm payment gateway in taskip
+sidebar:
+  order: 16
+---
+Paytm lets clients in India pay with UPI, wallets, cards and net banking. Follow these steps to connect Paytm to Taskip.
+
+### **Step 1: Navigate to Payment Methods in Taskip**
+
+1. Open Taskip Dashboard.
+1. Go to Settings > Payment Methods.
+1. Click on Paytm from the available payment gateways.
+
+### **Step 2: Get your credentials from Paytm**
+
+1. Log in to the Paytm for Business dashboard.
+1. Open Developer Settings > API Keys.
+1. Copy the **Merchant ID** and **Merchant Key** (use the staging keys while testing).
+
+### **Step 3: Configure Paytm in Taskip**
+
+1. In Taskip's Paytm settings:
+   - Paste the **Merchant ID** and **Merchant Key**.
+   - Enter the **Website Name** Paytm gave you. For staging it is usually WEBSTAGING, and for live it is usually DEFAULT.
+   - Toggle **Test Mode** for the staging environment.
+   - Enable **Is Default** if you want Paytm as the primary payment method.
+1. Copy the Webhook URL from Taskip.
+1. Save the settings.
+
+### **Step 4: Configure the webhook in Paytm**
+
+1. In Paytm Developer Settings, open the payment status webhook setting.
+1. Paste the Taskip **Webhook URL** and save.
+
+### **Step 5: Test and activate Paytm**
+
+- Click Save Changes to complete the integration.
+- Create a small test invoice in a supported currency and pay it from the client's invoice page to confirm the payment reaches Taskip.
+- Once it works, Paytm appears on invoices and service catalog checkout for your clients.
+
+### **Good to know**
+
+- Paytm accepts INR only.
+- The payment result always comes from Paytm's signed status check, never from the browser.

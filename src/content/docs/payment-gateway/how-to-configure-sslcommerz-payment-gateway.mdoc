@@ -1,0 +1,43 @@
+---
+title: How to configure SSLCommerz payment gateway in taskip
+sidebar:
+  order: 13
+---
+SSLCommerz lets clients in Bangladesh pay with cards, mobile banking and internet banking. Follow these steps to connect SSLCommerz to Taskip.
+
+### **Step 1: Navigate to Payment Methods in Taskip**
+
+1. Open Taskip Dashboard.
+1. Go to Settings > Payment Methods.
+1. Click on SSLCommerz from the available payment gateways.
+
+### **Step 2: Get your credentials from SSLCommerz**
+
+1. Log in to the SSLCommerz merchant panel (or register a sandbox account for testing).
+1. Find your **Store ID** and **Store Password**.
+
+### **Step 3: Configure SSLCommerz in Taskip**
+
+1. In Taskip's SSLCommerz settings:
+   - Paste the **Store ID**.
+   - Paste the **Store Password**.
+   - Toggle **Test Mode** for sandbox credentials.
+   - Enable **Is Default** if you want SSLCommerz as the primary payment method.
+1. Copy the Webhook URL from Taskip.
+1. Save the settings.
+
+### **Step 4: Configure the webhook in SSLCommerz**
+
+1. In the merchant panel, open your store's IPN settings.
+1. Paste the Taskip **Webhook URL** as the IPN URL and save.
+
+### **Step 5: Test and activate SSLCommerz**
+
+- Click Save Changes to complete the integration.
+- Create a small test invoice in a supported currency and pay it from the client's invoice page to confirm the payment reaches Taskip.
+- Once it works, SSLCommerz appears on invoices and service catalog checkout for your clients.
+
+### **Good to know**
+
+- Use BDT as the invoice currency.
+- After paying, the client is sent back to Taskip and the payment is verified with SSLCommerz.

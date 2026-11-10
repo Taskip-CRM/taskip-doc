@@ -1,0 +1,45 @@
+---
+title: How to configure Easypaisa payment gateway in taskip
+sidebar:
+  order: 17
+---
+Easypaisa lets clients in Pakistan pay with their Easypaisa account, cards and over the counter. Follow these steps to connect Easypaisa to Taskip.
+
+### **Step 1: Navigate to Payment Methods in Taskip**
+
+1. Open Taskip Dashboard.
+1. Go to Settings > Payment Methods.
+1. Click on Easypaisa from the available payment gateways.
+
+### **Step 2: Get your credentials from Easypay**
+
+1. Log in to the Easypay merchant portal (Easypaisa provides a staging portal for testing).
+1. Find your **Store ID** and your **Hash Key** (16, 24 or 32 characters).
+1. Optional: if Easypaisa gave you API access, note your API **Username**, **Password** and **Account Number**.
+
+### **Step 3: Configure Easypaisa in Taskip**
+
+1. In Taskip's Easypaisa settings:
+   - Paste the **Store ID** and **Hash Key**.
+   - Optionally add the **Username**, **Password** and **Account Number** so Taskip can check payments with Easypaisa directly.
+   - Toggle **Test Mode** for the staging environment.
+   - Enable **Is Default** if you want Easypaisa as the primary payment method.
+1. Copy the Webhook URL from Taskip.
+1. Save the settings.
+
+### **Step 4: Configure the webhook in Easypaisa**
+
+1. In the Easypay merchant portal, set the **IPN URL** to the Taskip **Webhook URL**.
+1. Save the settings.
+
+### **Step 5: Test and activate Easypaisa**
+
+- Click Save Changes to complete the integration.
+- Create a small test invoice in a supported currency and pay it from the client's invoice page to confirm the payment reaches Taskip.
+- Once it works, Easypaisa appears on invoices and service catalog checkout for your clients.
+
+### **Good to know**
+
+- Easypaisa accepts PKR only.
+- After paying, the client sees "Payment is being processed" until Easypaisa's notification arrives, then Taskip marks the invoice as paid.
+- Without the API credentials, the notification (IPN) is the only way Taskip learns about a payment, so make sure the IPN URL is saved.

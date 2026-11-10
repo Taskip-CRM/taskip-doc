@@ -1,0 +1,44 @@
+---
+title: How to configure Flutterwave payment gateway in taskip
+sidebar:
+  order: 11
+---
+Flutterwave lets clients across Africa pay with cards, bank transfer, mobile money and USSD. Follow these steps to connect Flutterwave to Taskip.
+
+### **Step 1: Navigate to Payment Methods in Taskip**
+
+1. Open Taskip Dashboard.
+1. Go to Settings > Payment Methods.
+1. Click on Flutterwave from the available payment gateways.
+
+### **Step 2: Get your credentials from Flutterwave**
+
+1. Log in to your Flutterwave dashboard.
+1. Go to Settings > API Keys and copy the **Secret key** (test or live).
+1. Go to Settings > Webhooks and choose a **Secret hash**. This is any long random value you create.
+
+### **Step 3: Configure Flutterwave in Taskip**
+
+1. In Taskip's Flutterwave settings:
+   - Paste the **Secret Key**.
+   - Paste the same value you chose as the secret hash into **Webhook Hash**.
+   - Enable **Is Default** if you want Flutterwave as the primary payment method.
+1. Copy the Webhook URL from Taskip.
+1. Save the settings.
+
+### **Step 4: Configure the webhook in Flutterwave**
+
+1. In Flutterwave, open Settings > Webhooks.
+1. Paste the Taskip **Webhook URL** and enter the secret hash.
+1. Save the settings.
+
+### **Step 5: Test and activate Flutterwave**
+
+- Click Save Changes to complete the integration.
+- Create a small test invoice in a supported currency and pay it from the client's invoice page to confirm the payment reaches Taskip.
+- Once it works, Flutterwave appears on invoices and service catalog checkout for your clients.
+
+### **Good to know**
+
+- The key decides test or live mode.
+- If the Webhook Hash in Taskip differs from the secret hash in Flutterwave, webhook calls are rejected.

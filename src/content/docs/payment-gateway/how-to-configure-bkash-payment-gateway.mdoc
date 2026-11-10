@@ -1,0 +1,37 @@
+---
+title: How to configure bKash payment gateway in taskip
+sidebar:
+  order: 14
+---
+bKash lets clients in Bangladesh pay from their bKash mobile wallet. Follow these steps to connect bKash to Taskip.
+
+### **Step 1: Navigate to Payment Methods in Taskip**
+
+1. Open Taskip Dashboard.
+1. Go to Settings > Payment Methods.
+1. Click on bKash from the available payment gateways.
+
+### **Step 2: Get your credentials from bKash**
+
+1. Ask bKash for tokenized checkout (API) access for your merchant account. For testing, bKash provides sandbox credentials.
+1. Collect the **Username**, **Password**, **App Key** and **App Secret**.
+
+### **Step 3: Configure bKash in Taskip**
+
+1. In Taskip's bKash settings:
+   - Paste the **Username**, **Password**, **App Key** and **App Secret**.
+   - Toggle **Test Mode** for sandbox credentials.
+   - Enable **Is Default** if you want bKash as the primary payment method.
+1. Save the settings.
+
+### **Step 4: Test and activate bKash**
+
+- Click Save Changes to complete the integration.
+- Create a small test invoice in a supported currency and pay it from the client's invoice page to confirm the payment reaches Taskip.
+- Once it works, bKash appears on invoices and service catalog checkout for your clients.
+
+### **Good to know**
+
+- bKash accepts BDT only. Invoices in another currency cannot be paid with bKash.
+- bKash has no webhook in this flow. Taskip confirms the payment when the client returns to Taskip after paying, so ask clients to wait for the confirmation page.
+- If a client pays and closes the page before returning, the invoice is not marked as paid until they come back, so check bKash for payments that are missing in Taskip.

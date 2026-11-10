@@ -1,0 +1,44 @@
+---
+title: How to configure Paystack payment gateway in taskip
+sidebar:
+  order: 10
+---
+Paystack lets clients in Nigeria, Ghana, South Africa and Kenya pay with cards, bank transfer and mobile money. Follow these steps to connect Paystack to Taskip.
+
+### **Step 1: Navigate to Payment Methods in Taskip**
+
+1. Open Taskip Dashboard.
+1. Go to Settings > Payment Methods.
+1. Click on Paystack from the available payment gateways.
+
+### **Step 2: Get your secret key from Paystack**
+
+1. Log in to your Paystack dashboard.
+1. Go to Settings > API Keys & Webhooks.
+1. Copy the **Secret key**. Use the test key while testing and the live key for real payments.
+
+### **Step 3: Configure Paystack in Taskip**
+
+1. In Taskip's Paystack settings:
+   - Paste the **Secret Key**.
+   - Enable **Is Default** if you want Paystack as the primary payment method.
+   - Enable **Is Default** if you want Paystack as the primary payment method.
+1. Copy the Webhook URL from Taskip.
+1. Save the settings.
+
+### **Step 4: Configure the webhook in Paystack**
+
+1. On the same Paystack page, paste the Taskip **Webhook URL** into the webhook field.
+1. Save the settings in both places.
+
+### **Step 5: Test and activate Paystack**
+
+- Click Save Changes to complete the integration.
+- Create a small test invoice in a supported currency and pay it from the client's invoice page to confirm the payment reaches Taskip.
+- Once it works, Paystack appears on invoices and service catalog checkout for your clients.
+
+### **Good to know**
+
+- The key decides test or live mode, so there is no Test Mode switch.
+- Your client needs an email address on file, because Paystack requires one.
+- Use a currency your Paystack account supports, such as NGN, GHS, ZAR, KES or USD.

@@ -1,6 +1,6 @@
 ---
 title: Time Tracking Settings
-description: Set the workspace rules for timers, rounding, working hours, billing profiles and budgets.
+description: Set the workspace rules for timers, approval, rounding, working hours, billing profiles and budgets.
 sidebar:
   order: 15
 ---
@@ -14,9 +14,26 @@ The page has up to three tabs.
 - **Stale timer threshold (minutes).** If Taskip has not heard from a running timer for this long, the timer is stopped automatically and the person is asked to review it (see [How to Use the Time Tracking Page](/project-management/how-to-use-the-time-tracking-page/)).
 - **Rounding increment (minutes).** Rounds each entry to a neat block, for example 15 minutes. Enter 0 to switch rounding off.
 - **Rounding mode.** **Nearest**, **Up** or **Down**.
-- **Default currency.** Used for billable amounts.
+- **Default hourly rate.** Used for billable time when no task, project or member rate is set. Leave it empty to have no default.
+- **Default currency.** Used for billable amounts. You can pick a different currency for time tracking than your workspace currency, and choose **Workspace default** to follow it again.
 - **First day of week.** Decides where your timesheet weeks start.
 - **Working hours per day.** Used to judge whether a day is missing hours and to measure workload.
+- **Show the Workload tab.** Switches the Workload tab on. It compares each person's weekly hours with the estimates on their tasks, so it is only useful once people have weekly hours and tasks have estimates.
+
+#### **Time Approval**
+
+**Time approval** decides whose time has to be approved before it can be billed.
+
+| Policy | Who needs approval | Who is approved automatically |
+|---|---|---|
+| No approval | Nobody | Everyone |
+| Members only (recommended, the default for new workspaces) | Team members | Owner, Administrators, Managers |
+| Everyone except admins | Team members and Managers | Owner and Administrators |
+| Everyone | Everyone | Nobody |
+
+Time that skips approval goes straight to the Billable Ledger and stays editable until it is invoiced. If you loosen the policy while entries are waiting, Taskip shows how many are waiting from people who no longer need approval. Click **Approve them now** to clear them.
+
+Until a default rate exists, the Time Tracking page also shows a **Set up billing for time tracking** card that asks for a default rate and an approval policy. For the whole picture see [Time Tracking in Taskip: How It Works](/project-management/time-tracking-how-it-works/).
 
 Click **Save** after changing anything.
 

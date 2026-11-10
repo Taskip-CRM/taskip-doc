@@ -1,0 +1,44 @@
+---
+title: How to configure Mercado Pago payment gateway in taskip
+sidebar:
+  order: 12
+---
+Mercado Pago is the leading payment method in Latin America (Brazil, Argentina, Mexico, Chile and Colombia). Follow these steps to connect it to Taskip.
+
+### **Step 1: Navigate to Payment Methods in Taskip**
+
+1. Open Taskip Dashboard.
+1. Go to Settings > Payment Methods.
+1. Click on Mercado Pago from the available payment gateways.
+
+### **Step 2: Get your credentials from Mercado Pago**
+
+1. Log in to Mercado Pago Developers and open Your integrations.
+1. Create or open an application and go to its credentials.
+1. Copy the **Access token**. Use the test credentials while testing.
+
+### **Step 3: Configure Mercado Pago in Taskip**
+
+1. In Taskip's Mercado Pago settings:
+   - Paste the **Access Token**.
+   - Toggle **Test Mode** to send clients to the Mercado Pago sandbox checkout.
+   - Enable **Is Default** if you want Mercado Pago as the primary payment method.
+1. Copy the Webhook URL from Taskip.
+1. Save the settings.
+
+### **Step 4: Configure the webhook in Mercado Pago**
+
+1. In your Mercado Pago application, open Webhooks and configure notifications.
+1. Paste the Taskip **Webhook URL** and select the **Payments** topic.
+1. Copy the secret signature and paste it into **Webhook Secret** in Taskip, then save.
+
+### **Step 5: Test and activate Mercado Pago**
+
+- Click Save Changes to complete the integration.
+- Create a small test invoice in a supported currency and pay it from the client's invoice page to confirm the payment reaches Taskip.
+- Once it works, Mercado Pago appears on invoices and service catalog checkout for your clients.
+
+### **Good to know**
+
+- Use the currency of the country your account is registered in, for example BRL, ARS or MXN.
+- Taskip always re-checks the payment with Mercado Pago before marking an invoice as paid.

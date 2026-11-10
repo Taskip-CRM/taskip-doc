@@ -1,0 +1,184 @@
+---
+title: "Time Tracking in Taskip: How It Works"
+description: >-
+  From a running timer to a paid invoice: how time is tracked, approved, rated
+  and billed, who can do what, and what clients see.
+sidebar:
+  order: 16
+---
+**Taskip Time Tracking turns the hours your team works into invoices your clients pay, in one place. Team members track time against projects and tasks. Admins approve it, set rates, and bill it to clients from the Billable Ledger. Clients can see the hours behind their project if you choose to share them.**
+
+### **How Time Moves Through Taskip**
+
+Every time entry follows the same path:
+
+1. **Track.** A team member runs a timer or logs time by hand.
+1. **Submit.** The member sends their time for approval, one entry at a time or a whole week at once.
+1. **Approve.** A manager or admin approves it, or sends it back with a reason. Depending on your approval policy, some people's time is approved automatically.
+1. **Bill.** Approved, billable time lands in the Billable Ledger, grouped by client, with its rate already worked out.
+1. **Invoice.** One click turns ledger rows into a draft invoice for that client.
+
+Rejected time goes back to the member as a draft. Time from roles that skip approval goes straight to the ledger.
+
+Time tracking lives under **Time Tracking** in the sidebar, with a timer in the top bar on every page. It is built into Projects, so hours, budgets, rates and invoices all use the same data.
+
+### **Roles and Boundaries**
+
+Admins and managers run the money side. Team members only track and submit their own time. Clients only see hours you choose to share. The workspace owner and the Administrator and Manager roles share the same time tracking powers.
+
+| What | Owner / Administrator | Manager | Team member | Client |
+|---|---|---|---|---|
+| Track time (timer or manual) | Yes | Yes | Yes | No |
+| See and edit own time | Yes | Yes | Yes | No |
+| See the whole team's time | Yes | Yes | Only if an admin allows it | No |
+| Submit time for approval | Yes | Yes | Yes | No |
+| Approve or reject time | Yes | Yes | No | No |
+| Unlock approved or locked time | Yes | Yes | No | No |
+| See rates, costs and amounts | Yes | Yes | No, hidden entirely | No |
+| Manage the Billable Ledger and invoice | Yes | Yes | No | No |
+| Workload view (capacity, time off) | Yes | Yes | Own capacity and time off only | No |
+| Export timesheets | Yes | Yes | Yes, without rate columns | No |
+| Set the approval policy and workspace settings | Yes | With settings access | No | No |
+| Budget policy settings | Owner only | No | No | No |
+| See project hours | Yes | Yes | Own time | Only when the project shares time with the client |
+
+Custom roles start with no time tracking access. An administrator can grant them up to what a team member has. Member access can be widened in **Teams → Permissions**. See [Permissions and Role Management](/team-management/permissions-role-management/).
+
+### **Team Member Workflow**
+
+A team member's whole job is: track time, check the week in **My Time**, and submit it.
+
+#### **1. Track Time**
+
+There are three ways to record time, and all of them end up in the same place.
+
+- **Top bar timer.** Start it from any page. Pick a project, task or subtask, or choose **No task, track on the project**. On a project with several clients, pick who to bill, or choose **Not sure, let an admin decide later**.
+- **On a task.** **Start Tracker** runs a timer on that task, and **Log time entry** adds time by hand. The task also shows its tracked time against its estimate.
+- **Log time manually.** Enter the start and end, any break, a description and tags, and mark it billable or not. Taskip works out the duration itself.
+
+One timer runs at a time; starting a new one stops the last (unless your administrator allows several). If you forget a timer, Taskip reminds you after 8 hours and stops it after 12 hours without activity. It then asks you to keep the full time, keep it up to when the connection was lost, or discard it. See [How to Use the Time Tracking Page](/project-management/how-to-use-the-time-tracking-page/).
+
+Budgets protect the project. When a project's hour or money budget, or a task's limit, is reached, Taskip stops new time or warns you, depending on the project's settings. Overlapping entries get a warning but are still saved. See [How to Track Time in a Project](/project-management/how-to-track-time-in-a-project/).
+
+#### **2. Review Your Week in My Time**
+
+**My Time** has two views.
+
+- **Week** shows each day's hours, flags days with missing hours, and shows if a week was sent back.
+- **All entries** lists everything you have tracked, with filters.
+
+You can edit or delete your own drafts and rejected entries freely. Once time is submitted or approved, an admin has to unlock it before it changes.
+
+#### **3. Submit for Approval**
+
+Click **Submit for approval** to send the week, or select entries and submit them together. You get a notification when your time is approved, or when it is sent back with the reason. Rejected time returns to draft, so you can fix it and submit again.
+
+If your workspace does not need approval for your role, there is nothing to submit: your time is approved as you track it.
+
+Team members never see rates, costs or amounts. Those fields are not sent to them at all.
+
+### **Admin and Manager Workflow**
+
+An admin sets billing up once, then each week approves time and turns the Billable Ledger into invoices.
+
+#### **1. Set Up Billing (Once)**
+
+Until a default rate exists, Time Tracking shows a **Set up billing for time tracking** card that asks for two things: a default rate and an approval policy.
+
+The approval policy lives in **Settings → Time Tracking → Workspace Settings → Time approval**.
+
+| Policy | Who needs approval | Who is approved automatically |
+|---|---|---|
+| No approval | Nobody | Everyone |
+| Members only (recommended, the default for new workspaces) | Team members | Owner, Administrators, Managers |
+| Everyone except admins | Team members and Managers | Owner and Administrators |
+| Everyone | Everyone | Nobody |
+
+Time that skips approval goes straight to the Billable Ledger and stays editable until it is invoiced. If you loosen the policy, click **Approve them now** to clear the entries already waiting. See [Time Tracking Settings](/settings/time-tracking-settings/).
+
+#### **2. Set Rates**
+
+Rates can be set at several levels, and the most specific one wins:
+
+1. The time entry itself
+1. The subtask, then the task
+1. The project
+1. The project's billing profile
+1. The team member's rate
+1. The workspace default
+
+Cost rates (what a person's hour costs you) follow the same idea, so Taskip can show profit per project. A rate is fixed onto each entry when it is tracked, so changing a rate later does not rewrite past time.
+
+**Billing profiles** (**Settings → Time Tracking → Billing Profiles**) are reusable sets of defaults: billing type, billable rate, cost rate and currency. Apply one in a project's **Settings → Billing & budget**, which also holds the billing type (Hourly, Fixed price, Retainer, Non-billable or Internal), whether time is billable by default, the budget and the contract value. Non-billable and internal projects never produce billable time.
+
+#### **3. Approve Time**
+
+The **Approvals** tab is the queue of submitted time, with a count badge. Approve entries, reject them with a reason, or set and change rates before approving. Group by member or project and export the queue. People are notified: project leads when time is submitted, and the member when it is approved or rejected.
+
+**Team Timesheet** shows everyone's time across all projects, for checking, editing and exporting.
+
+Approved time can still be corrected: an admin unlocks it with a reason, and the change is recorded. Workspaces can also lock time older than a day, a week, a month or the month end.
+
+#### **4. Bill from the Billable Ledger**
+
+Approved, billable time appears in the **Billable Ledger**. The **By client** view groups it per client with totals and is the default. **All entries** adds filters and a date range.
+
+- **Generate invoice** turns a client's rows into a draft invoice, one client and one currency at a time. Lines read "Project, Task" with the member's name. Rows are reserved while the invoice is created, so no hour is billed twice.
+- **Assign client** is for time tracked as "let an admin decide later".
+- **Set rate** is for rows marked **Needs rate**, optionally saving the rate to the project.
+- **Don't bill** writes time off, with an optional reason.
+
+From the invoice side, **Import billable hours** pulls a client's ledger time into an invoice, grouped by entry, task, member or day. Ledger rows show as **Not invoiced**, **In draft invoice**, **Invoiced** or **Won't bill**.
+
+#### **5. Plan Capacity in Workload**
+
+**Workload** is optional and is switched on in settings (**Show the Workload tab**). It shows each person per week: capacity minus time off, against hours planned in task estimates and hours actually logged. Each week reads as under, ok or over. Admins set weekly hours and working days, record time off, drill into tasks and reassign them. Team members can see their own capacity and add or remove their own time off.
+
+### **What Clients See**
+
+Clients never see your timesheets, rates or team. They see only the hours you decide to share and the invoices you send.
+
+- **Project Time tab.** When a project's **Show time details to client** setting is on (in the project's access settings), the client sees a **Time** tab on that project in the client portal. It shows total hours and hours by date. It never shows rates, costs or who worked, and clients cannot edit anything.
+- **Invoices.** Invoices built from the Billable Ledger list the billed hours as lines, labelled by project and task with the team member's name.
+- **Nothing else.** Clients cannot open Time Tracking, start timers or see approvals. With the share setting off, a client sees no time at all.
+
+### **Feature Reference**
+
+The Time Tracking page has five tabs. Each one appears only for people allowed to use it.
+
+| Tab or feature | Where | Who sees it | What it does |
+|---|---|---|---|
+| My Time | Time Tracking | Everyone who tracks time | Week and All entries views of your own time; submit for approval |
+| Team Timesheet | Time Tracking | Admins, managers, members granted team view | Everyone's time across projects; edit, bulk submit, export |
+| Approvals | Time Tracking | Admins and managers | Queue of submitted time; approve, reject with reason, set rates, export |
+| Billable Ledger | Time Tracking | Admins and managers | Approved billable time by client; generate invoices, assign client, set rate, don't bill |
+| Workload | Time Tracking | Admins and managers, when switched on | Capacity, time off and planned versus logged hours per person per week |
+| Top bar timer | Every page | Team (not clients) | Start, pause, resume and stop a timer, or log time by hand |
+| Task timer | Task view and task lists | Team | Track or log time on a task; see tracked time against the estimate |
+| Billing profiles | Settings → Time Tracking | Admins | Reusable billing type, rates and currency for projects |
+| Billing & budget | Project settings | Admins and managers | Billing type, rates, billable default, budget, contract value |
+| Approval policy and lock period | Settings → Time Tracking | Admins | Who needs approval; how old time locks |
+| Import billable hours | Invoices | Admins and managers | Pull a client's ledger time into an invoice |
+| Time tracking report | Reports | Admins and managers | Hours per project and member, with trends. See [How to Use Reports](/reports/how-to-use-reports/) |
+| Client Time tab | Client portal, per project | Clients, when shared | Total hours and hours by date, no rates or names |
+| Exports | Timesheet, Approvals, Ledger | Anyone with the tab | Excel or CSV; rate columns removed for people without rate access |
+| Notifications | In app | Members and project leads | Submitted, approved, rejected, timer running long, missing timesheet |
+| AI agent | Taspi | Per user permissions | Log time, start and stop timers, summarise hours, work the ledger |
+
+### **Frequently Asked Questions**
+
+**Do admins have to approve their own time?** No. With the default **Members only** policy, the owner, Administrators and Managers are approved automatically.
+
+**Can a team member see a colleague's hours?** Not by default. An admin can allow it in **Teams → Permissions**.
+
+**Can team members see what we charge?** No. Rates, costs and amounts are never sent to team members.
+
+**What happens if someone forgets to stop a timer?** Taskip reminds them after 8 hours and stops the timer after 12 hours without activity, then asks them to keep, trim or discard the time.
+
+**Can approved time be changed?** Yes, by an admin who unlocks it and gives a reason. The change is recorded.
+
+**Can I bill several clients from one project?** Yes. Pick the client when tracking, or leave it for an admin to assign in the ledger. Each invoice covers one client and one currency.
+
+**Can I avoid billing some time?** Yes. Mark it non-billable, or use **Don't bill** in the ledger with a reason.
+
+**What does the client see?** Only total hours and hours by date on projects where you turn on time sharing, plus the invoices you send.

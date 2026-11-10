@@ -29,6 +29,7 @@ export default defineConfig({
         { label: 'Invoices', autogenerate: { directory: 'invoices' } },
         { label: 'Team Management', autogenerate: { directory: 'team-management' } },
         { label: 'Project Management', autogenerate: { directory: 'project-management' } },
+        { label: 'Reports', autogenerate: { directory: 'reports' } },
         { label: 'Documents', autogenerate: { directory: 'documents' } },
         { label: 'Forms', autogenerate: { directory: 'forms' } },
         { label: 'Emails', autogenerate: { directory: 'emails' } },

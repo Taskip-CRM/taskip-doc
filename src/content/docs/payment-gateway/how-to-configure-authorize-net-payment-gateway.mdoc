@@ -1,0 +1,45 @@
+---
+title: How to configure Authorize.net payment gateway in taskip
+sidebar:
+  order: 15
+---
+Authorize.net lets clients in the US and Canada pay by card on a secure hosted page. Follow these steps to connect Authorize.net to Taskip.
+
+### **Step 1: Navigate to Payment Methods in Taskip**
+
+1. Open Taskip Dashboard.
+1. Go to Settings > Payment Methods.
+1. Click on Authorize.net from the available payment gateways.
+
+### **Step 2: Get your credentials from Authorize.net**
+
+1. Log in to the Authorize.net Merchant Interface (or the sandbox).
+1. Go to Account > Settings > API Credentials & Keys.
+1. Copy the **API Login ID**, create a **Transaction Key** and create a **Signature Key**.
+
+### **Step 3: Configure Authorize.net in Taskip**
+
+1. In Taskip's Authorize.net settings:
+   - Paste the **API Login ID** and **Transaction Key**.
+   - Paste the **Signature Key**.
+   - Toggle **Test Mode** for the sandbox.
+   - Enable **Is Default** if you want Authorize.net as the primary payment method.
+1. Copy the Webhook URL from Taskip.
+1. Save the settings.
+
+### **Step 4: Configure the webhook in Authorize.net**
+
+1. In the Merchant Interface, go to Account > Webhooks and add an endpoint.
+1. Paste the Taskip **Webhook URL** and select the payment events (for example authorization and capture).
+1. Save the settings.
+
+### **Step 5: Test and activate Authorize.net**
+
+- Click Save Changes to complete the integration.
+- Create a small test invoice in a supported currency and pay it from the client's invoice page to confirm the payment reaches Taskip.
+- Once it works, Authorize.net appears on invoices and service catalog checkout for your clients.
+
+### **Good to know**
+
+- Supported currencies follow your merchant account, typically USD and CAD.
+- Clients are sent to Authorize.net's hosted payment page, so card details never touch Taskip.

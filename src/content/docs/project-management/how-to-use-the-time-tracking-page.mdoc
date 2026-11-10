@@ -1,12 +1,14 @@
 ---
 title: How to Use the Time Tracking Page
-description: Start a timer, review your week, and (for admins) approve hours, bill them to clients, and see team workload.
+description: Start a timer, review your week in My Time, and (for admins) approve hours, bill them to clients, and see team workload.
 sidebar:
-  order: 16
+  order: 17
 ---
 **The Time Tracking page gathers the hours of every project in one place. You use it to see your own week, send it for approval, and, if you manage a team, to approve hours, turn them into invoices and see who has too much work.**
 
-You find it in the main menu under **Time Tracking**. Clients do not see this page.
+You find it in the main menu under **Time Tracking**. Clients do not see this page. For the whole story, from timer to invoice, read [Time Tracking in Taskip: How It Works](/project-management/time-tracking-how-it-works/).
+
+If no default rate exists yet, administrators see a **Set up billing for time tracking** card at the top. It asks for a default rate and a time approval policy (see [Time Tracking Settings](/settings/time-tracking-settings/)).
 
 ### **Start a Timer**
 
@@ -34,16 +36,20 @@ Sometimes a timer keeps going because a tab stayed open or the device went offli
 
 You must choose before you carry on, so a forgotten timer never turns into hours nobody checked.
 
-### **Your Week (My Week)**
+### **Your Time (My Time)**
 
-**My Week** shows the hours you logged, day by day. Click a day to see its entries.
+**My Time** shows your own time in two views.
 
-- Each entry shows where it came from, the project, and whether it is **Billable** or **Non-billable**.
-- Use the **...** menu on an entry to **Edit entry**, **Copy link** or **Delete entry**.
-- Days with no time are marked **no time logged**, and a warning shows on days with missing hours.
-- The week's total, and how much of it is billable, shows at the bottom.
+- **Week** shows the hours you logged, day by day. Click a day to see its entries. Days with no time are marked **no time logged**, and a warning shows on days with missing hours. If a week was sent back, it says so. The week's total, and how much of it is billable, shows at the bottom.
+- **All entries** lists everything you have tracked, with filters.
 
-When the week is complete, click **Submit week for approval**. After you submit, the button reads **Submitted**.
+Each entry shows where it came from, the project, and whether it is **Billable** or **Non-billable**. Use the **...** menu on an entry to **Edit entry**, **Copy link** or **Delete entry**. You can edit or delete your own drafts and rejected entries freely. Once time is submitted or approved, an administrator has to unlock it before it changes.
+
+When the week is complete, click **Submit for approval**. You can also select entries and submit just those. After you submit, the button reads **Submitted**. You get a notification when your time is approved, or when it is sent back with the reason. Rejected time returns to draft so you can fix it and submit again.
+
+If your workspace does not need approval for your role, there is nothing to submit. Your time is approved as you track it.
+
+Team members never see rates, costs or amounts.
 
 ### **Team Timesheet, Approvals, Billable Ledger and Workload**
 
@@ -51,40 +57,42 @@ These tabs are for administrators, managers and anyone your workspace owner has 
 
 #### **Team Timesheet**
 
-See the hours of everyone on your team, week by week, so you can spot missing time early.
+See the hours of everyone on your team across all projects, so you can spot missing time early. You can check, edit and export it. Team members only see this tab if an administrator allows it in **Teams → Permissions**.
 
 #### **Approvals**
 
-Weeks that people submitted wait here under **Pending entries**.
+Time that people submitted waits here under **Pending entries**, and the tab shows how many are waiting.
 
-1. Tick the entries you want to answer. You can filter by project or team member first.
+1. Tick the entries you want to answer. You can filter, or group by member or project, first.
+1. If an entry needs a rate, set or change it before you approve.
 1. Click **Approve**, or click **Reject**.
-1. When you reject, write **why** the hours are being rejected. The reason is kept on the record.
+1. When you reject, write **why** the hours are being rejected. The reason is kept on the record and the entry goes back to the member as a draft.
 
-Only approved hours can be billed.
+You can export the queue. Project leads are notified when time is submitted, and the member is notified when it is approved or rejected. Only approved hours can be billed. Time from roles that do not need approval skips this queue and goes straight to the ledger.
 
 #### **Billable Ledger**
 
-The ledger lists approved, billable hours that have not been invoiced yet, and the ones that have. Each row shows the project, the member, the hours, the rate and the amount.
+The ledger lists approved, billable hours that have not been invoiced yet, and the ones that have. Each row shows the project, the member, the hours, the rate and the amount, and a status: **Not invoiced**, **In draft invoice**, **Invoiced** or **Won't bill**.
 
-- Use **Group by** and the filters to look at one client, project or team member.
+- **By client** is the default view. It groups the hours per client with totals. **All entries** adds filters and a date range.
 - A row that has no client shows **Unassigned**. Click **Assign client** to say who it is for.
-- Tick rows, then click **Generate Invoice**. Taskip asks **Which client is this invoice for?** if it cannot tell, then creates the invoice. If something goes wrong, the hours are released so you can try again.
-- Hours you will never bill can be removed with **Write off**. They show as **Written off** and are kept for the record.
+- A row marked **Needs rate** has no rate yet. Click **Set rate**, and you can save the rate to the project.
+- Tick rows, then click **Generate invoice**. Taskip creates a draft invoice for one client and one currency at a time, with lines like "Project, Task" and the member's name. Taskip asks **Which client is this invoice for?** if it cannot tell. The rows are reserved while the invoice is created, so no hour is billed twice. If something goes wrong, the hours are released so you can try again.
+- Hours you will never bill can be removed with **Don't bill**, with an optional reason. They show as **Won't bill** and are kept for the record.
 - **Export** gives you the rows as a file.
 
-You can also pull hours into an invoice from the invoice screen with **Import billable hours**.
+You can also pull hours into an invoice from the invoice screen with **Import billable hours**. It groups a client's ledger time by entry, task, member or day.
 
 #### **Workload**
 
-Workload shows how many hours each person has planned and logged, so you can see who is overloaded and who has room before you hand out more work.
+Workload is optional. An administrator switches it on in the settings (**Show the Workload tab**). It shows each person per week: their capacity minus time off, against the hours planned in task estimates and the hours actually logged. Each week reads as under, ok or over, so you can see who is overloaded and who has room before you hand out more work. Administrators set weekly hours and working days, record time off, and can open a person's tasks to reassign them. Team members see only their own capacity and can add or remove their own time off.
 
 ### **Who Can Do What**
 
 | You are | You can |
 |---|---|
-| Any team member | Start timers, log time, see **My Week**, submit your week |
+| Any team member | Start timers, log time, see **My Time**, submit your time |
 | Someone with time tracking access | Also see Team Timesheet, Approvals, Billable Ledger and Workload |
-| A client | No access to this page |
+| A client | No access to this page. If a project shares its time, the client sees a **Time** tab on that project (see [Time Tracking in Taskip: How It Works](/project-management/time-tracking-how-it-works/)) |
 
 Your workspace owner can change these abilities for each role. See [Permissions and Role Management](/team-management/permissions-role-management/).

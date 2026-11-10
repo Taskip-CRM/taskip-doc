@@ -1,0 +1,44 @@
+---
+title: How to configure GoCardless payment gateway in taskip
+sidebar:
+  order: 9
+---
+GoCardless collects payments directly from your clients' bank accounts (Direct Debit), which suits retainers and larger invoices. Follow these steps to connect GoCardless to Taskip.
+
+### **Step 1: Navigate to Payment Methods in Taskip**
+
+1. Open Taskip Dashboard.
+1. Go to Settings > Payment Methods.
+1. Click on GoCardless from the available payment gateways.
+
+### **Step 2: Get your credentials from GoCardless**
+
+1. Log in to GoCardless and open Developers.
+1. Create an **Access token** with read and write access (use a sandbox token while testing).
+
+### **Step 3: Configure GoCardless in Taskip**
+
+1. In Taskip's GoCardless settings:
+   - Paste the **Access Token**.
+   - Toggle **Test Mode** if you are using a sandbox token.
+   - Enable **Is Default** if you want GoCardless as the primary payment method.
+1. Copy the Webhook URL from Taskip.
+1. Save the settings.
+
+### **Step 4: Configure the webhook in GoCardless**
+
+1. In GoCardless, go to Developers > Webhook endpoints and create an endpoint.
+1. Paste the Taskip **Webhook URL** and set a secret.
+1. Paste the same secret into **Webhook Secret** in Taskip and save.
+
+### **Step 5: Test and activate GoCardless**
+
+- Click Save Changes to complete the integration.
+- Create a small test invoice in a supported currency and pay it from the client's invoice page to confirm the payment reaches Taskip.
+- Once it works, GoCardless appears on invoices and service catalog checkout for your clients.
+
+### **Good to know**
+
+- Supported currencies: GBP, EUR, SEK, DKK, AUD, NZD, CAD and USD.
+- A bank debit is not instant. The client sees "Payment is being processed" after they authorise it, and Taskip marks the invoice as paid when GoCardless confirms the payment, usually a few days later.
+- The webhook is required for GoCardless: it is what marks the invoice as paid.

@@ -1,0 +1,67 @@
+---
+title: How To Configure MYOB Integration
+description: >-
+  Connect MYOB to Taskip with your own MYOB app credentials to sync clients,
+  invoices, and payments with your MYOB cloud company file.
+sidebar:
+  order: 5
+---
+The MYOB integration syncs clients, invoices, and payments between Taskip and your MYOB cloud company file. Each workspace connects with its own MYOB app, so you create the app in your MYOB developer account and paste its credentials into Taskip.
+
+## What gets synced
+
+- **Clients** you add or update in Taskip are created or updated as MYOB customers.
+- **Invoices** issued in Taskip are created in MYOB as service invoices for the matching customer.
+- **Payments** recorded in Taskip are sent to MYOB and applied to the matching invoice, deposited to the bank account you choose in the settings.
+
+## Before you start
+
+- You need a MYOB **cloud** company file. Desktop-only AccountRight files cannot be reached from Taskip.
+- You must be an **administrator** of that company file to approve the connection.
+- You need a MYOB developer account that can create an app and get an API key. MYOB controls who can get API keys and on what terms, so check the current requirements on the MYOB developer site (developer.myob.com) before you begin.
+- You need permission to edit integration settings in your Taskip workspace.
+
+## Part 1: Create a MYOB app
+
+1. Sign in to your MYOB developer account.
+1. Register a new app. Give it a name, such as the name of your business.
+1. For the **redirect URI**, use the exact URL that Taskip shows in the MYOB settings (see Part 2). It must match character for character.
+1. Save the app and copy its **Client ID** (the API key) and **Client secret**.
+
+## Part 2: Add the credentials in Taskip
+
+1. Go to **Settings → Integrations** and find the **MYOB** card.
+1. Click **Set up**. The MYOB settings window opens.
+1. Copy the **Redirect URI** from the window and add it to your MYOB app if you have not already.
+1. Paste your **Client ID (API key)** and **Client secret**, then click **Save credentials**.
+
+The secret is stored encrypted and is never shown again. To rotate it later, paste the new secret and save. Leave the secret blank to keep the current one.
+
+## Part 3: Connect and map
+
+1. Click **Connect MYOB**. You are taken to MYOB to sign in.
+1. Sign in as an administrator of your company file and approve access for Taskip.
+1. You return to Taskip, where the card shows **Connected**.
+1. Open the MYOB settings and, on the **Settings & Mapping** tab, choose:
+   - **Default Income Account**: the account used on invoice lines sent to MYOB.
+   - **Default Deposit Account**: the bank account payments are deposited to.
+   - **Default Tax Code**: the tax code applied to invoice lines.
+   - **Invoice Number Strategy**: use the Taskip invoice number, or let MYOB assign one.
+1. Click **Save Settings**. The income account, deposit account, and tax code are required.
+
+You can also click **Sync Contacts** or **Sync Invoices** to queue a sync on demand.
+
+## Sync logs
+
+The **Sync Logs** tab lists every sync with its result. When something fails, the entry shows the reason and a hint, and you can click **Retry** on items that can be retried. You can delete selected logs, clear logs older than 7, 30, or 90 days, or clear them all.
+
+## Changing or removing credentials
+
+You cannot change the Client ID or remove the credentials while MYOB is connected. Click **Disconnect** first. Disconnecting stops syncing but does not delete anything already in MYOB.
+
+## Troubleshooting
+
+- **"Add your MYOB app credentials first."** Save the Client ID and secret before clicking Connect.
+- **The connection fails after signing in to MYOB.** Check that the redirect URI in your MYOB app matches the one shown in Taskip exactly, and that you signed in as a company file administrator.
+- **Invoices fail to sync.** Open the Sync Logs tab for the reason. A missing income account, tax code, or customer is the most common cause.
+- **Syncing pauses with a rate-limit message.** MYOB limits how many requests an app can make. Taskip waits and retries automatically.

@@ -1,0 +1,55 @@
+---
+title: How to Connect a CalDAV Calendar
+description: >-
+  Connect a CalDAV calendar such as iCloud, Nextcloud or Fastmail so your
+  bookings appear on it and its events appear in Taskip.
+sidebar:
+  order: 12
+---
+**A CalDAV calendar works in both directions. Taskip writes your events and bookings to it, and events you add in your desktop calendar app show up in the Taskip calendar.**
+
+### **Connect the Calendar**
+
+1. Go to **Settings → Meeting Settings → Integrations**.
+1. Find **CalDAV calendar** and click **Connect calendar**.
+1. Enter the **Server URL**. It must start with `https://`.
+1. Enter your **Username** and **Password**. Use an app password if your provider offers one.
+1. Click **Find calendars**.
+1. Pick the calendar from **Calendars found**.
+1. Optional: give it a **Name**.
+1. Click **Connect**.
+
+Taskip checks that it can write to the calendar before it saves the connection. If it cannot, you see the reason and nothing is saved.
+
+Each connected calendar is listed with its status (**Active** or **Error**) and when it was **Last checked**. Click **Test** to check it again, or **Remove** to disconnect it.
+
+### **Send Events to the Calendar**
+
+- On any event, turn on **Add to CalDAV calendar** and pick the calendar. See [How to Use the Meeting Calendar](/meeting-scheduler/how-to-use-the-meeting-calendar/).
+- To write **every booking** to a calendar, use **Also add every booking to…** on the same Integrations page. Choose a Google Calendar or a CalDAV calendar and click **Save**. Choose **Don't add** to turn it off.
+
+New, rescheduled and canceled bookings are kept up to date on that calendar.
+
+### **See Your Desktop Calendar Events in Taskip**
+
+Events you add in your calendar app, such as Apple Calendar or Thunderbird, appear in the **Calendar** tab of Meetings.
+
+- **When** – when you open the Calendar tab, Taskip reads each connected calendar in the background, at most once every 5 minutes. The events appear a few seconds later, and the tab refreshes once by itself.
+- **How far** – events from 14 days back to 180 days ahead.
+- **Read-only** – these events cannot be edited, rescheduled or canceled in Taskip, and no invites or reminders are sent for them. Change them in your calendar app.
+- **Changes** – if you move or edit an event in your calendar app, Taskip updates it. If you delete or cancel it there, it disappears from Taskip.
+- **Repeating events** – each occurrence appears on its own day. An event that runs over several days appears on each day.
+- **Time zone** – times are shown in your workspace time zone.
+- **No duplicates** – events Taskip itself wrote to the calendar are not read back in.
+- **Format** – an event with an address shows as **In person**. Anything else shows as **No format**.
+
+{% table %}
+---
+- **Note:** Every connected CalDAV calendar is read, including one you connected only to send bookings to. Removing the connection also removes the events that were read from it.
+{% /table %}
+
+### **If Something Goes Wrong**
+
+- If a calendar shows **Error**, click **Test** to see the reason, then check the server address, username and password.
+- A failed read keeps the events already in Taskip. The next read tries again.
+- The server must be reachable over `https://` on the public internet.

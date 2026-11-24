@@ -1,0 +1,49 @@
+---
+title: How to Set Default Payment Terms
+description: >-
+  Choose how many days after the issue date a new invoice falls due, and Taskip
+  fills in the due date for you.
+sidebar:
+  order: 20
+---
+**Set your usual payment terms once, such as 7 days or 30 days. Every new invoice then gets its due date filled in from its issue date.**
+
+### **Set the Terms**
+
+1. Go to **Settings → Invoice Settings**.
+1. Open the **General** tab.
+1. Scroll down to **Default payment terms**.
+1. In **Days until due**, type a number of days from `0` to `365`. Or click a quick choice:
+   - **On receipt** – due on the issue date (`0` days)
+   - **1 days**, **3 days**, **7 days**, **10 days**, **14 days**, **30 days**
+   - **No default** – turns the default off
+1. Click **Save Changes** in that section.
+
+Leave the field empty if you do not want a default.
+
+### **What Happens on a New Invoice**
+
+The due date is the issue date plus your number of days.
+
+| Issue date | Days until due | Due date |
+|---|---|---|
+| 25 Nov 2026 | 7 | 2 Dec 2026 |
+| 25 Nov 2026 | 30 | 25 Dec 2026 |
+| 25 Nov 2026 | 0 (On receipt) | 25 Nov 2026 |
+
+When you create an invoice, the **Due Date** field is already filled in.
+
+- If you change the **Issue Date**, the due date moves with it.
+- Once you pick a **Due Date** yourself, Taskip stops changing it.
+- You can always change the due date later on the invoice.
+
+### **Invoices Created Any Other Way**
+
+The default also fills in the due date of an invoice that has no due date, however it was created. That includes invoices made from a quotation, from billable hours, from a workflow, or through the API.
+
+An invoice that already has a due date keeps it.
+
+{% table %}
+---
+- **Note:** The setting applies to invoices only. Quotations do not use it. Invoices you created before you set the terms are not changed.
+{% /table %}
